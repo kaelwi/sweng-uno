@@ -31,7 +31,12 @@ public class App {
 
     // Initial setup
     private void initialize() {
-
+        Deck deck = new Deck();
+        deck.createDeck();
+        System.out.println("deck.getCards().size() = " + deck.getCards().size());
+        System.out.println("deck.getCards().get(0).toString() = " + deck.getCards().get(0).toString());
+        System.out.println("deck.getCards().get(0).toString() = " + deck.getCards().get(10).toString());
+        System.out.println("deck.getCards().get(0).toString() = " + deck.getCards().get(107).toString());
     }
 
     private void readUserInput() {

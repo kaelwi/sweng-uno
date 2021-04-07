@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Deck {
 
     // Attributes: deck of cards, number of cards in deck?
-    private ArrayList<Card> cards;
+    private static ArrayList<Card> cards;
     private int cardsInDeck;
 
     // Constructor: 108 cards in deck
@@ -21,7 +21,24 @@ public class Deck {
         cardsInDeck = 0;
 
         for (int i = 0; i < colors.length-1; i++) {
+            // add 4 zeros, one of each color
+            cards.add(new Card(colors[i], values[0]));
 
+            // add all other cards (except for wild card and +4 wild card) twice from each color
+            for (int j = 1; j < values.length-2; j++) {
+                cards.add(new Card(colors[i], values[j]));
+                cards.add(new Card(colors[i], values[j]));
+            }
         }
+
+        // add 4 wild cards and 4 +4 wild cards
+        for (int i = 0; i < 4; i++) {
+            cards.add(new Card(colors[colors.length-1], values[values.length-2]));
+            cards.add(new Card(colors[colors.length-1], values[values.length-1]));
+        }
+    }
+
+    public static ArrayList<Card> getCards() {
+        return cards;
     }
 }
