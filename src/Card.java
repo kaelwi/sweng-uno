@@ -10,16 +10,19 @@ public class Card {
 
     private final String color;
     private final String value;
+    private final int points;
 
-    public Card(String color, String value) {
+    public Card(String color, String value, int points) {
         this.color = color;
         this.value = value;
+        this.points = points;
     }
 
     // empty constructor
     public Card() {
         this.color = " ";
         this.value = " ";
+        this.points = 0;
     };
 
     public static String[] getAllColors() {
