@@ -5,13 +5,13 @@
 ## Roadmap:
 
 ### 15.4.
-- [ ] Erzeugen Kartendeck
-- [ ] Shuffle, Austeilen
-- [ ] 4 fixe menschliche Spieler
+- [x] Erzeugen Kartendeck
+- [x] Shuffle, Austeilen
+- [x] 4 fixe menschliche Spieler
 
 ### 26.4.
-- [ ] Spielen noch ohne Gültigkeitscheck funktioniert
-- [ ] Karten können ohne Beachtung der Regeln gespielt werden
+- [x] Spielen noch ohne Gültigkeitscheck funktioniert
+- [x] Karten können ohne Beachtung der Regeln gespielt werden
 - [ ] Einlesen des Kommandos
 
 ### 11.5.
