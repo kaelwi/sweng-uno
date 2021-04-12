@@ -31,7 +31,22 @@ public class App {
 
     // Initial setup
     private void initialize() {
+        Game game = new Game(input, output);
+        game.startGame();
 
+//        System.out.println("game = " + game.getDeck().getCards().get(0));
+//        System.out.println("game.getPlayer()[0].getPlayerCards().size() = " + game.getPlayer()[0].getPlayerCards().size());
+//        System.out.println("game.getPlayer()[0].getPlayerCards().get(0) = " + game.getPlayer()[0].getPlayerCards().get(0));
+//        System.out.println("game.getDiscardDeck().getCards().get(0) = " + game.getDiscardDeck().getCards().get(0));
+
+        System.out.println("game = " + game.getDeck().getCards().size());
+        System.out.println("game discard deck = " + game.getDiscardDeck().getCards().size());
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("deck = " + game.getDeck().getCards().get(i));
+        }
+
+        printState(game);
     }
 
     private void readUserInput() {
@@ -43,6 +58,10 @@ public class App {
     }
 
     private void printState() {
+
+    }
+
+    private void printState(Game game) {
 
     }
 
