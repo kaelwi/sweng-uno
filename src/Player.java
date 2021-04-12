@@ -21,6 +21,10 @@ public class Player {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     // setter for player cards
     public void setPlayerCards(ArrayList<Card> playerCards) {
         this.playerCards = playerCards;
@@ -37,5 +41,7 @@ public class Player {
     public ArrayList<Card> getPlayerCards() {
         return playerCards;
     }
+
+
 
 }

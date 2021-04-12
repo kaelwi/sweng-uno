@@ -75,7 +75,6 @@ public class Deck {
 
     // remove first card from deck (needed for the beginning of the game and later on for players to take cards)
     public void removeCardFromDeck() {
-        System.out.println("cards.get(0) = " + cards.get(0));
         cards.remove(0);
     }
 }

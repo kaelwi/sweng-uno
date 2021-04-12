@@ -1,4 +1,5 @@
 import java.io.PrintStream;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
@@ -8,6 +9,7 @@ public class Game {
     private static Deck discardDeck = new Deck(0);
     private final Scanner input;
     private final PrintStream output;
+    private int turn = firstPlayer();
 
     // Constructor
     public Game(Scanner input, PrintStream output) {
@@ -49,7 +51,20 @@ public class Game {
     }
 
     // getter for players
-    public Player[] getPlayer() {
-        return player;
+    public Player getPlayer(int i) {
+        return player[i];
+    }
+
+    private int firstPlayer() {
+        Random random = new Random();
+        return random.nextInt(4);
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int i) {
+        this.turn = i;
     }
 }
