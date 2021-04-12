@@ -7,6 +7,7 @@ public class Card {
     // https://www.letsplayuno.com/news/guide/20181213/30092_732567.html
     private final static String[] colorCollection = {"R", "G", "B", "Y", ""};
     private final static String[] valueCollection = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "<->", "X", "W","W+4"};
+    private final static int[] pointCollection = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 50};
 
     private final String color;
     private final String value;
@@ -31,6 +32,10 @@ public class Card {
 
     public static String[] getAllValues() {
         return valueCollection;
+    }
+
+    public static int[] getAllPoints() {
+        return pointCollection;
     }
 
     @Override

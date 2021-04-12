@@ -29,4 +29,8 @@ public class Player {
         return botName;
     }
 
+    public ArrayList<Card> getPlayerCards() {
+        return playerCards;
+    }
+
 }
