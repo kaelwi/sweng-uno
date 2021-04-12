@@ -20,3 +20,15 @@
 
 ### 1.7.
 - [ ] Heben, +2, Reverse, Stopp usw. funktionieren und die Effekte werden angewendet
+
+### 5.7.
+- [ ] Alle Aktionskarten funktionierne nun und die Effekte werden angewendet (+4, Farbwechsel)
+- [ ] Auswahl Anzahl menschlicher Spieler und Botspieler sind vorhanden
+
+### 6.7.
+- [ ] Strafen für Uno, +4 usw. sind vorhanden, entsprechende Kommandos wurden implementiert
+
+### 20.7.
+- [ ] Punktezählung und Datenbank sind vorhanden
+- [ ] Kommandos für Hilfe, Punkteabfrage
+
