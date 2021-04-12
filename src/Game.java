@@ -9,6 +9,7 @@ public class Game {
     private final Scanner input;
     private final PrintStream output;
 
+    // Constructor
     public Game(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
@@ -19,9 +20,9 @@ public class Game {
         }
     }
 
+    // start game - fill the deck, shuffle it, remove first card to discarddeck
     public void startGame() {
         deck.fillDeck();
-        System.out.println(discardDeck.getCards().size());
         deck.shuffleCards();
         for (int i = 0; i < 4; i++) {
             setPlayers(i);
@@ -30,20 +31,24 @@ public class Game {
         deck.removeCardFromDeck();
     }
 
+    // set the players - get their names and give them 7 cards each
     private void setPlayers(int i) {
         output.println("Please enter your name (Player " + (i+1) + "): ");
         player[i].setName(input.nextLine());
         player[i].setPlayerCards(deck.giveCards());
     }
 
+    // getter for deck
     public Deck getDeck() {
         return deck;
     }
 
+    // getter for discarddeck
     public Deck getDiscardDeck() {
         return discardDeck;
     }
 
+    // getter for players
     public Player[] getPlayer() {
         return player;
     }

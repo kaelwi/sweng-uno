@@ -13,6 +13,7 @@ public class Card {
     private final String value;
     private final int points;
 
+    // constructor
     public Card(String color, String value, int points) {
         this.color = color;
         this.value = value;
@@ -26,18 +27,22 @@ public class Card {
         this.points = 0;
     };
 
+    // getter for all colors
     public static String[] getAllColors() {
         return colorCollection;
     }
 
+    // getter for all values
     public static String[] getAllValues() {
         return valueCollection;
     }
 
+    // getter for all points
     public static int[] getAllPoints() {
         return pointCollection;
     }
 
+    // override tostring to be able to print the cards in a nice manner
     @Override
     public String toString() {
         return color + value;
