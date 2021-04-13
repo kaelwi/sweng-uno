@@ -54,10 +54,10 @@ https://de.wikipedia.org/wiki/Softwaredokumentation#Programmiererdokumentation
 - Kommentar-Header Bsp. für Klassen und Methoden: https://de.wikipedia.org/wiki/Javadoc
 - Doxygen?
 
--[ ] Installationsdokumentation
+- [ ] Installationsdokumentation
 - siehe oben (Programm in Kommandozeile ausführen)
 
--[ ] Testdokumentation
+- [ ] Testdokumentation
 - gefundene Bugs mit Datum (bzw. Version) versehen
 - aus Wikipedia: Nachweis von Testfällen, mit denen die ordnungsgemäße Funktion jeder Version des Produkts getestet werden können, sowie Verfahren und Szenarien, mit denen in der Vergangenheit erfolgreich die Richtigkeit überprüft wurde
 
