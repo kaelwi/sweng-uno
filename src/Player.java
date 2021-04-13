@@ -6,6 +6,7 @@ public class Player {
     private int botNr = 0;
     private String name;
     private ArrayList<Card> playerCards;
+    private int points;
 
     public Player() {
         this.name = this.getBotName();
@@ -15,6 +16,7 @@ public class Player {
     public Player(String name, ArrayList<Card> playerCards) {
         this.name = name;
         this.playerCards = playerCards;
+        this.points = 0;
     }
 
     // setter for name
@@ -65,4 +67,11 @@ public class Player {
         playerCards.addAll(cardsToBeTaken);
     }
 
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
 }

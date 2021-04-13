@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class App {
 
     /**
-     * Attributes 
+     * Attributes
      */
     private final Scanner input;
     private final PrintStream output;
@@ -145,12 +145,22 @@ public class App {
     }
 
     private void updateState() {
-        if(!userInput.equals("help")) {
+        exit = checkWinner();
+        if (checkWinner()) {
+            printEndRound();
+        } else if(!userInput.equals("help")) {
             if (game.getTurn() >= 3) {
                 game.setTurn(0);
             } else {
                 game.setTurn(game.getTurn() + 1);
             }
+        }
+    }
+
+    private void printEndRound() {
+        output.println("Points for this round: ");
+        for (Player player : game.getPlayers()) {
+            output.println("Player " + player + ": " + player.getPoints());
         }
     }
 
@@ -171,5 +181,26 @@ public class App {
 
     private boolean askContinue() {
         return cont;
+    }
+
+    private boolean checkWinner() {
+        boolean winner = false;
+
+        for (Player player : game.getPlayers()) {
+            if (player.getPlayerCards().isEmpty()) {
+                output.println("Congratulations! Player " + player + " wins this round.");
+                winner = true;
+            }
+        }
+
+        if (winner) {
+            for (Player player : game.getPlayers()) {
+                for (Card cardsLeft : player.getPlayerCards()) {
+                    player.setPoints(player.getPoints()+cardsLeft.getPoints());
+                }
+            }
+        }
+
+        return winner;
     }
 }

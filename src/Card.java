@@ -55,4 +55,8 @@ public class Card {
     public String getValue() {
         return value;
     }
+
+    public int getPoints() {
+        return points;
+    }
 }
