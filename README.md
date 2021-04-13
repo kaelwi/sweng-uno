@@ -65,3 +65,5 @@ https://de.wikipedia.org/wiki/Softwaredokumentation#Programmiererdokumentation
 - Regeln?
 - Hilfe?
 
+https://www.altexsoft.com/blog/business/technical-documentation-in-software-development-types-best-practices-and-tools/
+
