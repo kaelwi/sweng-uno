@@ -1,10 +1,13 @@
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
 
-    private Player[] player = new Player[4];
+    private ArrayList<Player> player;
+    // private Player[] player = new Player[4];
     private Deck deck;
     private Deck discardDeck;
     private final Scanner input;
@@ -17,9 +20,10 @@ public class Game {
         this.output = output;
         deck = new Deck(108);
         discardDeck = new Deck(0);
-        for (int i = 0; i < 4; i++) {
-            player[i] = new Player();
-        }
+        player = new ArrayList<Player>(4);
+//        for (int i = 0; i < 4; i++) {
+//            player[i] = new Player();
+//        }
     }
 
     // start game - fill the deck, shuffle it, remove first card to discarddeck
@@ -44,8 +48,10 @@ public class Game {
             name = input.nextLine();
         }
 
-        player[i].setName(name);
-        player[i].setPlayerCards(deck.giveCards());
+        player.add(new Player());
+
+        player.get(i).setName(name);
+        player.get(i).setPlayerCards(deck.giveCards());
 
     }
 
@@ -66,10 +72,10 @@ public class Game {
     // A method to get one player at a certain position in the player-array
     ///////////////////////////////////////////////////////////////
     public Player getPlayer(int position) {
-        return player[position];
+        return player.get(position);
     }
 
-    public Player[] getPlayers() {
+    public ArrayList<Player> getPlayers() {
         return player;
     }
 
@@ -121,5 +127,13 @@ public class Game {
         boolean wildCardOnDiscardDeck = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals("W") ||
                 this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals("W+4");
         return equalColor || wildCardOnDiscardDeck || wildCardOnHand;
+    }
+
+    public void reversePlayers() {
+        Collections.reverse(player);
+    }
+
+    public void setDirectionTurn(int i, int direction) {
+        turn = i + 1*direction;
     }
 }

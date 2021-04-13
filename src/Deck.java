@@ -88,4 +88,13 @@ public class Deck {
 
         return playerCards;
     }
+
+    public Card getDiscardDeckCard() {
+        return this.cards.get(this.cards.size()-1);
+    }
+
+    public boolean checkReverse() {
+        return getDiscardDeckCard().getValue().equals("<->");
+    }
+
 }

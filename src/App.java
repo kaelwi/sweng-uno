@@ -23,6 +23,7 @@ public class App {
     private boolean cont = true;
     private Game game;
     private String[] userInput;
+    private int reverse;
 
 
     /**
@@ -61,6 +62,7 @@ public class App {
 
     // Initial setup
     private void initialize() {
+        reverse = 1;
         game = new Game(input, output);
         game.startGame();
         output.println();
@@ -71,10 +73,10 @@ public class App {
     private void printBegin() {
         output.println();
         output.print("Welcome ");
-        for (int i = 0; i < game.getPlayers().length - 1; i++) {
+        for (int i = 0; i < game.getPlayers().size() - 1; i++) {
             output.print(game.getPlayer(i) + ", ");
         }
-        output.print(game.getPlayer(game.getPlayers().length-1) + "!");
+        output.print(game.getPlayer(game.getPlayers().size()-1) + "!");
         output.println();
 
         output.println("In case you need help: type \"help\".");
@@ -134,6 +136,7 @@ public class App {
                     valid = true;
                 } else {
                     game.giveOnePenaltyCard(player);
+                    valid = true;
                     // output.println("Which card do you want to play?");
                     // userInput = input.nextLine().split(" ");
                 }
@@ -161,11 +164,17 @@ public class App {
         if (checkWinner()) {
             printEndRound();
             exit = true;
-        } else if(!userInput.equals("help")) {
-            if (game.getTurn() >= 3) {
+        } else if (!userInput[0].equals("help")) {
+            if (game.getDiscardDeck().checkReverse()) {
+                reverse *= -1;
+            }
+
+            game.setTurn(game.getTurn() + reverse);
+
+            if (game.getTurn() < 0) {
+                game.setTurn(3);
+            } else if (game.getTurn() > 3) {
                 game.setTurn(0);
-            } else {
-                game.setTurn(game.getTurn() + 1);
             }
         }
     }
@@ -179,8 +188,11 @@ public class App {
 
     private void printState() {
         if(!exit) {
-            output.println("Ablagestapel: " + game.getDiscardDeck().getCards().get(game.getDiscardDeck().getCards().size()-1));
+            output.println("Ablagestapel: " + game.getDiscardDeck().getDiscardDeckCard());
             output.println();
+            if (game.getDiscardDeck().checkReverse()) {
+                output.println("Reverse-Card has been played! Reverse direction...");
+            }
         }
     }
 
