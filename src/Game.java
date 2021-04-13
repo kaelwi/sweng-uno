@@ -6,7 +6,7 @@ public class Game {
 
     private static Player[] player = new Player[4];
     private static Deck deck;
-    private static Deck discardDeck = new Deck(0);
+    private static Deck discardDeck;
     private final Scanner input;
     private final PrintStream output;
     private int turn = setFirst();
@@ -16,7 +16,7 @@ public class Game {
         this.input = input;
         this.output = output;
         deck = new Deck(108);
-        // discardDeck = new Deck(0);
+        discardDeck = new Deck(0);
         for (int i = 0; i < 4; i++) {
             player[i] = new Player();
         }
@@ -27,6 +27,7 @@ public class Game {
         deck.fillDeck();
         deck.shuffleCards();
         for (int i = 0; i < 4; i++) {
+            // setPlayers in class game, because of missing input and output stream in other classes
             setPlayers(i);
         }
         discardDeck.addCardToDiscardDeck(deck.getCards().get(0));
@@ -75,5 +76,10 @@ public class Game {
 
     public void setTurn(int i) {
         turn = i;
+    }
+
+    public void printHelp() {
+        output.println("Print help - needs to be done.");
+        output.println();
     }
 }

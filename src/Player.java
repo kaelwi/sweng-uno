@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Player {
     private final static String[] botNames = {"Bot1", "Bot2", "Bot3", "Bot4"};
@@ -41,6 +42,23 @@ public class Player {
     @Override
     public String toString() {
         return name;
+    }
+
+    public Card isCardOnHand(String cardToPlay) {
+        Card foundCard = new Card();
+        Iterator<Card> it = this.getPlayerCards().iterator();
+        while(it.hasNext()) {
+            Card cardOnHand = it.next();
+            if (cardOnHand.toString().equals(cardToPlay)) {
+                foundCard = cardOnHand;
+                it.remove();
+                break;
+            } else
+            {
+                foundCard = null;
+            }
+        }
+        return foundCard;
     }
 
 }
