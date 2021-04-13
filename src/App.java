@@ -184,23 +184,25 @@ public class App {
     }
 
     private boolean checkWinner() {
-        boolean winner = false;
+        boolean win = false;
+        Player winner = new Player();
 
         for (Player player : game.getPlayers()) {
             if (player.getPlayerCards().isEmpty()) {
                 output.println("Congratulations! Player " + player + " wins this round.");
-                winner = true;
+                winner = player;
+                win = true;
             }
         }
 
-        if (winner) {
+        if (win) {
             for (Player player : game.getPlayers()) {
                 for (Card cardsLeft : player.getPlayerCards()) {
-                    player.setPoints(player.getPoints()+cardsLeft.getPoints());
+                    winner.setPoints(winner.getPoints()+cardsLeft.getPoints());
                 }
             }
         }
 
-        return winner;
+        return win;
     }
 }

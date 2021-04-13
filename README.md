@@ -14,6 +14,7 @@
 
 - [x] User name allows empty string 
 - [x] not able to let two players draw cards - flush scanner input buffer?
+- [x] congratulation in checkWinner is printed twice
 
 ## Roadmap:
 
