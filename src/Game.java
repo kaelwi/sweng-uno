@@ -1,4 +1,5 @@
 import java.io.PrintStream;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
@@ -8,6 +9,7 @@ public class Game {
     private static Deck discardDeck = new Deck(0);
     private final Scanner input;
     private final PrintStream output;
+    private int turn = setFirst();
 
     // Constructor
     public Game(Scanner input, PrintStream output) {
@@ -48,8 +50,30 @@ public class Game {
         return discardDeck;
     }
 
-    // getter for players
-    public Player[] getPlayer() {
+    ///////////////////////////////////////////////////////////////
+    // getPlayer
+    // parameter: int Position
+    // return: Player
+    // A method to get one player at a certain position in the player-array
+    ///////////////////////////////////////////////////////////////
+    public Player getPlayer(int position) {
+        return player[position];
+    }
+
+    public Player[] getPlayers() {
         return player;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    private int setFirst() {
+        Random random = new Random();
+        return random.nextInt(3);
+    }
+
+    public void setTurn(int i) {
+        turn = i;
     }
 }

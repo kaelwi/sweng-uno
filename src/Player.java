@@ -38,4 +38,9 @@ public class Player {
         return playerCards;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
 }
