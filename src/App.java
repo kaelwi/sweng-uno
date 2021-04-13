@@ -73,7 +73,6 @@ public class App {
     private void readUserInput(Player player) {
         output.println("Tell me what your next step shall be.");
         userInput = input.nextLine();
-        output.println(userInput);
 
         switch (userInput) {
             case "exit":
@@ -97,13 +96,12 @@ public class App {
 
             if (cardToBeChecked == null) {
                 if (!input.hasNextInt()) {
-                    System.out.println("It seems there is no such card on your hand...");
+                    output.println("It seems there is no such card on your hand...");
                     output.println();
                 }
                 output.println("Which card do you want to play?");
                 userInput = input.nextLine();
             } else {
-                output.println("test");
                 if (moveValidation(cardToBeChecked)) {
                     game.getDiscardDeck().addCardToDiscardDeck(cardToBeChecked);
                     valid = true;

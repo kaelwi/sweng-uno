@@ -90,17 +90,20 @@ public class Game {
         player.takeCards(this.getDeck().takeCards(number));
     }
 
+    // not taking care of wild cards yet
     public boolean colorValidation(Card card) {
-        if (this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getColor().equals(card.getColor())) {
-            return true;
-        }
-        return false;
+        boolean equalColor = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getColor().equals(card.getColor());
+        boolean wildCardOnHand = card.getColor().equals("");
+        boolean wildCardOnDiscardDeck = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getColor().equals("");
+        return equalColor || wildCardOnDiscardDeck || wildCardOnHand;
     }
 
+    // not taking care of wild cards yet
     public boolean valueValidation(Card card) {
-        if (this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals(card.getValue())) {
-            return true;
-        }
-        return false;
+        boolean equalColor = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals(card.getValue());
+        boolean wildCardOnHand = card.getValue().equals("W") || card.getValue().equals("W+4");
+        boolean wildCardOnDiscardDeck = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals("W") ||
+                this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals("W+4");
+        return equalColor || wildCardOnDiscardDeck || wildCardOnHand;
     }
 }
