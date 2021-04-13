@@ -145,9 +145,9 @@ public class App {
     }
 
     private void updateState() {
-        exit = checkWinner();
         if (checkWinner()) {
             printEndRound();
+            exit = true;
         } else if(!userInput.equals("help")) {
             if (game.getTurn() >= 3) {
                 game.setTurn(0);
