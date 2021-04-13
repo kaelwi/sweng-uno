@@ -1,5 +1,16 @@
 # uno
 
+## Run program from command line:
+- Download project
+- if no out folder is to be found:
+    - create folder out
+    - in folder src execute following command in cmd: javac -d ../out *.java (-d sets the destination directory for class files, the destination directory must already exist, https://stackoverflow.com/questions/36682472/how-to-set-the-output-of-a-javac-compiled-file/36682516)
+- if there are already class files (e.g., like in our intellij project structure in directory out/production/uno), or you just compiled it with the above command:
+    - navigate to the output folder containing the class files
+    - need command in cmd: java Main
+
+## Found errors:
+
 - [ ] User name allows empty string 
 
 ## Roadmap:
