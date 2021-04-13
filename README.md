@@ -44,3 +44,24 @@
 - [ ] Punktezählung und Datenbank sind vorhanden
 - [ ] Kommandos für Hilfe, Punkteabfrage
 
+## Dokumentation
+https://de.wikipedia.org/wiki/Softwaredokumentation
+https://de.wikipedia.org/wiki/Softwaredokumentation#Programmiererdokumentation
+- [ ] Programmierdokumentation 
+- Beschreibung des Quellcodes
+- Namen von Variablen und Funktionen sollen für Menschen intuitiv verständlich sein
+- Die Dokumentation soll so weit wie möglich in den Quellcode eingearbeitet werden (Kommentare; was bereits durch die formale Programmiersprache selbst erklärt wurde, darf nicht Inhalt eines zusätzlichen Kommentars sein)
+- Kommentar-Header Bsp. für Klassen und Methoden: https://de.wikipedia.org/wiki/Javadoc
+- Doxygen?
+
+-[ ] Installationsdokumentation
+- siehe oben (Programm in Kommandozeile ausführen)
+
+-[ ] Testdokumentation
+- gefundene Bugs mit Datum (bzw. Version) versehen
+- aus Wikipedia: Nachweis von Testfällen, mit denen die ordnungsgemäße Funktion jeder Version des Produkts getestet werden können, sowie Verfahren und Szenarien, mit denen in der Vergangenheit erfolgreich die Richtigkeit überprüft wurde
+
+- [ ] Benutzerdokumentation
+- Regeln?
+- Hilfe?
+
