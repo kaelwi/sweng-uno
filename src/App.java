@@ -129,12 +129,13 @@ public class App {
                     if (checkUno(player) && (userInput.length < 2 || !userInput[1].equals("uno"))) {
                         output.println("Oh no, you forgot to shout UNO!");
                         output.println("Take 1 card.");
-                        game.giveCardForMissingUno(player);
+                        game.giveOnePenaltyCard(player);
                     }
                     valid = true;
                 } else {
-                    output.println("Which card do you want to play?");
-                    userInput = input.nextLine().split(" ");
+                    game.giveOnePenaltyCard(player);
+                    // output.println("Which card do you want to play?");
+                    // userInput = input.nextLine().split(" ");
                 }
             }
         } while(!valid);

@@ -98,7 +98,7 @@ public class Game {
         player.takeCards(this.getDeck().takeCards(number));
     }
 
-    public void giveCardForMissingUno(Player player) {
+    public void giveOnePenaltyCard(Player player) {
         player.takeCards(this.getDeck().takeCards(1));
     }
 
