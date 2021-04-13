@@ -46,7 +46,6 @@ public class App {
         whoBegins();
     }
 
-    // Print players and commands.
     private void printBegin() {
         output.println();
         output.print("Welcome ");
@@ -64,7 +63,6 @@ public class App {
         output.println();
     }
 
-    // print first player
     private void whoBegins() {
         output.println("Rolling dice... tossing coins...");
         output.println(game.getPlayer(game.getTurn()) + " may begin.");
@@ -72,11 +70,10 @@ public class App {
         output.println();
     }
 
-    // read user input
     private void readUserInput(Player player) {
-        // TODO: distinguish different cases of input (card, help, exit)
         output.println("Tell me what your next step shall be.");
         userInput = input.nextLine();
+        output.println(userInput);
 
         switch (userInput) {
             case "exit":
@@ -91,7 +88,6 @@ public class App {
             default:
                 cardValidation(player);
         }
-
     }
 
     private void cardValidation(Player player) {
@@ -99,12 +95,7 @@ public class App {
         do {
             Card cardToBeChecked = player.isCardOnHand(userInput);
 
-            if(cardToBeChecked != null) {
-                game.getDiscardDeck().addCardToDiscardDeck(cardToBeChecked);
-                valid = true;
-            }
-
-            if (!valid) {
+            if (cardToBeChecked == null) {
                 if (!input.hasNextInt()) {
                     System.out.println("It seems there is no such card on your hand...");
                     output.println();
@@ -112,11 +103,26 @@ public class App {
                 output.println("Which card do you want to play?");
                 userInput = input.nextLine();
             } else {
-
+                output.println("test");
+                if (moveValidation(cardToBeChecked)) {
+                    game.getDiscardDeck().addCardToDiscardDeck(cardToBeChecked);
+                    valid = true;
+                } else {
+                    output.println("Which card do you want to play?");
+                    userInput = input.nextLine();
+                }
             }
         } while(!valid);
     }
 
+    private boolean moveValidation(Card card) {
+        if (game.colorValidation(card) || game.valueValidation(card)) {
+            return true;
+        } else {
+            output.println("Illegal move!");
+            return false;
+        }
+    }
 
     private void updateState() {
         if(!userInput.equals("help")) {
@@ -128,18 +134,11 @@ public class App {
         }
     }
 
-    /////////////////////
-    // printstate
-    // parameter: void
-    // return: void
-    // Was macht die Methode
-    /////////////////////
     private void printState() {
         if(!exit) {
             output.println("Ablagestapel: " + game.getDiscardDeck().getCards().get(game.getDiscardDeck().getCards().size()-1));
             output.println();
         }
-
     }
 
     private void printPlayerCards() {
@@ -149,7 +148,6 @@ public class App {
         }
         output.println();
     }
-
 
     private boolean askContinue() {
         return cont;

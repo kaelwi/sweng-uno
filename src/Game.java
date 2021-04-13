@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Game {
 
-    private static Player[] player = new Player[4];
-    private static Deck deck;
-    private static Deck discardDeck;
+    private Player[] player = new Player[4];
+    private Deck deck;
+    private Deck discardDeck;
     private final Scanner input;
     private final PrintStream output;
     private int turn = setFirst();
@@ -85,7 +85,22 @@ public class Game {
 
     public void givePlayerDrawCards(Player player) {
         output.println("How many cards do you want to/have to draw?");
-        int number = input.nextInt();
+        // nextInt problematic, \n stays in buffer -> parse whole input line into an integer
+        int number = Integer.parseInt(input.nextLine());
         player.takeCards(this.getDeck().takeCards(number));
+    }
+
+    public boolean colorValidation(Card card) {
+        if (this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getColor().equals(card.getColor())) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean valueValidation(Card card) {
+        if (this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals(card.getValue())) {
+            return true;
+        }
+        return false;
     }
 }
