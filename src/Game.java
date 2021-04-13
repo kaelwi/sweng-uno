@@ -82,4 +82,10 @@ public class Game {
         output.println("Print help - needs to be done.");
         output.println();
     }
+
+    public void givePlayerDrawCards(Player player) {
+        output.println("How many cards do you want to/have to draw?");
+        int number = input.nextInt();
+        player.takeCards(this.getDeck().takeCards(number));
+    }
 }

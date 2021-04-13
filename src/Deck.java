@@ -77,4 +77,15 @@ public class Deck {
     public void removeCardFromDeck() {
         cards.remove(0);
     }
+
+    public ArrayList<Card> takeCards(int number) {
+        ArrayList<Card> playerCards = new ArrayList<>(number);
+
+        for (int i = 0; i < number; i++) {
+            playerCards.add(cards.get(0));
+            cards.remove(0);
+        }
+
+        return playerCards;
+    }
 }

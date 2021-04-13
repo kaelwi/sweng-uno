@@ -61,4 +61,8 @@ public class Player {
         return foundCard;
     }
 
+    public void takeCards(ArrayList<Card> cardsToBeTaken) {
+        playerCards.addAll(cardsToBeTaken);
+    }
+
 }

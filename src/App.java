@@ -85,6 +85,9 @@ public class App {
             case "help":
                 game.printHelp();
                 break;
+            case "ziehen":
+                game.givePlayerDrawCards(player);
+                break;
             default:
                 cardValidation(player);
         }
@@ -102,10 +105,14 @@ public class App {
             }
 
             if (!valid) {
-                System.out.println("It seems there is no such card on your hand...");
-                output.println();
+                if (!input.hasNextInt()) {
+                    System.out.println("It seems there is no such card on your hand...");
+                    output.println();
+                }
                 output.println("Which card do you want to play?");
                 userInput = input.nextLine();
+            } else {
+
             }
         } while(!valid);
     }
