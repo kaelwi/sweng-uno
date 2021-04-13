@@ -1,26 +1,49 @@
+/**
+ * Class App
+ * This class implements a game loop. For more detail see comments on the methods below.
+ *
+ * @author: first draft from FH Campus02 (game loop)
+ * @contributors: Paulina Safar
+ *                Julia Summer
+ *                Karoline E. Wild
+ * @modified: 13.4.2021
+ */
+
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class App {
 
-    // Attributes
+    /**
+     * Attributes 
+     */
     private final Scanner input;
     private final PrintStream output;
     private boolean exit = false;
     private boolean cont = true;
     private Game game;
-    String userInput;
+    private String userInput;
 
 
-    // Constructor
+    /**
+     * Constructor
+     *
+     * @param input (Scanner for user input)
+     *        output (PrintStream)
+     */
     public App(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
     }
 
-    // Game Loop
+    /**
+     * This is the main method of the class. The method Run() implements the game loop. In this method, the game is
+     * set up (initialize()), the initial state is printed (printState()). Afterwards the game goes into a seemingly
+     * endless loop, where the actual game takes place. The variable exit can be changed via user input (typing "exit")
+     * or if the game ends (there is a player with no more cards on hand).
+     *
+     * The method needs no parameters and it has no return value.
+     */
     public void Run() {
         initialize();
         printState();
@@ -34,7 +57,6 @@ public class App {
 
             // exit = !askContinue();
         }
-
     }
 
     // Initial setup
