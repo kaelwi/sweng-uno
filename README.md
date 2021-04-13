@@ -1,6 +1,7 @@
 # uno
 
 ## Run program from command line:
+(Prerequisites: installed Java; tested with JDK-11 and JDK-13)
 - Download project
 - if no out folder is to be found:
     - create folder out
