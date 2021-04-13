@@ -98,6 +98,10 @@ public class Game {
         player.takeCards(this.getDeck().takeCards(number));
     }
 
+    public void missingUnoPenalty(Player player) {
+        player.takeCards(this.getDeck().takeCards(2));
+    }
+
     public void giveOnePenaltyCard(Player player) {
         player.takeCards(this.getDeck().takeCards(1));
     }
