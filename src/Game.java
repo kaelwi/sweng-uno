@@ -91,11 +91,15 @@ public class Game {
         output.println();
     }
 
-    public void givePlayerDrawCards(Player player) {
-        output.println("How many cards do you want to/have to draw?");
+    public void givePlayerDrawCards(Player player, int number) {
+        // output.println("How many cards do you want to/have to draw?");
         // nextInt problematic, \n stays in buffer -> parse whole input line into an integer
-        int number = Integer.parseInt(input.nextLine());
+        // int number = Integer.parseInt(input.nextLine());
         player.takeCards(this.getDeck().takeCards(number));
+    }
+
+    public void giveCardForMissingUno(Player player) {
+        player.takeCards(this.getDeck().takeCards(1));
     }
 
     // not taking care of wild cards yet

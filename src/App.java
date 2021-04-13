@@ -22,7 +22,7 @@ public class App {
     private boolean exit = false;
     private boolean cont = true;
     private Game game;
-    private String userInput;
+    private String[] userInput;
 
 
     /**
@@ -94,9 +94,9 @@ public class App {
 
     private void readUserInput(Player player) {
         output.println("Tell me what your next step shall be.");
-        userInput = input.nextLine();
+        userInput = input.nextLine().split(" ");
 
-        switch (userInput) {
+        switch (userInput[0]) {
             case "exit":
                 exit = true;
                 break;
@@ -104,7 +104,7 @@ public class App {
                 game.printHelp();
                 break;
             case "ziehen":
-                game.givePlayerDrawCards(player);
+                game.givePlayerDrawCards(player, Integer.parseInt(userInput[1]));
                 break;
             default:
                 cardValidation(player);
@@ -114,7 +114,7 @@ public class App {
     private void cardValidation(Player player) {
         boolean valid = false;
         do {
-            Card cardToBeChecked = player.isCardOnHand(userInput);
+            Card cardToBeChecked = player.isCardOnHand(userInput[0]);
 
             if (cardToBeChecked == null) {
                 if (!input.hasNextInt()) {
@@ -122,17 +122,29 @@ public class App {
                     output.println();
                 }
                 output.println("Which card do you want to play?");
-                userInput = input.nextLine();
+                userInput = input.nextLine().split(" ");
             } else {
                 if (moveValidation(cardToBeChecked)) {
                     game.getDiscardDeck().addCardToDiscardDeck(cardToBeChecked);
+                    if (checkUno(player) && (userInput.length < 2 || !userInput[1].equals("uno"))) {
+                        output.println("Oh no, you forgot to shout UNO!");
+                        output.println("Take 1 card.");
+                        game.giveCardForMissingUno(player);
+                    }
                     valid = true;
                 } else {
                     output.println("Which card do you want to play?");
-                    userInput = input.nextLine();
+                    userInput = input.nextLine().split(" ");
                 }
             }
         } while(!valid);
+    }
+
+    private boolean checkUno(Player player) {
+        if (player.getPlayerCards().size() == 1) {
+            return true;
+        }
+        return false;
     }
 
     private boolean moveValidation(Card card) {
