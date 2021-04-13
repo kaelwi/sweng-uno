@@ -37,8 +37,16 @@ public class Game {
     // set the players - get their names and give them 7 cards each
     private void setPlayers(int i) {
         output.println("Please enter your name (Player " + (i+1) + "): ");
-        player[i].setName(input.nextLine());
+        String name = input.nextLine();
+
+        while(name.isEmpty()) {
+            output.println("Unfortunately, you did not enter any name. Please, try it again.");
+            name = input.nextLine();
+        }
+
+        player[i].setName(name);
         player[i].setPlayerCards(deck.giveCards());
+
     }
 
     // getter for deck

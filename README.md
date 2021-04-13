@@ -12,7 +12,7 @@
 
 ## Found errors:
 
-- [ ] User name allows empty string 
+- [x] User name allows empty string 
 - [x] not able to let two players draw cards - flush scanner input buffer?
 
 ## Roadmap:
@@ -25,7 +25,7 @@
 ### 26.4.
 - [x] Spielen noch ohne Gültigkeitscheck funktioniert
 - [x] Karten können ohne Beachtung der Regeln gespielt werden
-- [ ] Einlesen des Kommandos
+- [x] Einlesen des Kommandos
 
 ### 11.5.
 - [ ] Karten können nur nach Regeln gespielt werden
