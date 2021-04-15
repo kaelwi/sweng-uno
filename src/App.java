@@ -55,8 +55,6 @@ public class App {
             readUserInput(game.getPlayer(game.getTurn()));
             updateState();
             printState();
-
-            // exit = !askContinue();
         }
     }
 
@@ -96,17 +94,14 @@ public class App {
 
     private void readUserInput(Player player) {
         output.println("Tell me what your next step shall be.");
-
         if (player.checkForBot()) {
             botTurn(player);
         } else {
             playerTurn(player);
         }
-
     }
 
     private void botTurn(Player player) {
-        // Bot bot = (Bot) player;
         Card card = player.getCardToPlay(game.getDiscardDeck().getDiscardDeckCard());
         String shout = "";
         if(card != null) {
@@ -174,8 +169,6 @@ public class App {
                 } else {
                     invalidMove(player, cardToBeChecked);
                     valid = true;
-                    // output.println("Which card do you want to play?");
-                    // userInput = input.nextLine().split(" ");
                 }
             }
         } while(!valid);
@@ -189,7 +182,7 @@ public class App {
     }
 
     private boolean moveValidation(Card card) {
-        if (game.colorValidation(card) || game.valueValidation(card)) {
+        if (Game.cardValidation(card, game.getDiscardDeck().getDiscardDeckCard())) {
             return true;
         } else {
             output.println("Illegal move!");
@@ -224,11 +217,12 @@ public class App {
     }
 
     private void printState() {
+        output.println();
         if(!exit) {
             output.println("Ablagestapel: " + game.getDiscardDeck().getDiscardDeckCard());
             output.println();
             if (game.getDiscardDeck().checkReverse()) {
-                output.println("Reverse-Card has been played! Reverse direction...");
+                output.println("Reverse-Card has been played! Reverse direction...\n");
             }
         }
     }
@@ -241,17 +235,15 @@ public class App {
         output.println();
     }
 
-    private boolean askContinue() {
-        return cont;
-    }
-
     private boolean checkWinner() {
         boolean win = false;
         Player winner = new Player();
 
         for (Player player : game.getPlayers()) {
             if (player.getPlayerCards().isEmpty()) {
+                output.println();
                 output.println("Congratulations! Player " + player + " wins this round.");
+                output.println();
                 for (Card cardsLeft : player.getPlayerCards()) {
                     player.setPoints(player.getPoints()+cardsLeft.getPoints());
                 }

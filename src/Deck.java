@@ -3,11 +3,8 @@ import java.util.Collections;
 
 public class Deck {
 
-    // Attributes: deck of cards, number of cards in deck?
     private ArrayList<Card> cards;
-    private int cardsInDeck;
 
-    // Constructor: 108 cards in deck
     public Deck(int capacity) {
         cards = new ArrayList<>(capacity);
     }
@@ -20,7 +17,6 @@ public class Deck {
         String[] colors = newCard.getAllColors();
         String[] values = newCard.getAllValues();
         int[] points = newCard.getAllPoints();
-        cardsInDeck = 0;
 
         for (int i = 0; i < colors.length-1; i++) {
             // add 4 zeros, one of each color
@@ -54,21 +50,17 @@ public class Deck {
     // to take and give 7 cards from deck to player
     public ArrayList<Card> giveCards() {
         ArrayList<Card> playerCards = new ArrayList<>(7);
-
         for (int i = 0; i < 7; i++) {
             playerCards.add(cards.get(0));
             cards.remove(0);
         }
-
         return playerCards;
     }
 
-    // getter for cards of a deck
     public ArrayList<Card> getCards() {
         return cards;
     }
 
-    // to add a card from the deck to the discard deck (needed for the beginning of the game)
     public void addCardToDiscardDeck(Card card) {
         cards.add(card);
     }
@@ -80,12 +72,10 @@ public class Deck {
 
     public ArrayList<Card> takeCards(int number) {
         ArrayList<Card> playerCards = new ArrayList<>(number);
-
         for (int i = 0; i < number; i++) {
             playerCards.add(cards.get(0));
             cards.remove(0);
         }
-
         return playerCards;
     }
 
