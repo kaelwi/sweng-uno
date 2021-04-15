@@ -182,6 +182,14 @@ public class Game {
         return equalColor || wildCardOnDiscardDeck || wildCardOnHand;
     }
 
+    public static boolean cardValidation(Card card, Card discardDeckCard) {
+        if (card.getValue() == discardDeckCard.getValue() || card.getColor() == discardDeckCard.getColor() || card.getColor().equals("") || discardDeckCard.getColor().equals("")) {
+            return true;
+        }
+
+        return false;
+    }
+
     // not taking care of wild cards yet
     public boolean valueValidation(Card card) {
         boolean equalColor = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals(card.getValue());
