@@ -48,4 +48,15 @@ public class Card {
         return color + value;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public int getPoints() {
+        return points;
+    }
 }
