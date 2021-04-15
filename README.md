@@ -1,5 +1,13 @@
 # uno
 
+## Found errors:
+
+- [x] User name allows empty string 
+- [x] not able to let two players draw cards - flush scanner input buffer?
+- [x] congratulation in checkWinner is printed twice
+- [ ] in den Spielregeln ist unter Spielverlauf 2 Karten als Strafe für vergessenes Uno, unter Strafen nur 1 (?)
+- [ ] User name allows identical names 
+
 ## Run program from command line:
 (Prerequisites: installed Java; tested with JDK-11 and JDK-13)
 - Download project
@@ -9,14 +17,6 @@
 - if there are already class files (e.g., like in our intellij project structure in directory out/production/uno), or you just compiled it with the above command:
     - navigate to the output folder containing the class files
     - needed command in cmd: java Main
-
-## Found errors:
-
-- [x] User name allows empty string 
-- [x] not able to let two players draw cards - flush scanner input buffer?
-- [x] congratulation in checkWinner is printed twice
-- [ ] in den Spielregeln ist unter Spielverlauf 2 Karten als Strafe für vergessenes Uno, unter Strafen nur 1 (?)
-- [ ] User name allows identical names 
 
 ## Roadmap:
 
