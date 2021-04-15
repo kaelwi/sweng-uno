@@ -70,11 +70,30 @@ public class Player {
         playerCards.addAll(cardsToBeTaken);
     }
 
+    public void takeCardBack(Card card) {
+        playerCards.add(card);
+    }
+
     public int getPoints() {
         return points;
     }
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public boolean checkForBot() {
+        return this instanceof Bot;
+    }
+
+    public void removeCardFromHand (Card card) {
+        Iterator<Card> it = this.getPlayerCards().iterator();
+        while(it.hasNext()) {
+            Card cardOnHand = it.next();
+            if (cardOnHand.equals(card)) {
+                it.remove();
+                break;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Bot extends Player {
 
@@ -6,6 +7,18 @@ public class Bot extends Player {
         super(name, playerCards);
     }
 
+
+    public Card getCardToPlay(Card dicardDeckCard) {
+
+        for (Card card : getPlayerCards()) {
+            if (Game.cardValidation(card, dicardDeckCard)) {
+                return card;
+            }
+        }
+
+        return null;
+
+    } 
 
 
 
