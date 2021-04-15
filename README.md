@@ -16,6 +16,7 @@
 - [x] not able to let two players draw cards - flush scanner input buffer?
 - [x] congratulation in checkWinner is printed twice
 - [ ] in den Spielregeln ist unter Spielverlauf 2 Karten als Strafe für vergessenes Uno, unter Strafen nur 1 (?)
+- [ ] User name allows identical names 
 
 ## Roadmap:
 
