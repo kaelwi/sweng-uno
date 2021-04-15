@@ -96,6 +96,34 @@ public class App {
 
     private void readUserInput(Player player) {
         output.println("Tell me what your next step shall be.");
+
+        if (player.checkForBot()) {
+            botTurn(player);
+        } else {
+            playerTurn(player);
+        }
+
+    }
+
+    private void botTurn(Player player) {
+        Bot bot = (Bot) player;
+        Card card = bot.getCardToPlay(game.getDiscardDeck().getDiscardDeckCard());
+        String shout = "";
+        if(card != null) {
+            shout = card.toString();
+            player.removeCardFromHand(card);
+            if (checkUno(player)) {
+                shout += " uno";
+            }
+            playCard(player, card);
+            output.println(shout);
+        } else {
+            game.giveOnePenaltyCard(player);
+            output.println("Unfortunately, I don't have anything to play.");
+        }
+    }
+
+    private void playerTurn(Player player) {
         userInput = input.nextLine().split(" ");
 
         switch (userInput[0]) {
@@ -113,6 +141,20 @@ public class App {
         }
     }
 
+    private void playCard(Player player, Card card) {
+        game.getDiscardDeck().addCardToDiscardDeck(card);
+        if (!player.checkForBot() && checkUno(player) && (userInput.length < 2 || !userInput[1].equals("uno"))) {
+            output.println("Oh no, you forgot to shout UNO!");
+            output.println("Take 1 card.");
+            game.missingUnoPenalty(player);
+        }
+    }
+
+    private void invalidMove(Player player, Card card) {
+        player.takeCardBack(card);
+        game.giveOnePenaltyCard(player);
+    }
+
     private void cardValidation(Player player) {
         boolean valid = false;
         do {
@@ -127,15 +169,10 @@ public class App {
                 userInput = input.nextLine().split(" ");
             } else {
                 if (moveValidation(cardToBeChecked)) {
-                    game.getDiscardDeck().addCardToDiscardDeck(cardToBeChecked);
-                    if (checkUno(player) && (userInput.length < 2 || !userInput[1].equals("uno"))) {
-                        output.println("Oh no, you forgot to shout UNO!");
-                        output.println("Take 1 card.");
-                        game.missingUnoPenalty(player);
-                    }
+                    playCard(player, cardToBeChecked);
                     valid = true;
                 } else {
-                    game.giveOnePenaltyCard(player);
+                    invalidMove(player, cardToBeChecked);
                     valid = true;
                     // output.println("Which card do you want to play?");
                     // userInput = input.nextLine().split(" ");
@@ -164,7 +201,7 @@ public class App {
         if (checkWinner()) {
             printEndRound();
             exit = true;
-        } else if (!userInput[0].equals("help")) {
+        } else if (game.getPlayer(game.getTurn()).checkForBot() || !userInput[0].equals("help")) {
             if (game.getDiscardDeck().checkReverse()) {
                 reverse *= -1;
             }
@@ -215,6 +252,9 @@ public class App {
         for (Player player : game.getPlayers()) {
             if (player.getPlayerCards().isEmpty()) {
                 output.println("Congratulations! Player " + player + " wins this round.");
+                for (Card cardsLeft : player.getPlayerCards()) {
+                    player.setPoints(player.getPoints()+cardsLeft.getPoints());
+                }
                 winner = player;
                 win = true;
             }
