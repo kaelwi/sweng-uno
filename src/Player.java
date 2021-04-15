@@ -9,7 +9,9 @@ public class Player {
     private int points;
 
     public Player() {
-    };
+    }
+
+    ;
 
     // constructor
     public Player(String name, ArrayList<Card> playerCards) {
@@ -52,14 +54,13 @@ public class Player {
     public Card isCardOnHand(String cardToPlay) {
         Card foundCard = new Card();
         Iterator<Card> it = this.getPlayerCards().iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             Card cardOnHand = it.next();
             if (cardOnHand.toString().equals(cardToPlay)) {
                 foundCard = cardOnHand;
                 it.remove();
                 break;
-            } else
-            {
+            } else {
                 foundCard = null;
             }
         }
@@ -86,14 +87,26 @@ public class Player {
         return this instanceof Bot;
     }
 
-    public void removeCardFromHand (Card card) {
+    public void removeCardFromHand(Card card) {
         Iterator<Card> it = this.getPlayerCards().iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             Card cardOnHand = it.next();
             if (cardOnHand.equals(card)) {
                 it.remove();
                 break;
             }
         }
+    }
+
+    public Card getCardToPlay(Card discardDeckCard) {
+
+        for (Card card : this.getPlayerCards()) {
+            if (Game.cardValidation(card, discardDeckCard)) {
+                return card;
+            }
+        }
+
+        return null;
+
     }
 }

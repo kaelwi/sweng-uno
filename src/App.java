@@ -106,8 +106,8 @@ public class App {
     }
 
     private void botTurn(Player player) {
-        Bot bot = (Bot) player;
-        Card card = bot.getCardToPlay(game.getDiscardDeck().getDiscardDeckCard());
+        // Bot bot = (Bot) player;
+        Card card = player.getCardToPlay(game.getDiscardDeck().getDiscardDeckCard());
         String shout = "";
         if(card != null) {
             shout = card.toString();
