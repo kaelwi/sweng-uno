@@ -20,7 +20,6 @@ public class App {
     private final Scanner input;
     private final PrintStream output;
     private boolean exit = false;
-    private boolean cont = true;
     private Game game;
     private String[] userInput;
     private int reverse;
