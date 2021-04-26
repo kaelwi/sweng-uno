@@ -68,6 +68,7 @@ public class App {
         whoBegins();
     }
 
+
     private void printBegin() {
         output.println();
         output.print("Welcome ");
@@ -81,7 +82,7 @@ public class App {
         output.println("If you wish to end the game: type \"exit\".");
         output.println();
 
-        output.println("Let the game begin!");
+        output.println("Let the Game begin!");
         output.println();
     }
 
@@ -93,7 +94,7 @@ public class App {
     }
 
     private void readUserInput(Player player) {
-        output.println("Tell me what your next step shall be.");
+        output.println("Tell me your next step.");
         if (player.checkForBot()) {
             botTurn(player);
         } else {
@@ -101,6 +102,7 @@ public class App {
         }
     }
 
+    // Bot game sequence
     private void botTurn(Player player) {
         Card card = player.getCardToPlay(game.getDiscardDeck().getDiscardDeckCard());
         String shout = "";
@@ -128,7 +130,7 @@ public class App {
             case "help":
                 game.printHelp();
                 break;
-            case "ziehen":
+            case "draw":
                 game.givePlayerDrawCards(player, Integer.parseInt(userInput[1]));
                 break;
             default:
@@ -219,7 +221,7 @@ public class App {
     private void printState() {
         output.println();
         if(!exit) {
-            output.println("Ablagestapel: " + game.getDiscardDeck().getDiscardDeckCard());
+            output.println("Open card deck: " + game.getDiscardDeck().getDiscardDeckCard());
             output.println();
             if (game.getDiscardDeck().checkReverse()) {
                 output.println("Reverse-Card has been played! Reverse direction...\n");
@@ -259,7 +261,6 @@ public class App {
                 }
             }
         }
-
         return win;
     }
 }

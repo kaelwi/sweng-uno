@@ -31,7 +31,7 @@ public class Game {
     }
 
     private void setPlayers() {
-        output.println("Tell me how many bots you would like to involve: ");
+        output.println("Tell me how many bots would you like to involve: ");
         int bots = checkNrBots();
         createBots(bots);
 
@@ -46,7 +46,7 @@ public class Game {
             String name = input.nextLine();
 
             while(name.isEmpty() || playerNames().contains(name)) {
-                output.println("I'm sorry, this is not working. Either you did not enter any name, or the name is already taken. Please try again.");
+                output.println("I'm sorry, you either did not enter a name, or the entered name is already taken. Please try again.");
                 name = input.nextLine();
             }
             player.add(new Player(name, deck.giveCards()));
@@ -60,7 +60,7 @@ public class Game {
             String name = input.nextLine();
 
             while(name.isEmpty() || playerNames().contains(name)) {
-                output.println("I'm sorry, this is not working. Either you did not enter any name, or the name is already taken. Please try again.");
+                output.println("I'm sorry, you either did not enter a name, or the entered name is already taken. Please try again.");
                 name = input.nextLine();
             }
             player.add(new Bot(name, deck.giveCards()));
@@ -79,7 +79,7 @@ public class Game {
         int bots = Integer.parseInt(input.nextLine());
         while(bots < 0 || bots > 4) {
             if (bots > 4) {
-                output.println("The maximum of allowed players is 4!");
+                output.println("The maximum number of allowed players is 4!");
             } else {
                 output.println("You know you need at least 1 player...");
             }
