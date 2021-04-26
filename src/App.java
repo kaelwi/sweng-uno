@@ -14,9 +14,6 @@ import java.util.Scanner;
 
 public class App {
 
-    /**
-     * Attributes
-     */
     private final Scanner input;
     private final PrintStream output;
     private boolean exit = false;
@@ -24,13 +21,6 @@ public class App {
     private String[] userInput;
     private int reverse;
 
-
-    /**
-     * Constructor
-     *
-     * @param input (Scanner for user input)
-     *        output (PrintStream)
-     */
     public App(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
@@ -221,16 +211,6 @@ public class App {
         checkTakeFour();
         game.checkEmptyDeck();
     }
-
-//    private void checkEmptyDeck() {
-//        if (game.getDeck().isEmpty()) {
-//            Deck newDeck = new Deck(1);
-//            newDeck.addCardToDiscardDeck(game.getDiscardDeck().getDiscardDeckCard());
-//            game.getDiscardDeck().removeCardFromDeck();
-//            game.setDeck(game.getDiscardDeck());
-//            game.setDiscardDeck(newDeck);
-//        }
-//    }
 
     private void checkTakeFour() {
         if(game.getDiscardDeck().getDiscardDeckCard().getValue().equals("W+4")) {
