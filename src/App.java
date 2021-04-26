@@ -207,8 +207,24 @@ public class App {
             }
 
             game.setTurn(game.getTurn() + reverse);
-            checkStop();
+            doChecks();
             game.turnOverflow();
+        }
+    }
+
+    private void doChecks() {
+        game.turnOverflow();
+        checkStop();
+        checkTakeTwo();
+    }
+
+    private void checkTakeTwo() {
+        if(game.getDiscardDeck().getDiscardDeckCard().getValue().equals("+2")) {
+            printState();
+            printPlayerCards();
+            System.out.println("You have to take 2 cards!");
+            game.givePlayerDrawCards(game.getPlayer(game.getTurn()), 2);
+            game.setTurn(game.getTurn() + reverse);
         }
     }
 
