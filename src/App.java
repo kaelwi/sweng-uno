@@ -219,14 +219,29 @@ public class App {
         checkStop();
         checkTakeTwo();
         checkTakeFour();
+        game.checkEmptyDeck();
     }
+
+//    private void checkEmptyDeck() {
+//        if (game.getDeck().isEmpty()) {
+//            Deck newDeck = new Deck(1);
+//            newDeck.addCardToDiscardDeck(game.getDiscardDeck().getDiscardDeckCard());
+//            game.getDiscardDeck().removeCardFromDeck();
+//            game.setDeck(game.getDiscardDeck());
+//            game.setDiscardDeck(newDeck);
+//        }
+//    }
 
     private void checkTakeFour() {
         if(game.getDiscardDeck().getDiscardDeckCard().getValue().equals("W+4")) {
             printState();
             printPlayerCards();
             System.out.println("You have to take 4 cards!");
-            game.givePlayerDrawCards(game.getPlayer(game.getTurn()), 4);
+            for (int i = 0; i < 4; i++) {
+                game.givePlayerDrawCards(game.getPlayer(game.getTurn()), 1);
+                game.checkEmptyDeck();
+            }
+
             game.setTurn(game.getTurn() + reverse);
         }
     }
@@ -239,8 +254,8 @@ public class App {
             while (!rightInput) {
                 System.out.println("You can choose the color.");
                 color = input.nextLine();
-                for (String colorOfCards : Card.getAllColors()) {
-                    if (color.equals(colorOfCards)) {
+                for (int i = 0; i < Card.getAllColors().length-1; i++) {
+                    if (color.equals(Card.getAllColors()[i])) {
                         rightInput = true;
                     }
                 }
@@ -258,7 +273,11 @@ public class App {
             printState();
             printPlayerCards();
             System.out.println("You have to take 2 cards!");
-            game.givePlayerDrawCards(game.getPlayer(game.getTurn()), 2);
+            for (int i = 0; i < 2; i++) {
+                game.givePlayerDrawCards(game.getPlayer(game.getTurn()), 1);
+                game.checkEmptyDeck();
+            }
+
             game.setTurn(game.getTurn() + reverse);
         }
     }
@@ -271,14 +290,6 @@ public class App {
             game.setTurn(game.getTurn() + reverse);
         }
     }
-
-//    private void turnOverflow() {
-//        if (game.getTurn() < 0) {
-//            game.setTurn(3);
-//        } else if (game.getTurn() > 3) {
-//            game.setTurn(0);
-//        }
-//    }
 
     private void printEndRound() {
         output.println("Points for this round: ");

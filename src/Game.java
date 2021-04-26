@@ -30,6 +30,14 @@ public class Game {
         deck.removeCardFromDeck();
     }
 
+    public void setDeck(Deck deck) {
+        this.deck = deck;
+    }
+
+    public void setDiscardDeck(Deck discardDeck) {
+        this.discardDeck = discardDeck;
+    }
+
     private void setPlayers() {
         output.println("Tell me how many bots would you like to involve: ");
         int bots = checkNrBots();
@@ -123,7 +131,11 @@ public class Game {
     }
 
     public void givePlayerDrawCards(Player player, int number) {
-        player.takeCards(this.getDeck().takeCards(number));
+        for (int i = 0; i < number; i++) {
+            player.takeCards(this.getDeck().takeCards(1));
+            checkEmptyDeck();
+        }
+        // player.takeCards(this.getDeck().takeCards(number));
     }
 
     public void missingUnoPenalty(Player player) {
@@ -147,6 +159,22 @@ public class Game {
             this.setTurn(3);
         } else if (this.getTurn() > 3) {
             this.setTurn(0);
+        }
+    }
+
+    public Deck shuffleDiscardDeck(Deck discardDeck) {
+        discardDeck.shuffleCards();
+        return discardDeck;
+    }
+
+    public void checkEmptyDeck() {
+        if (deck.isEmpty()) {
+            output.println("The deck is empty! Let me shuffle a new one...");
+            Deck newDeck = new Deck(1);
+            newDeck.addCardToDiscardDeck(discardDeck.getDiscardDeckCard());
+            discardDeck.removeCardFromDeck();
+            deck = discardDeck;
+            discardDeck = newDeck;
         }
     }
 }

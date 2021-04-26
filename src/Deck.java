@@ -23,13 +23,13 @@ public class Deck {
             cards.add(new Card(colors[i], values[0], points[0]));
 
             // add all other cards with numbers, twice from each color
-            for (int j = 1; j < values.length-5; j++) {
+            for (int j = 1; j < values.length-6; j++) {
                 cards.add(new Card(colors[i], values[j], points[j]));
                 cards.add(new Card(colors[i], values[j], points[j]));
             }
 
             // add all special cards except for wild card and +4 wild card
-            for (int j = values.length-5; j < values.length-2; j++) {
+            for (int j = values.length-5; j < values.length-3; j++) {
                 cards.add(new Card(colors[i], values[j], points[points.length-2]));
                 cards.add(new Card(colors[i], values[j], points[points.length-2]));
             }
@@ -51,8 +51,8 @@ public class Deck {
     public ArrayList<Card> giveCards() {
         ArrayList<Card> playerCards = new ArrayList<>(7);
         for (int i = 0; i < 7; i++) {
-            playerCards.add(cards.get(0));
-            cards.remove(0);
+            playerCards.add(cards.get(cards.size()-1));
+            cards.remove(cards.size()-1);
         }
         return playerCards;
     }
@@ -67,14 +67,14 @@ public class Deck {
 
     // remove first card from deck (needed for the beginning of the game and later on for players to take cards)
     public void removeCardFromDeck() {
-        cards.remove(0);
+        cards.remove(cards.size()-1);
     }
 
     public ArrayList<Card> takeCards(int number) {
         ArrayList<Card> playerCards = new ArrayList<>(number);
         for (int i = 0; i < number; i++) {
-            playerCards.add(cards.get(0));
-            cards.remove(0);
+            playerCards.add(cards.get(cards.size()-1));
+            cards.remove(cards.size()-1);
         }
         return playerCards;
     }
@@ -85,6 +85,18 @@ public class Deck {
 
     public boolean checkReverse() {
         return getDiscardDeckCard().getValue().equals("<->");
+    }
+
+    public boolean isEmpty() {
+        return cards.isEmpty();
+    }
+
+    public void removeFakeWildCards() {
+        for (Card card : cards) {
+            if (card.getPoints() == -1) {
+                cards.remove(card);
+            }
+        }
     }
 
 }
