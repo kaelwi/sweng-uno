@@ -118,7 +118,10 @@ public class App {
     }
 
     private void playerTurn(Player player) {
-        userInput = input.nextLine().split(" ");
+        String inputLine = input.nextLine();
+        inputLine = inputLine.replaceFirst("^\\s*", "");
+
+        userInput = inputLine.split(" ");
 
         switch (userInput[0]) {
             case "exit":
@@ -155,10 +158,10 @@ public class App {
             Card cardToBeChecked = player.isCardOnHand(userInput[0]);
 
             if (cardToBeChecked == null) {
-                if (!input.hasNextInt()) {
+                // if (!input.hasNextInt()) {
                     output.println("It seems there is no such card on your hand...");
                     output.println();
-                }
+                // }
                 output.println("Which card do you want to play?");
                 userInput = input.nextLine().split(" ");
             } else {
