@@ -119,11 +119,14 @@ public class App {
         }
     }
 
-    private void playerTurn(Player player) {
+    private String[] cleanUserInput() {
         String inputLine = input.nextLine();
         inputLine = inputLine.replaceFirst("^\\s*", "");
+        return inputLine.split(" ");
+    }
 
-        userInput = inputLine.split(" ");
+    private void playerTurn(Player player) {
+        userInput = cleanUserInput();
 
         switch (userInput[0]) {
             case "exit":
@@ -165,7 +168,7 @@ public class App {
                     output.println();
                 // }
                 output.println("Which card do you want to play?");
-                userInput = input.nextLine().split(" ");
+                userInput = cleanUserInput();
             } else {
                 if (moveValidation(cardToBeChecked)) {
                     playCard(player, cardToBeChecked);
@@ -204,14 +207,27 @@ public class App {
             }
 
             game.setTurn(game.getTurn() + reverse);
-
-            if (game.getTurn() < 0) {
-                game.setTurn(3);
-            } else if (game.getTurn() > 3) {
-                game.setTurn(0);
-            }
+            checkStop();
+            game.turnOverflow();
         }
     }
+
+    private void checkStop() {
+        if(game.getDiscardDeck().getDiscardDeckCard().getValue().equals("X")) {
+            printState();
+            printPlayerCards();
+            System.out.println("Stop! You are not allowed to play!");
+            game.setTurn(game.getTurn() + reverse);
+        }
+    }
+
+//    private void turnOverflow() {
+//        if (game.getTurn() < 0) {
+//            game.setTurn(3);
+//        } else if (game.getTurn() > 3) {
+//            game.setTurn(0);
+//        }
+//    }
 
     private void printEndRound() {
         output.println("Points for this round: ");

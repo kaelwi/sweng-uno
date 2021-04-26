@@ -141,4 +141,12 @@ public class Game {
 
         return false;
     }
+
+    public void turnOverflow() {
+        if (this.getTurn() < 0) {
+            this.setTurn(3);
+        } else if (this.getTurn() > 3) {
+            this.setTurn(0);
+        }
+    }
 }
