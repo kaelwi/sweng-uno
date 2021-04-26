@@ -37,8 +37,8 @@ public class Deck {
 
         // add 4 wild cards and 4 +4 wild cards
         for (int i = 0; i < 4; i++) {
+            cards.add(new Card(colors[colors.length-1], values[values.length-3], points[points.length-1]));
             cards.add(new Card(colors[colors.length-1], values[values.length-2], points[points.length-1]));
-            cards.add(new Card(colors[colors.length-1], values[values.length-1], points[points.length-1]));
         }
     }
 

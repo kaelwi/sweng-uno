@@ -206,6 +206,8 @@ public class App {
                 reverse *= -1;
             }
 
+            checkColorChange();
+
             game.setTurn(game.getTurn() + reverse);
             doChecks();
             game.turnOverflow();
@@ -216,6 +218,39 @@ public class App {
         game.turnOverflow();
         checkStop();
         checkTakeTwo();
+        checkTakeFour();
+    }
+
+    private void checkTakeFour() {
+        if(game.getDiscardDeck().getDiscardDeckCard().getValue().equals("W+4")) {
+            printState();
+            printPlayerCards();
+            System.out.println("You have to take 4 cards!");
+            game.givePlayerDrawCards(game.getPlayer(game.getTurn()), 4);
+            game.setTurn(game.getTurn() + reverse);
+        }
+    }
+
+    private void checkColorChange() {
+        if(game.getDiscardDeck().getDiscardDeckCard().getColor().equals("")) {
+            boolean rightInput = false;
+            String color = "";
+
+            while (!rightInput) {
+                System.out.println("You can choose the color.");
+                color = input.nextLine();
+                for (String colorOfCards : Card.getAllColors()) {
+                    if (color.equals(colorOfCards)) {
+                        rightInput = true;
+                    }
+                }
+                if (!rightInput) {
+                    System.out.println("Invalid choice of color!");
+                }
+            }
+
+            game.getDiscardDeck().addCardToDiscardDeck(new Card(color, game.getDiscardDeck().getDiscardDeckCard().getValue(), -1));
+        }
     }
 
     private void checkTakeTwo() {

@@ -1,10 +1,10 @@
 public class Card {
 
     private final static String[] colorCollection = {"R", "G", "B", "Y", ""};
-    private final static String[] valueCollection = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "<->", "X", "W","W+4"};
+    private final static String[] valueCollection = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "<->", "X", "W","W+4", ""};
     private final static int[] pointCollection = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 50};
 
-    private final String color;
+    private String color;
     private final String value;
     private final int points;
 
@@ -48,4 +48,9 @@ public class Card {
     public int getPoints() {
         return points;
     }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
 }
