@@ -12,6 +12,10 @@
 import java.io.PrintStream;
 import java.util.Scanner;
 
+/**
+ * This Class is the control center for the UNO Program.
+ * It controls the start of the game and implements the game loop.
+ */
 public class App {
 
     private final Scanner input;
@@ -47,7 +51,9 @@ public class App {
         }
     }
 
-    // Initial setup
+    /**
+     * Initial setup
+      */
     private void initialize() {
         reverse = 1;
         game = new Game(input, output);
@@ -82,6 +88,10 @@ public class App {
         output.println();
     }
 
+    /**
+     * This Method reads the card the User wants to play
+     * @param player
+     */
     private void readUserInput(Player player) {
         output.println("Tell me your next step.");
         if (player.checkForBot()) {
@@ -91,7 +101,10 @@ public class App {
         }
     }
 
-    // Bot game sequence
+    /**
+     * This Method sets rules for Bot game sequence
+     * @param player
+     */
     private void botTurn(Player player) {
         Card card = player.getCardToPlay(game.getDiscardDeck().getDiscardDeckCard());
         String shout = "";
@@ -115,6 +128,10 @@ public class App {
         return inputLine.split(" ");
     }
 
+    /**
+     *
+     * @param player
+     */
     private void playerTurn(Player player) {
         userInput = cleanUserInput();
 

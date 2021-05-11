@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * This Class creates human players
+ */
 public class Player {
     // private final static String[] botNames = {"Bot1", "Bot2", "Bot3", "Bot4"};
     // private int botNr = 0;
@@ -11,21 +14,17 @@ public class Player {
     public Player() {
     }
 
-    ;
 
-    // constructor
     public Player(String name, ArrayList<Card> playerCards) {
         this.name = name;
         this.playerCards = playerCards;
         this.points = 0;
     }
 
-    // setter for name
     public void setName(String name) {
         this.name = name;
     }
 
-    // setter for player cards
     public void setPlayerCards(ArrayList<Card> playerCards) {
         this.playerCards = playerCards;
     }
@@ -37,7 +36,7 @@ public class Player {
 //        return botName;
 //    }
 
-    // getter for player cards
+
     public ArrayList<Card> getPlayerCards() {
         return playerCards;
     }
@@ -51,6 +50,12 @@ public class Player {
         return name;
     }
 
+    /**
+     * This Method checks if the wanted card is in the player's hand,
+     * and if it is, the player plays it
+     * @param cardToPlay
+     * @returns the card to play
+     */
     public Card isCardOnHand(String cardToPlay) {
         Card foundCard = new Card();
         Iterator<Card> it = this.getPlayerCards().iterator();
@@ -87,6 +92,10 @@ public class Player {
         return this instanceof Bot;
     }
 
+    /**
+     * This Method removes a specific card from the Player's hand
+     * @param card
+     */
     public void removeCardFromHand(Card card) {
         Iterator<Card> it = this.getPlayerCards().iterator();
         while (it.hasNext()) {
@@ -98,6 +107,12 @@ public class Player {
         }
     }
 
+    /**
+     * This Method checks the Player's Cards for a appropriate card to play.
+     * If there is such a card, it returns it, if not, it returns null
+     * @param discardDeckCard
+     * @returns the appropriate card to play or null
+     */
     public Card getCardToPlay(Card discardDeckCard) {
 
         for (Card card : this.getPlayerCards()) {
