@@ -1,5 +1,6 @@
 import java.io.*;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -48,10 +49,11 @@ public class Printer {
         }
     }
 
-    public static void printEndRound(List<Player> players) {
-        output.println("Points for this round: ");
-        for (Player player : players) {
-            output.println("Player " + player + ": " + player.getPoints());
+    public static void printEndRound() throws SQLException {
+        output.println("Points after this round: ");
+        ResultSet resultSet = DBManager.selectAll();
+        while(resultSet.next()) {
+            output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
         }
     }
 
