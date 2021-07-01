@@ -37,6 +37,9 @@ public class Human extends Player {
             case "help":
                 Printer.printHelp();
                 return moveValidation(cleanUserInput());
+            case "status":
+                Printer.printStatus();
+                return moveValidation(cleanUserInput());
             case "exit":
                 App.exit = true;
                 return null;

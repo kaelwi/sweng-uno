@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="reformat code">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="get rid of warnings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Bot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Human.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +88,7 @@
       <workItem from="1625133589091" duration="15000" />
       <workItem from="1625133617624" duration="26000" />
       <workItem from="1625133663839" duration="228000" />
-      <workItem from="1625133923459" duration="10063000" />
+      <workItem from="1625133923459" duration="11056000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -183,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625143697964</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="get rid of warnings">
+      <created>1625144280266</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1625144280266</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +212,7 @@
     <MESSAGE value="ignore case when calling uno" />
     <MESSAGE value="draw command without the need to enter number of cards to draw" />
     <MESSAGE value="reformat code" />
-    <option name="LAST_COMMIT_MESSAGE" value="reformat code" />
+    <MESSAGE value="get rid of warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="get rid of warnings" />
   </component>
 </project>

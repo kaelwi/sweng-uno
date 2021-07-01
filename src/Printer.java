@@ -112,4 +112,21 @@ public class Printer {
         output.println();
         output.println();
     }
+
+    public static void printStatus() {
+        try {
+            ResultSet resultSet = DBManager.selectAll();
+
+            if (!resultSet.next()) {
+                output.println("You are in the first round! Everyone has a point status of 0.");
+            } else {
+                output.println("Status: ");
+                do {
+                    output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
+                } while (resultSet.next());
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
