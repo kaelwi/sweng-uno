@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="dangling javadoc">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="@author">
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +88,7 @@
       <workItem from="1625133617624" duration="26000" />
       <workItem from="1625133663839" duration="228000" />
       <workItem from="1625133923459" duration="13398000" />
-      <workItem from="1625150132030" duration="2490000" />
+      <workItem from="1625150132030" duration="3305000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -229,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625157452817</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="@author">
+      <created>1625157735719</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1625157735719</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +268,7 @@
     <MESSAGE value="some duplicate code fragments. check correct user input while color change." />
     <MESSAGE value="class headers" />
     <MESSAGE value="dangling javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="dangling javadoc" />
+    <MESSAGE value="@author" />
+    <option name="LAST_COMMIT_MESSAGE" value="@author" />
   </component>
 </project>

@@ -19,6 +19,9 @@ public class Deck {
         cards = new ArrayList<>(capacity);
     }
 
+    /**
+     * Fill the deck with corresponding cards. 108 cards in total.
+     */
     public void fillDeck() {
         String[] colors = Card.getAllColors();
         String[] values = Card.getAllValues();
@@ -48,6 +51,10 @@ public class Deck {
         Collections.shuffle(cards);
     }
 
+    /**
+     * Initial dealing of cards. 7 cards for each player.
+     * @return playerCards, a list of 7 cards that a player gets on hand
+     */
     public List<Card> giveCards() {
         List<Card> playerCards = new ArrayList<>(7);
         for (int i = 0; i < 7; i++) {
@@ -69,6 +76,12 @@ public class Deck {
         cards.remove(0);
     }
 
+    /**
+     * Lets a player taky any specified number of cards.
+     *
+     * @param number of cards to be taken
+     * @return playerCards, a list of cards enriched with new cards
+     */
     public List<Card> takeCards(int number) {
         List<Card> playerCards = new ArrayList<>(number);
         for (int i = 0; i < number; i++) {
