@@ -1,3 +1,4 @@
+import java.io.PrintStream;
 import java.util.List;
 
 public class Human extends Player {
@@ -18,9 +19,16 @@ public class Human extends Player {
 
     @Override
     public String colorWish() {
-        // TODO: what if color wrong?
-        return input.nextLine();
+        String color;
+        boolean rightInput = false;
+        do {
+            color = input.nextLine();
+            rightInput = isRightInput(color);
+        } while (!rightInput);
+        return color;
     }
+
+
 
     @Override
     public String challengeWish() {

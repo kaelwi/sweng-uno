@@ -283,19 +283,13 @@ public class Game {
             alreadyChallenged = false;
             boolean rightInput = false;
             String color = "";
-            while (!rightInput) {
-                output.println("You can choose the color.");
-                color = getPlayer(getTurn()).colorWish();
-                for (int i = 0; i < Card.getAllColors().length - 1; i++) {
-                    if (color.equals(Card.getAllColors()[i])) {
-                        rightInput = true;
-                        break;
-                    }
-                }
-                if (!rightInput) {
-                    output.println("Invalid choice of color!");
-                }
-            }
+            output.println("You can choose the color.");
+            color = getPlayer(getTurn()).colorWish();
+//            while (!rightInput) {
+//                output.println("You can choose the color.");
+//                color = getPlayer(getTurn()).colorWish();
+//                rightInput = Player.isRightInput(color, rightInput, output);
+//            }
             getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
         }
     }

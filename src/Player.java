@@ -106,6 +106,16 @@ public abstract class Player {
         return false;
     }
 
+    public boolean isRightInput(String color) {
+        for (int i = 0; i < Card.getAllColors().length-1; i++) {
+            if (color.equals(Card.getAllColors()[i])) {
+                return true;
+            }
+        }
+        output.println("Invalid choice of color!");
+        return false;
+    }
+
     public abstract Card getCardToPlay(Card discardDeckCard);
 
     public abstract Card turn(Card card);
