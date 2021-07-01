@@ -87,20 +87,20 @@ public class Printer {
     }
 
     public static void printEndGame(List<Player> players) {
-//        try {
-//            ResultSet resultSet = DBManager.selectAll();
-//            if (!resultSet.next()) {
-//                output.println("The game ended within the first round. No points where given to any player.");
-//            } else {
-//                output.println("The game ended before anyone could reach 500 points. Here are your points: ");
-//                for (Player player : players) {
-//                    player.setPoints(resultSet.getInt(player.getName()));
-//                    output.println("Player " + player.getName() + ": " + player.getPoints() + " points");
-//                }
-//            }
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
+        try {
+            ResultSet resultSet = DBManager.selectAll();
+
+            if (!resultSet.next()) {
+                output.println("The game ended within the first round. No points where given to any player.");
+            } else {
+                output.println("The game ended before anyone could reach 500 points. Here are your points: ");
+                do {
+                    output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
+                } while(resultSet.next());
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
 
