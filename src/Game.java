@@ -13,7 +13,7 @@ public class Game {
     private static List<Player> player = new ArrayList<>(4);
     private static Deck deck = new Deck(108);
     private static Deck discardDeck = new Deck(0);
-    private static final Scanner input = new Scanner(System.in);;
+    private static final Scanner input = new Scanner(System.in);
     private static final PrintStream output = System.out;
     private static int turn = setFirst();
     private static int reverse = 1;
@@ -26,7 +26,7 @@ public class Game {
         do {
             discardDeck.addCardToDiscardDeck(deck.getCards().get(0));
             deck.removeCardFromDeck();
-        } while(discardDeck.getDiscardDeckCard().getValue().equals("W+4"));
+        } while (discardDeck.getDiscardDeckCard().getValue().equals("W+4"));
 
     }
 
@@ -81,21 +81,22 @@ public class Game {
         createBots(bots);
 
         output.println("Now let's settle the rest!");
-        output.println("You may create " + (4-bots) + " players.");
-        createPlayers(4-bots);
+        output.println("You may create " + (4 - bots) + " players.");
+        createPlayers(4 - bots);
     }
 
     /**
      * This Method creates human players (number of human players needs to be entered as parameter)
      * and adds them to the Arraylist of Players
+     *
      * @param humans int
      */
     private static void createPlayers(int humans) {
         for (int i = 0; i < humans; i++) {
-            output.println("Please enter a name for your player (player nr. " + (i+1) + ")");
+            output.println("Please enter a name for your player (player nr. " + (i + 1) + ")");
             String name = input.nextLine();
 
-            while(name.isEmpty() || playerNames().contains(name)) {
+            while (name.isEmpty() || playerNames().contains(name)) {
                 output.println("I'm sorry, you either did not enter a name, or the name is already taken. Please try again.");
                 name = input.nextLine();
             }
@@ -106,14 +107,15 @@ public class Game {
     /**
      * This Method creates bot players (takes number of bots as parameter)
      * and adds them to the Arraylist of Players
+     *
      * @param bots
      */
     private static void createBots(int bots) {
         for (int i = 0; i < bots; i++) {
-            output.println("Please enter a name for bot nr. " + (i+1));
+            output.println("Please enter a name for bot nr. " + (i + 1));
             String name = input.nextLine();
 
-            while(name.isEmpty() || playerNames().contains(name)) {
+            while (name.isEmpty() || playerNames().contains(name)) {
                 output.println("I'm sorry, you either did not enter a name, or the entered name is already taken. Please try again.");
                 name = input.nextLine();
             }
@@ -123,6 +125,7 @@ public class Game {
 
     /**
      * This Method creates a list of Player's Names
+     *
      * @returns the Arraylist of names
      */
     private static List<String> playerNames() {
@@ -135,11 +138,12 @@ public class Game {
 
     /**
      * This Method checks the number of bot players
+     *
      * @returns the number of bot players
      */
     private static int checkNrBots() {
         int bots = Integer.parseInt(input.nextLine());
-        while(bots < 0 || bots > 4) {
+        while (bots < 0 || bots > 4) {
             if (bots > 4) {
                 output.println("The maximum number of allowed players is 4!");
             } else {
@@ -172,6 +176,7 @@ public class Game {
 
     /**
      * This Method determines the first Players
+     *
      * @returns the random first Player
      */
     private static int setFirst() {
@@ -190,9 +195,10 @@ public class Game {
 
     /**
      * This Method deals the cards to the players
+     *
      * @param player (to which player are the cards dealt)
      * @param number (number of cards to be dealt)
-     * The Method also checks if the Deck is empty
+     *               The Method also checks if the Deck is empty
      */
     public static void givePlayerDrawCards(Player player, int number) {
         for (int i = 0; i < number; i++) {
@@ -201,9 +207,11 @@ public class Game {
         }
         // player.takeCards(this.getDeck().takeCards(number));
     }
+
     /**
      * This Method gives TWO penalty card to the Player who forgot to say "UNO" with only one card left in the hand
      * and the next Player already drew a new card
+     *
      * @param player who needs to get penalty cards
      */
     public static void missingUnoPenalty(Player player) {
@@ -213,6 +221,7 @@ public class Game {
     /**
      * This Method gives ONE penalty card to the Player who forgot to say "UNO" with only one card left in the hand
      * and the next Player did not draw a new card
+     *
      * @param player who needs to get penalty card
      */
     public static void giveOnePenaltyCard(Player player) {
@@ -222,7 +231,8 @@ public class Game {
     /**
      * This Method checks if the card we want to play is appropriate to play
      * (if the color or the value of this card matches the color or the value of the top card on the discard Deck)
-     * @param card we want to play
+     *
+     * @param card            we want to play
      * @param discardDeckCard top card on the discard Deck
      * @returns if the card should be played
      */
@@ -278,7 +288,7 @@ public class Game {
             setReverse();
         }
         checkColorChange();
-        setTurn(getTurn()+getReverse());
+        setTurn(getTurn() + getReverse());
         doOtherChecks();
     }
 
@@ -287,10 +297,10 @@ public class Game {
             alreadyChallenged = false;
             boolean rightInput = false;
             String color = "";
-            while(!rightInput) {
+            while (!rightInput) {
                 output.println("You can choose the color.");
                 color = getPlayer(getTurn()).colorWish();
-                for (int i = 0; i < Card.getAllColors().length-1; i++) {
+                for (int i = 0; i < Card.getAllColors().length - 1; i++) {
                     if (color.equals(Card.getAllColors()[i])) {
                         rightInput = true;
                         break;
@@ -356,13 +366,13 @@ public class Game {
                     givePlayerDrawCards(getPlayer(getTurn()), 1);
                     checkEmptyDeck();
                 }
-                setTurn(getTurn()+getReverse());
+                setTurn(getTurn() + getReverse());
             }
         }
     }
 
     private static int checkTurn() {
-        int turn = getTurn()-reverse;
+        int turn = getTurn() - reverse;
         if (turn < 0) {
             turn = 3;
         }
@@ -373,8 +383,8 @@ public class Game {
     }
 
     public static boolean challenge() {
-            System.out.println(discardDeck.getCardBeforeWild().getColor());
-            return getPlayer(checkTurn()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
+        System.out.println(discardDeck.getCardBeforeWild().getColor());
+        return getPlayer(checkTurn()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
     }
 }
 

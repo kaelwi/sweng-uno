@@ -9,7 +9,7 @@ public class App {
     private final PrintStream output;
     public static boolean exit = false;
 
-    public App(Scanner input, PrintStream output){
+    public App(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
     }
@@ -18,7 +18,7 @@ public class App {
         initialize();
         Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard());
 
-        while(!exit) {
+        while (!exit) {
             Printer.printPlayerCards(Game.getPlayer(Game.getTurn()));
             readUserInput(Game.getPlayer(Game.getTurn()));
             Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard());
@@ -60,7 +60,7 @@ public class App {
             for (Player p : Game.getPlayers()) {
                 if (!p.equals(player)) {
                     for (Card cardsLeft : p.getPlayerCards()) {
-                        player.setPoints(player.getPoints()+cardsLeft.getPoints());
+                        player.setPoints(player.getPoints() + cardsLeft.getPoints());
                     }
                 }
             }
@@ -81,7 +81,7 @@ public class App {
         try {
             for (Player player : players) {
                 ResultSet resultSet = DBManager.selectPoints(player);
-                while(resultSet.next()) {
+                while (resultSet.next()) {
                     if (resultSet.getInt("points") >= 500) {
                         output.println();
                         output.println("Player " + player.getName() + " wins this game with " + resultSet.getInt("points") + " points");

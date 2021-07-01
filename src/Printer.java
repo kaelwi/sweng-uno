@@ -1,6 +1,8 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class Printer {
         for (int i = 0; i < players.size() - 1; i++) {
             output.print(players.get(i) + ", ");
         }
-        output.print(players.get(players.size()-1) + "!");
+        output.print(players.get(players.size() - 1) + "!");
         output.println();
 
         output.println("In case you need help: type \"help\".");
@@ -40,7 +42,7 @@ public class Printer {
 
     public static void printState(boolean exit, boolean reverse, Card card) {
         output.println();
-        if(!exit) {
+        if (!exit) {
             output.println("Open card deck: " + card);
             output.println();
             if (reverse) {
@@ -52,7 +54,7 @@ public class Printer {
     public static void printEndRound() throws SQLException {
         output.println("Points after this round: ");
         ResultSet resultSet = DBManager.selectAll();
-        while(resultSet.next()) {
+        while (resultSet.next()) {
             output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
         }
     }
@@ -62,7 +64,7 @@ public class Printer {
             FileReader fileReader = new FileReader("help.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
-            while((line = bufferedReader.readLine()) != null) {
+            while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
             }
             bufferedReader.close();
@@ -96,13 +98,12 @@ public class Printer {
                 output.println("The game ended before anyone could reach 500 points. Here are your points: ");
                 do {
                     output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
-                } while(resultSet.next());
+                } while (resultSet.next());
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
-
 
     public static void startingNewRound() {
         output.println();

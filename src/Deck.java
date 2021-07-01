@@ -16,23 +16,23 @@ public class Deck {
         String[] values = newCard.getAllValues();
         int[] points = newCard.getAllPoints();
 
-        for (int i = 0; i < colors.length-1; i++) {
+        for (int i = 0; i < colors.length - 1; i++) {
             cards.add(new Card(colors[i], values[0], points[0]));
 
-            for (int j = 1; j < values.length-5; j++) {
+            for (int j = 1; j < values.length - 5; j++) {
                 cards.add(new Card(colors[i], values[j], points[j]));
                 cards.add(new Card(colors[i], values[j], points[j]));
             }
 
-            for (int j = values.length-5; j < values.length-3; j++) {
-                cards.add(new Card(colors[i], values[j], points[points.length-2]));
-                cards.add(new Card(colors[i], values[j], points[points.length-2]));
+            for (int j = values.length - 5; j < values.length - 3; j++) {
+                cards.add(new Card(colors[i], values[j], points[points.length - 2]));
+                cards.add(new Card(colors[i], values[j], points[points.length - 2]));
             }
         }
 
         for (int i = 0; i < 4; i++) {
-            cards.add(new Card(colors[colors.length-1], values[values.length-3], points[points.length-1]));
-            cards.add(new Card(colors[colors.length-1], values[values.length-2], points[points.length-1]));
+            cards.add(new Card(colors[colors.length - 1], values[values.length - 3], points[points.length - 1]));
+            cards.add(new Card(colors[colors.length - 1], values[values.length - 2], points[points.length - 1]));
         }
     }
 
@@ -43,8 +43,8 @@ public class Deck {
     public List<Card> giveCards() {
         List<Card> playerCards = new ArrayList<>(7);
         for (int i = 0; i < 7; i++) {
-            playerCards.add(cards.get(cards.size()-1));
-            cards.remove(cards.size()-1);
+            playerCards.add(cards.get(cards.size() - 1));
+            cards.remove(cards.size() - 1);
         }
         return playerCards;
     }
@@ -64,8 +64,8 @@ public class Deck {
     public List<Card> takeCards(int number) {
         List<Card> playerCards = new ArrayList<>(number);
         for (int i = 0; i < number; i++) {
-            playerCards.add(cards.get(cards.size()-1));
-            cards.remove(cards.size()-1);
+            playerCards.add(cards.get(cards.size() - 1));
+            cards.remove(cards.size() - 1);
         }
         return playerCards;
     }
@@ -75,7 +75,7 @@ public class Deck {
     }
 
     public Card getCardBeforeWild() {
-        return this.cards.get(this.cards.size()-3);
+        return this.cards.get(this.cards.size() - 3);
     }
 
     public boolean checkReverse() {

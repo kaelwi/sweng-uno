@@ -13,8 +13,7 @@ public class Human extends Player {
     @Override
     public Card turn(Card card) {
         String[] userInput = cleanUserInput();
-        Card validateMove = moveValidation(userInput);
-        return validateMove;
+        return moveValidation(userInput);
     }
 
     @Override
@@ -34,11 +33,6 @@ public class Human extends Player {
     }
 
     private Card moveValidation(String[] input) {
-//        if (input[0].equals("help")) {
-//            Printer.printHelp();
-//            input = cleanUserInput();
-//        }
-
         switch (input[0]) {
             case "help":
                 Printer.printHelp();
@@ -47,30 +41,12 @@ public class Human extends Player {
                 App.exit = true;
                 return null;
             case "draw":
-                Game.givePlayerDrawCards(this, Integer.parseInt(input[1]));
+                Game.givePlayerDrawCards(this, 1);
                 return null;
             default:
                 return cardValidation(input);
         }
     }
-
-//    private int commandValidation(String[] input) {
-//        if (input[0].equals("help")) {
-//            Printer.printHelp();
-//            input = cleanUserInput();
-//        }
-//
-//        switch (input[0]) {
-//            case "exit":
-//                App.exit = true;
-//                return 0;
-//            case "draw":
-//                Game.givePlayerDrawCards(this, Integer.parseInt(input[1]));
-//                return 0;
-//            default:
-//                return -1;
-//        }
-//    }
 
     private Card cardValidation(String[] input) {
         boolean valid = false;
@@ -89,7 +65,7 @@ public class Human extends Player {
                 printMove(input);
                 removeCardFromHand(cardToBeChecked);
             }
-        } while(!valid);
+        } while (!valid);
         return cardToBeChecked;
     }
 

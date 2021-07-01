@@ -19,7 +19,7 @@ public abstract class Player {
         this.points = 0;
     }
 
-    public void setPlayerCards (List<Card> playerCards) {
+    public void setPlayerCards(List<Card> playerCards) {
         this.playerCards = playerCards;
     }
 
@@ -40,6 +40,7 @@ public abstract class Player {
     /**
      * This Method checks if the wanted card is in the player's hand,
      * and if it is, the player plays it
+     *
      * @param cardToPlay
      * @returns the card to play
      */
@@ -78,6 +79,7 @@ public abstract class Player {
 
     /**
      * This Method removes a specific card from the Player's hand
+     *
      * @param card
      */
     public void removeCardFromHand(Card card) {
@@ -100,7 +102,7 @@ public abstract class Player {
 
     public boolean challengeColorCheck(String color) {
         Iterator<Card> it = this.getPlayerCards().iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             Card cardOnHand = it.next();
             if (cardOnHand.getColor().equals(color) && (cardOnHand.getPoints() < 20)) {
                 return true;

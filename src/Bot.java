@@ -13,6 +13,7 @@ public class Bot extends Player {
     /**
      * This Method checks the Player's Cards for a appropriate card to play.
      * If there is such a card, it returns it, if not, it returns null
+     *
      * @param discardDeckCard
      * @returns the appropriate card to play or null
      */
@@ -28,7 +29,7 @@ public class Bot extends Player {
     @Override
     public Card turn(Card discardDeckCard) {
         Card card = getCardToPlay(discardDeckCard);
-        if(card != null) {
+        if (card != null) {
             removeCardFromHand(card);
             output.println(card.toString());
             if (checkUno()) {
