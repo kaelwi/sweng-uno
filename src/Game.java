@@ -245,16 +245,6 @@ public class Game {
     }
 
     /**
-     * This Method shuffles the discard Deck, when it is full
-     * @param discardDeck
-     * @returns shuffled discard Deck
-     */
-    public Deck shuffleDiscardDeck(Deck discardDeck) {
-        discardDeck.shuffleCards();
-        return discardDeck;
-    }
-
-    /**
      * This Method checks if the main Deck is empty of cards.
      * If it is, than the discard Deck full with cards becomes the main Deck
      * and the new discard Deck starts afresh

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="exit within first round">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="remove fake wild cards">
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Human.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <workItem from="1625133589091" duration="15000" />
       <workItem from="1625133617624" duration="26000" />
       <workItem from="1625133663839" duration="228000" />
-      <workItem from="1625133923459" duration="8763000" />
+      <workItem from="1625133923459" duration="9147000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -138,7 +138,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625142106241</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="drop table at the beginning">
+      <created>1625142808199</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625142808199</updated>
+    </task>
+    <task id="LOCAL-00009" summary="remove fake wild cards">
+      <created>1625143076856</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625143076856</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +178,8 @@
     <MESSAGE value="dbmanager" />
     <MESSAGE value="print end game" />
     <MESSAGE value="exit within first round" />
-    <option name="LAST_COMMIT_MESSAGE" value="exit within first round" />
+    <MESSAGE value="drop table at the beginning" />
+    <MESSAGE value="remove fake wild cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove fake wild cards" />
   </component>
 </project>

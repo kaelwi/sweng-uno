@@ -1,7 +1,6 @@
 import java.util.List;
 
 public class Human extends Player {
-    private String uno;
     public Human(String name, List<Card> giveCards) {
         super(name, giveCards);
     }
@@ -95,7 +94,7 @@ public class Human extends Player {
     }
 
     private void printMove(String[] input) {
-        if (checkUno() && (input.length < 2 || !input[1].equals("UNO"))) {
+        if (checkUno() && (input.length < 2 || !input[1].equalsIgnoreCase("UNO"))) {
             output.println("Oh no, you forgot to shout uno...");
             Game.missingUnoPenalty(this);
         } else if (checkUno() && input[1].equals("UNO")) {
