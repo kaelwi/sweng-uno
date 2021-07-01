@@ -24,7 +24,7 @@ public class App {
         this.output = output;
     }
 
-    public void Run() throws SQLException {
+    public void Run() {
         initialize();
         Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard());
 
@@ -43,13 +43,13 @@ public class App {
         Game.checkStartingColor();
     }
 
-    private void readUserInput(Player player) throws SQLException {
+    private void readUserInput(Player player) {
         output.println("Tell me your next step.");
         Card cardToBePlayed = player.turn(Game.getDiscardDeck().getDiscardDeckCard());
         updateState(cardToBePlayed, player);
     }
 
-    private void updateState(Card card, Player player) throws SQLException {
+    private void updateState(Card card, Player player) {
         if (exit) {
             Printer.printEndGame();
         } else {
@@ -64,7 +64,7 @@ public class App {
         }
     }
 
-    private void checkWinner(Player player) throws SQLException {
+    private void checkWinner(Player player) {
         if (player.getPlayerCards().isEmpty()) {
             Printer.printWin(player);
             for (Player p : Game.getPlayers()) {
@@ -91,11 +91,13 @@ public class App {
         try {
             for (Player player : players) {
                 ResultSet resultSet = DBManager.selectPoints(player);
-                while (resultSet.next()) {
-                    if (resultSet.getInt("points") >= 500) {
-                        output.println();
-                        output.println("Player " + player.getName() + " wins this game with " + resultSet.getInt("points") + " points");
-                        return true;
+                if (resultSet != null) {
+                    while (resultSet.next()) {
+                        if (resultSet.getInt("points") >= 500) {
+                            output.println();
+                            output.println("Player " + player.getName() + " wins this game with " + resultSet.getInt("points") + " points");
+                            return true;
+                        }
                     }
                 }
             }

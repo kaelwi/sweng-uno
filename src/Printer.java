@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *  Printer class. A helper class to keep the code clean from bigger console outputs.
@@ -61,12 +62,17 @@ public class Printer {
         }
     }
 
-    public static void printEndRound() throws SQLException {
+    public static void printEndRound() {
         output.println("Points after this round: ");
-        ResultSet resultSet = DBManager.selectAll();
-        while (resultSet.next()) {
-            output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
+        try {
+            ResultSet resultSet = DBManager.selectAll();
+            while (resultSet != null && resultSet.next()) {
+                output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
+
     }
 
     public static void printHelp() {
@@ -100,7 +106,7 @@ public class Printer {
         try {
             ResultSet resultSet = DBManager.selectAll();
 
-            if (!resultSet.next()) {
+            if (!Objects.requireNonNull(resultSet).next()) {
                 output.println("The game ended within the first round. No points where given to any player.");
             } else {
                 output.println("The game ended before anyone could reach 500 points. Here are your points: ");
@@ -125,7 +131,7 @@ public class Printer {
         try {
             ResultSet resultSet = DBManager.selectAll();
 
-            if (!resultSet.next()) {
+            if (!(resultSet != null && resultSet.next())) {
                 output.println("You are in the first round! Everyone has a point status of 0.");
             } else {
                 output.println("Status: ");
