@@ -1,3 +1,13 @@
+/**
+ *  The App class implements a game loop (incl. initialization, entrance point of reading the user input, update of
+ *  the game) and this is the place where the winner of the round and/or game is checked.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 import java.io.PrintStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;

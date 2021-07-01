@@ -1,9 +1,15 @@
+/**
+ *  This class creates bot players, as an extension of the Player class.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 import java.util.List;
 import java.util.Random;
 
-/**
- * This Class creates Bot players, as an extension of the Player class
- */
 public class Bot extends Player {
 
     public Bot(String name, List<Card> playerCards) {

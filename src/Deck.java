@@ -1,3 +1,12 @@
+/**
+ *  A class for the representation of deck objects.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

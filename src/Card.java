@@ -1,3 +1,12 @@
+/**
+ *  Card class to represent all cards of the UNO game.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 public class Card {
 
     private final static String[] colorCollection = {"R", "G", "B", "Y", ""};

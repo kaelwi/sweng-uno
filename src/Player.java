@@ -1,11 +1,17 @@
+/**
+ *  Abstract class Player as a template or common ground for bots and human players.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 import java.io.PrintStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * This Class creates human players
- */
 public abstract class Player {
     private final String name;
     private List<Card> playerCards;

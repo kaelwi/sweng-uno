@@ -1,3 +1,12 @@
+/**
+ *  Printer class. A helper class to keep the code clean from bigger console outputs.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

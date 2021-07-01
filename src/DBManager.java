@@ -1,3 +1,12 @@
+/**
+ *  This class manages access to a database and the insertion and/or update of data.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 import java.sql.*;
 import java.util.List;
 

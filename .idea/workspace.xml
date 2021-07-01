@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="some todos and corrections">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="some duplicate code fragments. check correct user input while color change.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +66,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -78,7 +99,7 @@
       <workItem from="1625133617624" duration="26000" />
       <workItem from="1625133663839" duration="228000" />
       <workItem from="1625133923459" duration="13398000" />
-      <workItem from="1625150132030" duration="576000" />
+      <workItem from="1625150132030" duration="2114000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -192,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625147285895</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="some duplicate code fragments. check correct user input while color change.">
+      <created>1625150966207</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1625150966207</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +255,7 @@
     <MESSAGE value="implemented status" />
     <MESSAGE value="don't print bots cards" />
     <MESSAGE value="some todos and corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="some todos and corrections" />
+    <MESSAGE value="some duplicate code fragments. check correct user input while color change." />
+    <option name="LAST_COMMIT_MESSAGE" value="some duplicate code fragments. check correct user input while color change." />
   </component>
 </project>

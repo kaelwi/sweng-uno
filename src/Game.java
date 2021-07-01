@@ -1,13 +1,18 @@
+/**
+ *  This class implements most of the game logic. It works mostly as a dealer and rule checker.
+ *
+ *  Last Modified: 01.07.2021
+ *  Authors: Paulina Safar
+ *           Julia Summer
+ *           Karoline E. Wild
+ */
+
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * This Class works the hardest in the UNO Program.
- * It creates Players and Bots, has instructions for starting of the Game,
- */
 public class Game {
 
     private static final List<Player> player = new ArrayList<>(4);
