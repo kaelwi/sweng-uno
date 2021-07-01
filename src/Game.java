@@ -1,114 +1,117 @@
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * This Class works the hardest in the UNO Program.
+ * It creates Players and Bots, has instructions for starting of the Game,
+ */
 public class Game {
 
-    private ArrayList<Player> player;
-    // private Player[] player = new Player[4];
-    private Deck deck;
-    private Deck discardDeck;
-    private final Scanner input;
-    private final PrintStream output;
-    private int turn = setFirst();
+    private static List<Player> player = new ArrayList<>(4);
+    private static Deck deck = new Deck(108);
+    private static Deck discardDeck = new Deck(0);
+    private static final Scanner input = new Scanner(System.in);;
+    private static final PrintStream output = System.out;
+    private static int turn = setFirst();
+    private static int reverse = 1;
 
-    // Constructor
-    public Game(Scanner input, PrintStream output) {
-        this.input = input;
-        this.output = output;
-        deck = new Deck(108);
-        discardDeck = new Deck(0);
-        player = new ArrayList<Player>(4);
-//        for (int i = 0; i < 4; i++) {
-//            player[i] = new Player();
-//        }
-    }
-
-    // start game - fill the deck, shuffle it, remove first card to discarddeck
-    public void startGame() {
+    public static void startGame() {
         deck.fillDeck();
         deck.shuffleCards();
         setPlayers();
-        Collections.shuffle(player);
-//        for (int i = 0; i < 4; i++) {
-//            // setPlayers in class game, because of missing input and output stream in other classes
-//            setPlayers(i);
-//        }
         discardDeck.addCardToDiscardDeck(deck.getCards().get(0));
         deck.removeCardFromDeck();
     }
 
-    // set the players - get their names and give them 7 cards each
-    private void setPlayers() {
-        output.println("Tell me how many bots you would like to involve: ");
+    public static void setReverse() {
+        reverse *= -1;
+    }
+
+    public static int getReverse() {
+        return reverse;
+    }
+
+    public void setDeck(Deck deck) {
+        this.deck = deck;
+    }
+
+    public void setDiscardDeck(Deck discardDeck) {
+        this.discardDeck = discardDeck;
+    }
+
+    /**
+     * This method determines the number of human and bot players
+     */
+    private static void setPlayers() {
+        output.println("Tell me how many bots would you like to involve: ");
         int bots = checkNrBots();
         createBots(bots);
 
         output.println("Now let's settle the rest!");
         output.println("You may create " + (4-bots) + " players.");
         createPlayers(4-bots);
-
-//        output.println("Please enter your name (Player " + (i+1) + "): ");
-//        String name = input.nextLine();
-//
-//        while(name.isEmpty()) {
-//            output.println("Unfortunately, you did not enter any name. Please, try it again.");
-//            name = input.nextLine();
-//        }
-//
-//        player.add(new Player());
-//
-//        player.get(i).setName(name);
-//        player.get(i).setPlayerCards(deck.giveCards());
-
     }
 
-    private void createPlayers(int humans) {
+    /**
+     * This Method creates human players (number of human players needs to be entered as parameter)
+     * and adds them to the Arraylist of Players
+     * @param humans int
+     */
+    private static void createPlayers(int humans) {
         for (int i = 0; i < humans; i++) {
             output.println("Please enter a name for your player (player nr. " + (i+1) + ")");
             String name = input.nextLine();
 
             while(name.isEmpty() || playerNames().contains(name)) {
-                output.println("I'm sorry, this is not working. Either you did not enter any name, or the name is already taken. Please try again.");
+                output.println("I'm sorry, you either did not enter a name, or the name is already taken. Please try again.");
                 name = input.nextLine();
             }
-            player.add(new Player(name, deck.giveCards()));
-            System.out.println(player.get(player.size()-1) instanceof Player);
-            System.out.println(player.get(player.size()-1) instanceof Bot);
+            player.add(new Human(name, deck.giveCards()));
         }
     }
 
-
-    private void createBots(int bots) {
+    /**
+     * This Method creates bot players (takes number of bots as parameter)
+     * and adds them to the Arraylist of Players
+     * @param bots
+     */
+    private static void createBots(int bots) {
         for (int i = 0; i < bots; i++) {
             output.println("Please enter a name for bot nr. " + (i+1));
             String name = input.nextLine();
 
             while(name.isEmpty() || playerNames().contains(name)) {
-                output.println("I'm sorry, this is not working. Either you did not enter any name, or the name is already taken. Please try again.");
+                output.println("I'm sorry, you either did not enter a name, or the entered name is already taken. Please try again.");
                 name = input.nextLine();
             }
             player.add(new Bot(name, deck.giveCards()));
-            System.out.println(player.get(player.size()-1) instanceof Player);
-            System.out.println(player.get(player.size()-1) instanceof Bot);
         }
     }
 
-    private ArrayList<String> playerNames() {
-        ArrayList<String> names = new ArrayList<>();
+    /**
+     * This Method creates a list of Player's Names
+     * @returns the Arraylist of names
+     */
+    private static List<String> playerNames() {
+        List<String> names = new ArrayList<>();
         for (Player player : player) {
             names.add(player.getName());
         }
         return names;
     }
 
-    private int checkNrBots() {
+    /**
+     * This Method checks the number of bot players
+     * @returns the number of bot players
+     */
+    private static int checkNrBots() {
         int bots = Integer.parseInt(input.nextLine());
         while(bots < 0 || bots > 4) {
             if (bots > 4) {
-                output.println("The maximum of allowed players is 4!");
+                output.println("The maximum number of allowed players is 4!");
             } else {
                 output.println("You know you need at least 1 player...");
             }
@@ -117,40 +120,36 @@ public class Game {
         return bots;
     }
 
-    // getter for deck
-    public Deck getDeck() {
+    public static Deck getDeck() {
         return deck;
     }
 
-    // getter for discarddeck
-    public Deck getDiscardDeck() {
+    public static Deck getDiscardDeck() {
         return discardDeck;
     }
 
-    ///////////////////////////////////////////////////////////////
-    // getPlayer
-    // parameter: int Position
-    // return: Player
-    // A method to get one player at a certain position in the player-array
-    ///////////////////////////////////////////////////////////////
-    public Player getPlayer(int position) {
+    public static Player getPlayer(int position) {
         return player.get(position);
     }
 
-    public ArrayList<Player> getPlayers() {
+    public static List<Player> getPlayers() {
         return player;
     }
 
-    public int getTurn() {
+    public static int getTurn() {
         return turn;
     }
 
-    private int setFirst() {
+    /**
+     * This Method determines the first Players
+     * @returns the random first Player
+     */
+    private static int setFirst() {
         Random random = new Random();
         return random.nextInt(3);
     }
 
-    public void setTurn(int i) {
+    public static void setTurn(int i) {
         turn = i;
     }
 
@@ -159,43 +158,170 @@ public class Game {
         output.println();
     }
 
-    public void givePlayerDrawCards(Player player, int number) {
-        // output.println("How many cards do you want to/have to draw?");
-        // nextInt problematic, \n stays in buffer -> parse whole input line into an integer
-        // int number = Integer.parseInt(input.nextLine());
-        player.takeCards(this.getDeck().takeCards(number));
+    /**
+     * This Method deals the cards to the players
+     * @param player (to which player are the cards dealt)
+     * @param number (number of cards to be dealt)
+     * The Method also checks if the Deck is empty
+     */
+    public static void givePlayerDrawCards(Player player, int number) {
+        for (int i = 0; i < number; i++) {
+            player.takeCards(getDeck().takeCards(1));
+            checkEmptyDeck();
+        }
+        // player.takeCards(this.getDeck().takeCards(number));
+    }
+    /**
+     * This Method gives TWO penalty card to the Player who forgot to say "UNO" with only one card left in the hand
+     * and the next Player already drew a new card
+     * @param player who needs to get penalty cards
+     */
+    public static void missingUnoPenalty(Player player) {
+        player.takeCards(getDeck().takeCards(2));
     }
 
-    public void missingUnoPenalty(Player player) {
-        player.takeCards(this.getDeck().takeCards(2));
+    /**
+     * This Method gives ONE penalty card to the Player who forgot to say "UNO" with only one card left in the hand
+     * and the next Player did not draw a new card
+     * @param player who needs to get penalty card
+     */
+    public static void giveOnePenaltyCard(Player player) {
+        player.takeCards(getDeck().takeCards(1));
     }
 
-    public void giveOnePenaltyCard(Player player) {
-        player.takeCards(this.getDeck().takeCards(1));
+    /**
+     * This Method checks if the card we want to play is appropriate to play
+     * (if the color or the value of this card matches the color or the value of the top card on the discard Deck)
+     * @param card we want to play
+     * @param discardDeckCard top card on the discard Deck
+     * @returns if the card should be played
+     */
+    public static boolean cardValidation(Card card, Card discardDeckCard) {
+        if (card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("")) {
+            return true;
+        }
+        return false;
     }
 
-    // not taking care of wild cards yet
-    public boolean colorValidation(Card card) {
-        boolean equalColor = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getColor().equals(card.getColor());
-        boolean wildCardOnHand = card.getColor().equals("");
-        boolean wildCardOnDiscardDeck = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getColor().equals("");
-        return equalColor || wildCardOnDiscardDeck || wildCardOnHand;
+    /**
+     * This Method ?
+     */
+    public static void turnOverflow() {
+        if (getTurn() < 0) {
+            setTurn(3);
+        } else if (getTurn() > 3) {
+            setTurn(0);
+        }
     }
 
-    // not taking care of wild cards yet
-    public boolean valueValidation(Card card) {
-        boolean equalColor = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals(card.getValue());
-        boolean wildCardOnHand = card.getValue().equals("W") || card.getValue().equals("W+4");
-        boolean wildCardOnDiscardDeck = this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals("W") ||
-                this.getDiscardDeck().getCards().get(this.getDiscardDeck().getCards().size()-1).getValue().equals("W+4");
-        return equalColor || wildCardOnDiscardDeck || wildCardOnHand;
+    /**
+     * This Method shuffles the discard Deck, when it is full
+     * @param discardDeck
+     * @returns shuffled discard Deck
+     */
+    public Deck shuffleDiscardDeck(Deck discardDeck) {
+        discardDeck.shuffleCards();
+        return discardDeck;
     }
 
-    public void reversePlayers() {
-        Collections.reverse(player);
+    /**
+     * This Method checks if the main Deck is empty of cards.
+     * If it is, than the discard Deck full with cards becomes the main Deck
+     * and the new discard Deck starts afresh
+     */
+    public static void checkEmptyDeck() {
+        if (deck.isEmpty()) {
+            output.println("The deck is empty! Let me shuffle a new one...");
+            Deck newDeck = new Deck(1);
+            newDeck.addCardToDiscardDeck(discardDeck.getDiscardDeckCard());
+            discardDeck.removeCardFromDeck();
+            deck = discardDeck;
+            discardDeck = newDeck;
+        }
     }
 
-    public void setDirectionTurn(int i, int direction) {
-        turn = i + 1*direction;
+    public static boolean moveValidation(Card card, Player player) {
+        if (cardValidation(card, getDiscardDeck().getDiscardDeckCard())) {
+            return true;
+        } else {
+            output.println("Invalid move!");
+            player.takeCardBack(card);
+            giveOnePenaltyCard(player);
+            return false;
+        }
+    }
+
+    public static void doChecks() {
+        if (getDiscardDeck().checkReverse()) {
+            setReverse();
+        }
+        checkColorChange();
+        setTurn(getTurn()+getReverse());
+        doOtherChecks();
+    }
+
+    private static void checkColorChange() {
+        if (getDiscardDeck().getDiscardDeckCard().getColor().equals("")) {
+            boolean rightInput = false;
+            String color = "";
+            while(!rightInput) {
+                output.println("You can choose the color.");
+                color = input.nextLine();
+                for (int i = 0; i < Card.getAllColors().length-1; i++) {
+                    if (color.equals(Card.getAllColors()[i])) {
+                        rightInput = true;
+                        break;
+                    }
+                }
+                if (!rightInput) {
+                    output.println("Invalid choice of color!");
+                }
+            }
+            getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
+        }
+    }
+
+    private static void doOtherChecks() {
+        turnOverflow();
+        checkStop();
+        checkTakeTwo();
+        checkTakeFour();
+        turnOverflow();
+    }
+
+    private static void checkStop() {
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X")) {
+            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
+            Printer.printPlayerCards(getPlayer(getTurn()));
+            output.println("Stop! You are not allowed to play!");
+            setTurn(getTurn() + getReverse());
+        }
+    }
+
+    private static void checkTakeTwo() {
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2")) {
+            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
+            Printer.printPlayerCards(getPlayer(getTurn()));
+            output.println("You have to take 2 cards!");
+            for (int i = 0; i < 2; i++) {
+                givePlayerDrawCards(getPlayer(getTurn()), 1);
+                checkEmptyDeck();
+            }
+            setTurn(getTurn() + getReverse());
+        }
+    }
+
+    private static void checkTakeFour() {
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("W+4")) {
+            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
+            Printer.printPlayerCards(getPlayer(getTurn()));
+            output.println("You have to take 4 cards!");
+            for (int i = 0; i < 4; i++) {
+                givePlayerDrawCards(getPlayer(getTurn()), 1);
+                checkEmptyDeck();
+            }
+            setTurn(getTurn()+getReverse());
+        }
     }
 }
+
