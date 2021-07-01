@@ -25,12 +25,15 @@ public class Human extends Player {
     }
 
     private Card moveValidation(String[] input) {
-        if (input[0].equals("help")) {
-            Printer.printHelp();
-            input = cleanUserInput();
-        }
+//        if (input[0].equals("help")) {
+//            Printer.printHelp();
+//            input = cleanUserInput();
+//        }
 
         switch (input[0]) {
+            case "help":
+                Printer.printHelp();
+                return moveValidation(cleanUserInput());
             case "exit":
                 App.exit = true;
                 return null;
