@@ -5,7 +5,7 @@ import java.util.List;
  *  This class manages access to a database and the insertion and/or update of data.
  *
  *  Last Modified: 01.07.2021
- *  Authors: Paulina Safar
+ *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
  */

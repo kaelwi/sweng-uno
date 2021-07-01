@@ -7,7 +7,7 @@ import java.util.Scanner;
  *  Abstract class Player as a template or common ground for bots and human players.
  *
  *  Last Modified: 01.07.2021
- *  Authors: Paulina Safar
+ *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
  */

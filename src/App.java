@@ -9,7 +9,7 @@ import java.util.Scanner;
  *  the game) and this is the place where the winner of the round and/or game is checked.
  *
  *  Last Modified: 01.07.2021
- *  Authors: Paulina Safar
+ *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
  */

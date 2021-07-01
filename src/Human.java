@@ -5,7 +5,7 @@ import java.util.List;
  *  turn is done here.
  *
  *  Last Modified: 01.07.2021
- *  Authors: Paulina Safar
+ *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
  */
@@ -29,7 +29,7 @@ public class Human extends Player {
     @Override
     public String colorWish() {
         String color;
-        boolean rightInput = false;
+        boolean rightInput;
         do {
             color = input.nextLine();
             rightInput = isRightInput(color);

@@ -10,7 +10,7 @@ import java.util.List;
  *  Printer class. A helper class to keep the code clean from bigger console outputs.
  *
  *  Last Modified: 01.07.2021
- *  Authors: Paulina Safar
+ *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
  */

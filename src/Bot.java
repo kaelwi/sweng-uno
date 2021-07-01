@@ -5,7 +5,7 @@ import java.util.Random;
  *  This class creates bot players, as an extension of the Player class.
  *
  *  Last Modified: 01.07.2021
- *  Authors: Paulina Safar
+ *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
  */

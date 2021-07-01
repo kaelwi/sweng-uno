@@ -8,7 +8,7 @@ import java.util.Scanner;
  *  This class implements most of the game logic. It works mostly as a dealer and rule checker.
  *
  *  Last Modified: 01.07.2021
- *  Authors: Paulina Safar
+ *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
  */
@@ -287,7 +287,7 @@ public class Game {
         if (getDiscardDeck().getDiscardDeckCard().getColor().equals("")) {
             alreadyChallenged = false;
             boolean rightInput = false;
-            String color = "";
+            String color;
             output.println("You can choose the color.");
             color = getPlayer(getTurn()).colorWish();
 //            while (!rightInput) {
