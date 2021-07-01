@@ -23,6 +23,11 @@ public class Human extends Player {
         return input.nextLine();
     }
 
+    @Override
+    public String challengeWish() {
+        return input.nextLine();
+    }
+
     private String[] cleanUserInput() {
         String inputLine = input.nextLine();
         inputLine = inputLine.replaceFirst("^\\s*", "");

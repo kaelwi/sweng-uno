@@ -111,6 +111,8 @@ public abstract class Player {
 
     public abstract String colorWish();
 
+    public abstract String challengeWish();
+
 
 }
 

@@ -320,7 +320,8 @@ public class Game {
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 4 cards!");
             output.println("Dou you want to challenge the last player?");
-            if (input.nextLine().equals("challenge")) {
+            String challenge = getPlayer(getTurn()).challengeWish();
+            if (challenge.equals("challenge")) {
                 System.out.println("challenge");
                 if (challenge()) {
                     for (int i = 0; i < 6; i++) {

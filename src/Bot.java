@@ -50,4 +50,14 @@ public class Bot extends Player {
         }
         return Card.getAllColors()[new Random().nextInt(4)];
     }
+
+    @Override
+    public String challengeWish() {
+        int random = new Random().nextInt(11);
+        if (random < 5) {
+            return "no";
+        } else {
+            return "challenge";
+        }
+    }
 }
