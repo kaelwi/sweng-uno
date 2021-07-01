@@ -23,8 +23,11 @@ public class Game {
         deck.fillDeck();
         deck.shuffleCards();
         setPlayers();
-        discardDeck.addCardToDiscardDeck(deck.getCards().get(0));
-        deck.removeCardFromDeck();
+        do {
+            discardDeck.addCardToDiscardDeck(deck.getCards().get(0));
+            deck.removeCardFromDeck();
+        } while(discardDeck.getDiscardDeckCard().getValue().equals("W+4"));
+
     }
 
     public static void setReverse() {
@@ -33,6 +36,32 @@ public class Game {
 
     public static int getReverse() {
         return reverse;
+    }
+
+    public static void newRound() {
+        deck = new Deck(108);
+        discardDeck = new Deck(0);
+        turn = setFirst();
+        reverse = 1;
+        deck.fillDeck();
+        deck.shuffleCards();
+        do {
+            discardDeck.addCardToDiscardDeck(deck.getCards().get(0));
+            deck.removeCardFromDeck();
+        } while (discardDeck.getDiscardDeckCard().getValue().equals("W+4"));
+
+        for (Player p : player) {
+            p.setPoints(0);
+            p.setPlayerCards(deck.giveCards());
+        }
+    }
+
+    public static void checkStartingColor() {
+        if (discardDeck.getDiscardDeckCard().getValue().equals("W")) {
+            output.println("The last player is allowed to choose the color at the beginning of the game: ");
+            String color = getPlayer(checkTurn()).colorWish();
+            getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
+        }
     }
 
     public void setDeck(Deck deck) {
@@ -237,6 +266,7 @@ public class Game {
             newDeck.addCardToDiscardDeck(discardDeck.getDiscardDeckCard());
             discardDeck.removeCardFromDeck();
             deck = discardDeck;
+            deck.shuffleCards();
             discardDeck = newDeck;
         }
     }
@@ -352,9 +382,8 @@ public class Game {
     }
 
     public static boolean challenge() {
-        System.out.println("in challenge");
             System.out.println(discardDeck.getCardBeforeWild().getColor());
-            return getPlayer(getTurn()-reverse).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
+            return getPlayer(checkTurn()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
     }
 }
 

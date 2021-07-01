@@ -50,31 +50,28 @@ public class Human extends Player {
             case "draw":
                 Game.givePlayerDrawCards(this, Integer.parseInt(input[1]));
                 return null;
-            case "challenge":
-                System.out.println(Game.challenge());
-                return null;
             default:
                 return cardValidation(input);
         }
     }
 
-    private int commandValidation(String[] input) {
-        if (input[0].equals("help")) {
-            Printer.printHelp();
-            input = cleanUserInput();
-        }
-
-        switch (input[0]) {
-            case "exit":
-                App.exit = true;
-                return 0;
-            case "draw":
-                Game.givePlayerDrawCards(this, Integer.parseInt(input[1]));
-                return 0;
-            default:
-                return -1;
-        }
-    }
+//    private int commandValidation(String[] input) {
+//        if (input[0].equals("help")) {
+//            Printer.printHelp();
+//            input = cleanUserInput();
+//        }
+//
+//        switch (input[0]) {
+//            case "exit":
+//                App.exit = true;
+//                return 0;
+//            case "draw":
+//                Game.givePlayerDrawCards(this, Integer.parseInt(input[1]));
+//                return 0;
+//            default:
+//                return -1;
+//        }
+//    }
 
     private Card cardValidation(String[] input) {
         boolean valid = false;
@@ -85,7 +82,7 @@ public class Human extends Player {
             if (cardToBeChecked == null) {
                 Printer.noSuchCardOnHand();
                 input = cleanUserInput();
-                if (commandValidation(input) == 0) {
+                if (moveValidation(input) == null) {
                     valid = true;
                 }
             } else {

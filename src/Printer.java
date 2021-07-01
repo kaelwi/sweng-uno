@@ -1,4 +1,6 @@
 import java.io.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class Printer {
@@ -79,6 +81,32 @@ public class Printer {
         for (int i = 0; i < player.getPlayerCards().size(); i++) {
             output.print(player.getPlayerCards().get(i) + ", ");
         }
+        output.println();
+    }
+
+    public static void printEndGame(List<Player> players) {
+//        try {
+//            ResultSet resultSet = DBManager.selectAll();
+//            if (!resultSet.next()) {
+//                output.println("The game ended within the first round. No points where given to any player.");
+//            } else {
+//                output.println("The game ended before anyone could reach 500 points. Here are your points: ");
+//                for (Player player : players) {
+//                    player.setPoints(resultSet.getInt(player.getName()));
+//                    output.println("Player " + player.getName() + ": " + player.getPoints() + " points");
+//                }
+//            }
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+    }
+
+
+    public static void startingNewRound() {
+        output.println();
+        output.println();
+        output.println("STARTING NEW ROUND!");
+        output.println();
         output.println();
     }
 }

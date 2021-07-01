@@ -24,7 +24,7 @@ public class Deck {
             cards.add(new Card(colors[i], values[0], points[0]));
 
             // add all other cards with numbers, twice from each color
-            for (int j = 1; j < values.length-6; j++) {
+            for (int j = 1; j < values.length-5; j++) {
                 cards.add(new Card(colors[i], values[j], points[j]));
                 cards.add(new Card(colors[i], values[j], points[j]));
             }
@@ -63,12 +63,12 @@ public class Deck {
     }
 
     public void addCardToDiscardDeck(Card card) {
-        cards.add(card);
+        cards.add(0, card);
     }
 
     // remove first card from deck (needed for the beginning of the game and later on for players to take cards)
     public void removeCardFromDeck() {
-        cards.remove(cards.size()-1);
+        cards.remove(0);
     }
 
     public List<Card> takeCards(int number) {
@@ -81,7 +81,7 @@ public class Deck {
     }
 
     public Card getDiscardDeckCard() {
-        return this.cards.get(this.cards.size()-1);
+        return cards.get(0);
     }
 
     public Card getCardBeforeWild() {

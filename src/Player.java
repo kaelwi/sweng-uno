@@ -19,6 +19,10 @@ public abstract class Player {
         this.points = 0;
     }
 
+    public void setPlayerCards (List<Card> playerCards) {
+        this.playerCards = playerCards;
+    }
+
 
     public List<Card> getPlayerCards() {
         return playerCards;
