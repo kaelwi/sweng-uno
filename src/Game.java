@@ -275,26 +275,24 @@ public class Game {
     }
 
     public static void doChecks() {
-        if (getDiscardDeck().checkReverse()) {
-            setReverse();
-        }
+        checkReverse();
         checkColorChange();
         setTurn(getTurn() + getReverse());
         doOtherChecks();
     }
 
+    private static void checkReverse() {
+        if (getDiscardDeck().checkReverse()) {
+            setReverse();
+        }
+    }
+
     private static void checkColorChange() {
         if (getDiscardDeck().getDiscardDeckCard().getColor().equals("")) {
             alreadyChallenged = false;
-            boolean rightInput = false;
             String color;
             output.println("You can choose the color.");
             color = getPlayer(getTurn()).colorWish();
-//            while (!rightInput) {
-//                output.println("You can choose the color.");
-//                color = getPlayer(getTurn()).colorWish();
-//                rightInput = Player.isRightInput(color, rightInput, output);
-//            }
             getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
         }
     }

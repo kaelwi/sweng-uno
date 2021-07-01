@@ -40,7 +40,7 @@ public class App {
         Game.startGame(input);
         Printer.printBegin(Game.getPlayers());
         Printer.whoBegins(Game.getPlayer(Game.getTurn()));
-        Game.checkStartingColor();
+        Game.doChecks();
     }
 
     private void readUserInput(Player player) {
