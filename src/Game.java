@@ -265,6 +265,7 @@ public class Game {
             Deck newDeck = new Deck(1);
             newDeck.addCardToDiscardDeck(discardDeck.getDiscardDeckCard());
             discardDeck.removeCardFromDeck();
+            discardDeck.removeFakeWildCards();
             deck = discardDeck;
             deck.shuffleCards();
             discardDeck = newDeck;

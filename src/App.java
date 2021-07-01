@@ -23,12 +23,9 @@ public class App {
             readUserInput(Game.getPlayer(Game.getTurn()));
             Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard());
         }
-
-
     }
 
     private void initialize() {
-        //TODO: Initialisierungen hier durchführen
         DBManager.createTable();
         Game.startGame();
         Printer.printBegin(Game.getPlayers());
@@ -37,14 +34,12 @@ public class App {
     }
 
     private void readUserInput(Player player) throws SQLException {
-        //TODO: Alle Eingaben der Benutzer einlesen
         output.println("Tell me your next step.");
         Card cardToBePlayed = player.turn(Game.getDiscardDeck().getDiscardDeckCard());
         updateState(cardToBePlayed, player);
     }
 
     private void updateState(Card card, Player player) throws SQLException {
-        //TODO: Benutzereingaben verarbeiten
         if (exit) {
             Printer.printEndGame(Game.getPlayers());
         } else {
@@ -59,11 +54,6 @@ public class App {
         }
     }
 
-    private void printState() {
-        //TODO: Ausgabe des aktuellen Zustands
-        Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard());
-    }
-
     private void checkWinner(Player player) throws SQLException {
         if (player.getPlayerCards().isEmpty()) {
             Printer.printWin(player);
@@ -74,8 +64,6 @@ public class App {
                     }
                 }
             }
-            // Printer print end of round and points
-            // Printer.printEndRound(Game.getPlayers());
 
             DBManager.insertOrUpdate(Game.getPlayers());
             Printer.printEndRound();
