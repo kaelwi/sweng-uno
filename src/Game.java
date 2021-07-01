@@ -268,7 +268,7 @@ public class Game {
             String color = "";
             while(!rightInput) {
                 output.println("You can choose the color.");
-                color = input.nextLine();
+                color = getPlayer(getTurn()).colorWish();
                 for (int i = 0; i < Card.getAllColors().length-1; i++) {
                     if (color.equals(Card.getAllColors()[i])) {
                         rightInput = true;

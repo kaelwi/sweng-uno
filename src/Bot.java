@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Random;
 
 /**
  * This Class creates Bot players, as an extension of the Player class
@@ -38,5 +39,15 @@ public class Bot extends Player {
             Game.givePlayerDrawCards(this, 1);
         }
         return card;
+    }
+
+    @Override
+    public String colorWish() {
+        for (Card card : this.getPlayerCards()) {
+            if (!card.getColor().equals("")) {
+                return card.getColor();
+            }
+        }
+        return Card.getAllColors()[new Random().nextInt(4)];
     }
 }

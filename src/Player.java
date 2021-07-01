@@ -109,6 +109,8 @@ public abstract class Player {
 
     public abstract Card turn(Card card);
 
+    public abstract String colorWish();
+
 
 }
 

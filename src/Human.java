@@ -18,6 +18,11 @@ public class Human extends Player {
         return validateMove;
     }
 
+    @Override
+    public String colorWish() {
+        return input.nextLine();
+    }
+
     private String[] cleanUserInput() {
         String inputLine = input.nextLine();
         inputLine = inputLine.replaceFirst("^\\s*", "");
