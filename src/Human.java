@@ -40,6 +40,9 @@ public class Human extends Player {
             case "draw":
                 Game.givePlayerDrawCards(this, Integer.parseInt(input[1]));
                 return null;
+            case "challenge":
+                System.out.println(Game.challenge());
+                return null;
             default:
                 return cardValidation(input);
         }

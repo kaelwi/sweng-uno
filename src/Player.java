@@ -94,6 +94,17 @@ public abstract class Player {
         return false;
     }
 
+    public boolean challengeColorCheck(String color) {
+        Iterator<Card> it = this.getPlayerCards().iterator();
+        while(it.hasNext()) {
+            Card cardOnHand = it.next();
+            if (cardOnHand.getColor().equals(color) && (cardOnHand.getPoints() < 20)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public abstract Card getCardToPlay(Card discardDeckCard);
 
     public abstract Card turn(Card card);

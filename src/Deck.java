@@ -84,6 +84,10 @@ public class Deck {
         return this.cards.get(this.cards.size()-1);
     }
 
+    public Card getCardBeforeWild() {
+        return this.cards.get(this.cards.size()-3);
+    }
+
     public boolean checkReverse() {
         return getDiscardDeckCard().getValue().equals("<->");
     }

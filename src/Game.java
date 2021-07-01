@@ -17,6 +17,7 @@ public class Game {
     private static final PrintStream output = System.out;
     private static int turn = setFirst();
     private static int reverse = 1;
+    private static boolean alreadyChallenged = false;
 
     public static void startGame() {
         deck.fillDeck();
@@ -262,6 +263,7 @@ public class Game {
 
     private static void checkColorChange() {
         if (getDiscardDeck().getDiscardDeckCard().getColor().equals("")) {
+            alreadyChallenged = false;
             boolean rightInput = false;
             String color = "";
             while(!rightInput) {
@@ -312,16 +314,46 @@ public class Game {
     }
 
     private static void checkTakeFour() {
-        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("W+4")) {
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("W+4") && !alreadyChallenged) {
+            alreadyChallenged = true;
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 4 cards!");
-            for (int i = 0; i < 4; i++) {
-                givePlayerDrawCards(getPlayer(getTurn()), 1);
-                checkEmptyDeck();
+            output.println("Dou you want to challenge the last player?");
+            if (input.nextLine().equals("challenge")) {
+                System.out.println("challenge");
+                if (challenge()) {
+                    for (int i = 0; i < 6; i++) {
+                        int turn = checkTurn();
+                        givePlayerDrawCards(getPlayer(turn), 1);
+                        checkEmptyDeck();
+                    }
+                }
+            } else {
+                for (int i = 0; i < 4; i++) {
+                    givePlayerDrawCards(getPlayer(getTurn()), 1);
+                    checkEmptyDeck();
+                }
+                setTurn(getTurn()+getReverse());
             }
-            setTurn(getTurn()+getReverse());
         }
+    }
+
+    private static int checkTurn() {
+        int turn = getTurn()-reverse;
+        if (turn < 0) {
+            turn = 3;
+        }
+        if (turn > 3) {
+            turn = 0;
+        }
+        return turn;
+    }
+
+    public static boolean challenge() {
+        System.out.println("in challenge");
+            System.out.println(discardDeck.getCardBeforeWild().getColor());
+            return getPlayer(getTurn()-reverse).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
     }
 }
 
