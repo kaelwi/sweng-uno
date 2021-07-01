@@ -1,3 +1,8 @@
+import java.io.PrintStream;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *  Abstract class Player as a template or common ground for bots and human players.
  *
@@ -6,11 +11,6 @@
  *           Julia Summer
  *           Karoline E. Wild
  */
-
-import java.io.PrintStream;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
 
 public abstract class Player {
     private final String name;

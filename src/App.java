@@ -1,3 +1,9 @@
+import java.io.PrintStream;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *  The App class implements a game loop (incl. initialization, entrance point of reading the user input, update of
  *  the game) and this is the place where the winner of the round and/or game is checked.
@@ -7,12 +13,6 @@
  *           Julia Summer
  *           Karoline E. Wild
  */
-
-import java.io.PrintStream;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Scanner;
 
 public class App {
     private final Scanner input;

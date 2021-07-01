@@ -1,3 +1,6 @@
+import java.sql.*;
+import java.util.List;
+
 /**
  *  This class manages access to a database and the insertion and/or update of data.
  *
@@ -6,9 +9,6 @@
  *           Julia Summer
  *           Karoline E. Wild
  */
-
-import java.sql.*;
-import java.util.List;
 
 public class DBManager {
 

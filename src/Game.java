@@ -1,3 +1,9 @@
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *  This class implements most of the game logic. It works mostly as a dealer and rule checker.
  *
@@ -6,12 +12,6 @@
  *           Julia Summer
  *           Karoline E. Wild
  */
-
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Game {
 

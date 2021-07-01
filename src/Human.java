@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  *  This class creates human players, as an extension of the Player class. Also move and card validation of the current
  *  turn is done here.
@@ -7,8 +9,6 @@
  *           Julia Summer
  *           Karoline E. Wild
  */
-
-import java.util.List;
 
 public class Human extends Player {
     public Human(String name, List<Card> giveCards) {

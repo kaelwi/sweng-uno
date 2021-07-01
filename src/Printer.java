@@ -1,3 +1,11 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 /**
  *  Printer class. A helper class to keep the code clean from bigger console outputs.
  *
@@ -6,14 +14,6 @@
  *           Julia Summer
  *           Karoline E. Wild
  */
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
 public class Printer {
     private static final PrintStream output = System.out;

@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.Random;
+
 /**
  *  This class creates bot players, as an extension of the Player class.
  *
@@ -6,9 +9,6 @@
  *           Julia Summer
  *           Karoline E. Wild
  */
-
-import java.util.List;
-import java.util.Random;
 
 public class Bot extends Player {
 
