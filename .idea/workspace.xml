@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="implemented status">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="don't print bots cards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Bot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Deck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +91,7 @@
       <workItem from="1625133589091" duration="15000" />
       <workItem from="1625133617624" duration="26000" />
       <workItem from="1625133663839" duration="228000" />
-      <workItem from="1625133923459" duration="11833000" />
+      <workItem from="1625133923459" duration="12995000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -196,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625145315607</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="don't print bots cards">
+      <created>1625145898944</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1625145898944</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,17 +231,7 @@
     <MESSAGE value="reformat code" />
     <MESSAGE value="get rid of warnings" />
     <MESSAGE value="implemented status" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented status" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="don't print bots cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="don't print bots cards" />
   </component>
 </project>

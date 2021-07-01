@@ -33,7 +33,7 @@ public class Bot extends Player {
             removeCardFromHand(card);
             output.println(card);
             if (checkUno()) {
-                output.println(" UNO!");
+                output.println("UNO!");
             }
         } else {
             output.println("Unfortunately, I don't have anything to play.");

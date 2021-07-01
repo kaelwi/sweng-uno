@@ -21,6 +21,7 @@ public class Printer {
 
         output.println("In case you need help: type \"help\".");
         output.println("If you wish to end the game: type \"exit\".");
+        // TODO: command for status
         output.println();
 
         output.println("Let the Game begin!");

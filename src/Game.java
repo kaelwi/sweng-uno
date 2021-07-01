@@ -28,7 +28,6 @@ public class Game {
             discardDeck.addCardToDiscardDeck(deck.getCards().get(0));
             deck.removeCardFromDeck();
         } while (discardDeck.getDiscardDeckCard().getValue().equals("W+4"));
-
     }
 
     public static void setReverse() {
@@ -225,7 +224,9 @@ public class Game {
      * @returns if the card should be played
      */
     public static boolean cardValidation(Card card, Card discardDeckCard) {
-        return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("");
+        // TODO: check if last ORs needed
+        return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("");
+        // return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("");
     }
 
     /**

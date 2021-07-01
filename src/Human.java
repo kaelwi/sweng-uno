@@ -18,6 +18,7 @@ public class Human extends Player {
 
     @Override
     public String colorWish() {
+        // TODO: what if color wrong?
         return input.nextLine();
     }
 
