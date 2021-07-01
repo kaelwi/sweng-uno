@@ -61,4 +61,9 @@ public class Bot extends Player {
             return "challenge";
         }
     }
+
+    @Override
+    public void printCards() {
+        output.println("Don't be so curious....");
+    }
 }

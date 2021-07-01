@@ -82,4 +82,11 @@ public class Human extends Player {
             output.println(input[0]);
         }
     }
+
+    @Override
+    public void printCards() {
+        for (int i = 0; i < getPlayerCards().size(); i++) {
+            output.print(getPlayerCards().get(i) + ", ");
+        }
+    }
 }

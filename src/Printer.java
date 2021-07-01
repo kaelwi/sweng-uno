@@ -82,9 +82,7 @@ public class Printer {
 
     public static void printPlayerCards(Player player) {
         output.print("Player " + player + " cards: ");
-        for (int i = 0; i < player.getPlayerCards().size(); i++) {
-            output.print(player.getPlayerCards().get(i) + ", ");
-        }
+        player.printCards();
         output.println();
     }
 

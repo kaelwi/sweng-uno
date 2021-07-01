@@ -114,6 +114,8 @@ public abstract class Player {
 
     public abstract String challengeWish();
 
+    public abstract void printCards();
+
 
 }
 

@@ -18,20 +18,20 @@ public class Deck {
         for (int i = 0; i < colors.length - 1; i++) {
             cards.add(new Card(colors[i], values[0], points[0]));
 
-            for (int j = 1; j < values.length - 5; j++) {
+            for (int j = 1; j < values.length - 4; j++) {
                 cards.add(new Card(colors[i], values[j], points[j]));
                 cards.add(new Card(colors[i], values[j], points[j]));
             }
 
-            for (int j = values.length - 5; j < values.length - 3; j++) {
+            for (int j = values.length - 4; j < values.length - 2; j++) {
                 cards.add(new Card(colors[i], values[j], points[points.length - 2]));
                 cards.add(new Card(colors[i], values[j], points[points.length - 2]));
             }
         }
 
         for (int i = 0; i < 4; i++) {
-            cards.add(new Card(colors[colors.length - 1], values[values.length - 3], points[points.length - 1]));
             cards.add(new Card(colors[colors.length - 1], values[values.length - 2], points[points.length - 1]));
+            cards.add(new Card(colors[colors.length - 1], values[values.length - 1], points[points.length - 1]));
         }
     }
 
