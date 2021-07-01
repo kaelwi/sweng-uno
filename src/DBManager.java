@@ -14,9 +14,11 @@ public class DBManager {
     }
 
     public static void createTable() {
-        String create = "CREATE TABLE IF NOT EXISTS uno (player varchar(255) PRIMARY KEY, points int)";
+        String create = "CREATE TABLE uno (player varchar(255) PRIMARY KEY, points int)";
+        String drop = "DROP TABLE IF EXISTS uno";
         try {
             Statement statement = connection.createStatement();
+            statement.executeUpdate(drop);
             statement.executeUpdate(create);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
