@@ -50,7 +50,7 @@ public class Human extends Player {
 
     private Card cardValidation(String[] input) {
         boolean valid = false;
-        Card cardToBeChecked = null;
+        Card cardToBeChecked;
         do {
             cardToBeChecked = isCardOnHand(input[0]);
 

@@ -27,7 +27,7 @@ public class App {
 
     private void initialize() {
         DBManager.createTable();
-        Game.startGame();
+        Game.startGame(input);
         Printer.printBegin(Game.getPlayers());
         Printer.whoBegins(Game.getPlayer(Game.getTurn()));
         Game.checkStartingColor();
@@ -41,7 +41,7 @@ public class App {
 
     private void updateState(Card card, Player player) throws SQLException {
         if (exit) {
-            Printer.printEndGame(Game.getPlayers());
+            Printer.printEndGame();
         } else {
             if (card != null) {
                 if (Game.moveValidation(card, player)) {

@@ -10,16 +10,17 @@ import java.util.Scanner;
  */
 public class Game {
 
-    private static List<Player> player = new ArrayList<>(4);
+    private static final List<Player> player = new ArrayList<>(4);
     private static Deck deck = new Deck(108);
     private static Deck discardDeck = new Deck(0);
-    private static final Scanner input = new Scanner(System.in);
+    private static Scanner input;
     private static final PrintStream output = System.out;
     private static int turn = setFirst();
     private static int reverse = 1;
     private static boolean alreadyChallenged = false;
 
-    public static void startGame() {
+    public static void startGame(Scanner in) {
+        input = in;
         deck.fillDeck();
         deck.shuffleCards();
         setPlayers();
@@ -64,14 +65,6 @@ public class Game {
         }
     }
 
-    public void setDeck(Deck deck) {
-        this.deck = deck;
-    }
-
-    public void setDiscardDeck(Deck discardDeck) {
-        this.discardDeck = discardDeck;
-    }
-
     /**
      * This method determines the number of human and bot players
      */
@@ -108,7 +101,7 @@ public class Game {
      * This Method creates bot players (takes number of bots as parameter)
      * and adds them to the Arraylist of Players
      *
-     * @param bots
+     * @param bots Indicates the number of bots to create
      */
     private static void createBots(int bots) {
         for (int i = 0; i < bots; i++) {
@@ -126,7 +119,7 @@ public class Game {
     /**
      * This Method creates a list of Player's Names
      *
-     * @returns the Arraylist of names
+     * @returns names, a List of already used names
      */
     private static List<String> playerNames() {
         List<String> names = new ArrayList<>();
@@ -188,11 +181,6 @@ public class Game {
         turn = i;
     }
 
-    public void printHelp() {
-        output.println("Print help - needs to be done.");
-        output.println();
-    }
-
     /**
      * This Method deals the cards to the players
      *
@@ -237,10 +225,7 @@ public class Game {
      * @returns if the card should be played
      */
     public static boolean cardValidation(Card card, Card discardDeckCard) {
-        if (card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("")) {
-            return true;
-        }
-        return false;
+        return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("");
     }
 
     /**

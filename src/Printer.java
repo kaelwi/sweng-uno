@@ -88,7 +88,7 @@ public class Printer {
         output.println();
     }
 
-    public static void printEndGame(List<Player> players) {
+    public static void printEndGame() {
         try {
             ResultSet resultSet = DBManager.selectAll();
 

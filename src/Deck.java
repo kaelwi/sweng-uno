@@ -4,17 +4,16 @@ import java.util.List;
 
 public class Deck {
 
-    private List<Card> cards;
+    private final List<Card> cards;
 
     public Deck(int capacity) {
         cards = new ArrayList<>(capacity);
     }
 
     public void fillDeck() {
-        Card newCard = new Card();
-        String[] colors = newCard.getAllColors();
-        String[] values = newCard.getAllValues();
-        int[] points = newCard.getAllPoints();
+        String[] colors = Card.getAllColors();
+        String[] values = Card.getAllValues();
+        int[] points = Card.getAllPoints();
 
         for (int i = 0; i < colors.length - 1; i++) {
             cards.add(new Card(colors[i], values[0], points[0]));
@@ -87,11 +86,7 @@ public class Deck {
     }
 
     public void removeFakeWildCards() {
-        for (Card card : cards) {
-            if (card.getPoints() == -1) {
-                cards.remove(card);
-            }
-        }
+        cards.removeIf(card -> card.getPoints() == -1);
     }
 }
 

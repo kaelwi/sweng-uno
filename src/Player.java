@@ -7,7 +7,7 @@ import java.util.Scanner;
  * This Class creates human players
  */
 public abstract class Player {
-    private String name;
+    private final String name;
     private List<Card> playerCards;
     private int points;
     protected Scanner input = new Scanner(System.in);
@@ -41,7 +41,7 @@ public abstract class Player {
      * This Method checks if the wanted card is in the player's hand,
      * and if it is, the player plays it
      *
-     * @param cardToPlay
+     * @param cardToPlay The card a player wants to play
      * @returns the card to play
      */
     public Card isCardOnHand(String cardToPlay) {
@@ -80,7 +80,7 @@ public abstract class Player {
     /**
      * This Method removes a specific card from the Player's hand
      *
-     * @param card
+     * @param card Card to be removed from hand
      */
     public void removeCardFromHand(Card card) {
         Iterator<Card> it = this.getPlayerCards().iterator();
@@ -94,16 +94,11 @@ public abstract class Player {
     }
 
     public boolean checkUno() {
-        if (playerCards.size() == 1) {
-            return true;
-        }
-        return false;
+        return playerCards.size() == 1;
     }
 
     public boolean challengeColorCheck(String color) {
-        Iterator<Card> it = this.getPlayerCards().iterator();
-        while (it.hasNext()) {
-            Card cardOnHand = it.next();
+        for (Card cardOnHand : this.getPlayerCards()) {
             if (cardOnHand.getColor().equals(color) && (cardOnHand.getPoints() < 20)) {
                 return true;
             }

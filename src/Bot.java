@@ -14,7 +14,7 @@ public class Bot extends Player {
      * This Method checks the Player's Cards for a appropriate card to play.
      * If there is such a card, it returns it, if not, it returns null
      *
-     * @param discardDeckCard
+     * @param discardDeckCard The card being on the discard deck right now
      * @returns the appropriate card to play or null
      */
     public Card getCardToPlay(Card discardDeckCard) {
@@ -31,7 +31,7 @@ public class Bot extends Player {
         Card card = getCardToPlay(discardDeckCard);
         if (card != null) {
             removeCardFromHand(card);
-            output.println(card.toString());
+            output.println(card);
             if (checkUno()) {
                 output.println(" UNO!");
             }
