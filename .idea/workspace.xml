@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="don't throw exception further">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="TODO: special cards at the beginning not handled properly!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/help.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uno/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +91,7 @@
       <workItem from="1625133617624" duration="26000" />
       <workItem from="1625133663839" duration="228000" />
       <workItem from="1625133923459" duration="13398000" />
-      <workItem from="1625150132030" duration="5206000" />
+      <workItem from="1625150132030" duration="6742000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -245,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625161717230</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="TODO: special cards at the beginning not handled properly!">
+      <created>1625162755401</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1625162755401</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +295,7 @@
     <MESSAGE value="@author" />
     <MESSAGE value="doc for bot, dbmanager, deck" />
     <MESSAGE value="don't throw exception further" />
-    <option name="LAST_COMMIT_MESSAGE" value="don't throw exception further" />
+    <MESSAGE value="TODO: special cards at the beginning not handled properly!" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: special cards at the beginning not handled properly!" />
   </component>
 </project>

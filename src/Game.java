@@ -234,9 +234,7 @@ public class Game {
         // return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("");
     }
 
-    /**
-     * This Method ?
-     */
+    // TODO: Get rid of hardcoded values (to keep nr of players flexible)
     public static void turnOverflow() {
         if (getTurn() < 0) {
             setTurn(3);
@@ -280,6 +278,7 @@ public class Game {
         setTurn(getTurn() + getReverse());
         doOtherChecks();
     }
+
 
     private static void checkReverse() {
         if (getDiscardDeck().checkReverse()) {
@@ -354,6 +353,7 @@ public class Game {
         }
     }
 
+    // TODO: Get rid of hardcoded values (to keep nr of players flexible)
     private static int checkTurn() {
         int turn = getTurn() - reverse;
         if (turn < 0) {
