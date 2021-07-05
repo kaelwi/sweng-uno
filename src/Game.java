@@ -233,9 +233,7 @@ public class Game {
      * @returns if the card should be played
      */
     public static boolean cardValidation(Card card, Card discardDeckCard) {
-        // TODO: check if last ORs needed
         return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("");
-        // return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("");
     }
 
     /**
@@ -283,6 +281,13 @@ public class Game {
         }
     }
 
+    /**
+     * Check if the move is valid. Give one penalty card in case of an invalid move.
+     *
+     * @param card being played
+     * @param player trying to play the card above
+     * @return boolean (true if move valid)
+     */
     public static boolean moveValidation(Card card, Player player) {
         if (cardValidation(card, getDiscardDeck().getDiscardDeckCard())) {
             return true;
@@ -294,6 +299,12 @@ public class Game {
         }
     }
 
+    /**
+     * Check special cards on discard deck.
+     *
+     * @param beginning (don't set the turn to the next player if a special card gets on the discard deck on the very
+     *                  beginning)
+     */
     public static void doChecks(boolean beginning) {
         checkReverse();
         checkColorChange();
@@ -302,7 +313,6 @@ public class Game {
         }
         doOtherChecks();
     }
-
 
     private static void checkReverse() {
         if (getDiscardDeck().checkReverse()) {
@@ -371,10 +381,12 @@ public class Game {
         }
     }
 
-
-
+    /**
+     * Method to check if a player was allowed to play the +4 wild card.
+     *
+     * @return boolean (true if the challenge is right and the player had another card that he/she could play)
+     */
     public static boolean challenge() {
-        System.out.println(discardDeck.getCardBeforeWild().getColor());
         return getPlayer(getPredecessor()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
     }
 }

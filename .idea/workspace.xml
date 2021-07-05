@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="refactoring, got rid of hardcoded values">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="printouts for challenge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
       <workItem from="1625133663839" duration="228000" />
       <workItem from="1625133923459" duration="13398000" />
       <workItem from="1625150132030" duration="6818000" />
-      <workItem from="1625466270694" duration="7480000" />
+      <workItem from="1625466270694" duration="8281000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -275,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625474481755</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="printouts for challenge">
+      <created>1625474805025</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1625474805025</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +300,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="challenge wish for bots" />
     <MESSAGE value="dbmanager" />
     <MESSAGE value="print end game" />
     <MESSAGE value="exit within first round" />
@@ -319,6 +324,7 @@
     <MESSAGE value="correction of setFirst (don't change when beginning)" />
     <MESSAGE value="point status ausgabe" />
     <MESSAGE value="refactoring, got rid of hardcoded values" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring, got rid of hardcoded values" />
+    <MESSAGE value="printouts for challenge" />
+    <option name="LAST_COMMIT_MESSAGE" value="printouts for challenge" />
   </component>
 </project>
