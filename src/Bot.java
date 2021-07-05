@@ -56,6 +56,12 @@ public class Bot extends Player {
         return card;
     }
 
+    /**
+     * As the name suggests, check if the drawn card can be played.
+     *
+     * @param discardDeckCard to compare cards with the discard deck card
+     * @return card to be played (if possible)
+     */
     public Card checkDrawnCard(Card discardDeckCard) {
         Card card = getCardToPlay(discardDeckCard);
         if (card != null) {
