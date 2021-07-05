@@ -10,9 +10,6 @@ import java.util.Random;
  *           Karoline E. Wild
  */
 
-/**
- * This Class creates Bot players, as an extension of the Player class
- */
 public class Bot extends Player {
 
     public Bot(String name, List<Card> playerCards) {
@@ -54,6 +51,22 @@ public class Bot extends Player {
         } else {
             output.println("Unfortunately, I don't have anything to play.");
             Game.givePlayerDrawCards(this, 1);
+            card = checkDrawnCard(discardDeckCard);
+        }
+        return card;
+    }
+
+    public Card checkDrawnCard(Card discardDeckCard) {
+        Card card = getCardToPlay(discardDeckCard);
+        if (card != null) {
+            removeCardFromHand(card);
+            output.println("I was happy, I can play that card.");
+            output.println(card);
+            if (checkUno()) {
+                output.println("UNO!");
+            }
+        } else {
+            output.println("Still nothing...");
         }
         return card;
     }

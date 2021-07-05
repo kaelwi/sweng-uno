@@ -64,7 +64,8 @@ public class Game {
     public static void checkStartingColor() {
         if (discardDeck.getDiscardDeckCard().getValue().equals("W")) {
             output.println("The last player is allowed to choose the color at the beginning of the game: ");
-            String color = getPlayer(getPredecessor()).colorWish();
+            // String color = getPlayer(getPredecessor()).colorWish();
+            String color = getPlayer(getTurn()).colorWish();
             getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
         }
     }

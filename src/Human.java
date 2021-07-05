@@ -63,6 +63,9 @@ public class Human extends Player {
                 return null;
             case "draw":
                 Game.givePlayerDrawCards(this, 1);
+                Printer.printPlayerCards(this);
+                return moveValidation(cleanUserInput());
+            case "skip":
                 return null;
             default:
                 return cardValidation(input);
