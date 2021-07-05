@@ -1,5 +1,6 @@
 /* Diese Datei nicht ändern! */
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Scanner;
  * It starts and ends the Program
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Scanner input = new Scanner(System.in);
         App app = new App(input, System.out);
         app.Run();
