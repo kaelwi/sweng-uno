@@ -80,9 +80,9 @@ public class Bot extends Player {
     public String challengeWish() {
         int random = new Random().nextInt(11);
         if (random < 5) {
-            return "no";
+            return "N";
         } else {
-            return "challenge";
+            return "Y";
         }
     }
 

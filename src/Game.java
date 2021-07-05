@@ -197,10 +197,10 @@ public class Game {
             player.takeCards(getDeck().takeCards(1));
             checkEmptyDeck();
         }
-        // player.takeCards(this.getDeck().takeCards(number));
     }
 
     /**
+     * TODO: mit Schleife machen (check empty deck) + random?
      * This Method gives TWO penalty card to the Player who forgot to say "UNO" with only one card left in the hand
      * and the next Player already drew a new card
      *
@@ -332,10 +332,10 @@ public class Game {
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 4 cards!");
-            output.println("Dou you want to challenge the last player?");
+            output.println("Dou you want to challenge the last player? (Y/N)");
             String challenge = getPlayer(getTurn()).challengeWish();
-            if (challenge.equals("challenge")) {
-                System.out.println("challenge");
+            // TODO: Ausgabe, ob challenge gerechtfertigt!
+            if (challenge.equals("Y")) {
                 if (challenge()) {
                     for (int i = 0; i < 6; i++) {
                         int turn = checkTurn();
@@ -353,7 +353,7 @@ public class Game {
         }
     }
 
-    // TODO: Get rid of hardcoded values (to keep nr of players flexible)
+    // TODO: Get rid of hardcoded values (to keep nr of players flexible), 2 almost same methods - work with parameter?
     private static int checkTurn() {
         int turn = getTurn() - reverse;
         if (turn < 0) {

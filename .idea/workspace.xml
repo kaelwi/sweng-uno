@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="TODO: special cards at the beginning not handled properly!">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="added some more todos (hardcoded values)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Deck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uno/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uno/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,17 +54,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -91,7 +76,8 @@
       <workItem from="1625133617624" duration="26000" />
       <workItem from="1625133663839" duration="228000" />
       <workItem from="1625133923459" duration="13398000" />
-      <workItem from="1625150132030" duration="6742000" />
+      <workItem from="1625150132030" duration="6818000" />
+      <workItem from="1625466270694" duration="2456000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -254,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625162755401</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added some more todos (hardcoded values)">
+      <created>1625221357118</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1625221357118</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +289,7 @@
     <MESSAGE value="doc for bot, dbmanager, deck" />
     <MESSAGE value="don't throw exception further" />
     <MESSAGE value="TODO: special cards at the beginning not handled properly!" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: special cards at the beginning not handled properly!" />
+    <MESSAGE value="added some more todos (hardcoded values)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some more todos (hardcoded values)" />
   </component>
 </project>
