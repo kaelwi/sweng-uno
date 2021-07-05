@@ -20,6 +20,7 @@ public class Game {
     private static Deck discardDeck = new Deck(0);
     private static Scanner input;
     private static final PrintStream output = System.out;
+    // TODO: etwas kaputt
     private static int turn = setFirst();
     private static int reverse = 1;
     private static boolean alreadyChallenged = false;
@@ -272,10 +273,13 @@ public class Game {
         }
     }
 
-    public static void doChecks() {
+    // TODO: setTurn only if it is not the beginning - sth like do initial checks??
+    public static void doChecks(boolean beginning) {
         checkReverse();
         checkColorChange();
-        setTurn(getTurn() + getReverse());
+        if (!beginning) {
+            setTurn(getTurn() + getReverse());
+        }
         doOtherChecks();
     }
 

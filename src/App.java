@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class App {
     private final Scanner input;
     private final PrintStream output;
+    public static boolean beginning = true;
     public static boolean exit = false;
 
     public App(Scanner input, PrintStream output) {
@@ -40,7 +41,8 @@ public class App {
         Game.startGame(input);
         Printer.printBegin(Game.getPlayers());
         Printer.whoBegins(Game.getPlayer(Game.getTurn()));
-        Game.doChecks();
+        Game.doChecks(beginning);
+        beginning = false;
     }
 
     private void readUserInput(Player player) {
@@ -59,7 +61,7 @@ public class App {
                 }
             }
 
-            Game.doChecks();
+            Game.doChecks(beginning);
             checkWinner(player);
         }
     }
