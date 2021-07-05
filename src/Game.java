@@ -20,7 +20,6 @@ public class Game {
     private static Deck discardDeck = new Deck(0);
     private static Scanner input;
     private static final PrintStream output = System.out;
-    // TODO: etwas kaputt
     private static int turn = setFirst();
     private static int reverse = 1;
     private static boolean alreadyChallenged = false;
@@ -65,7 +64,7 @@ public class Game {
     public static void checkStartingColor() {
         if (discardDeck.getDiscardDeckCard().getValue().equals("W")) {
             output.println("The last player is allowed to choose the color at the beginning of the game: ");
-            String color = getPlayer(checkTurn()).colorWish();
+            String color = getPlayer(getPredecessor()).colorWish();
             getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
         }
     }
@@ -235,13 +234,31 @@ public class Game {
         // return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("") || discardDeckCard.getColor().equals("");
     }
 
-    // TODO: Get rid of hardcoded values (to keep nr of players flexible)
+    /**
+     * Method to check out of bound access to the player list.
+     */
     public static void turnOverflow() {
         if (getTurn() < 0) {
-            setTurn(3);
-        } else if (getTurn() > 3) {
+            setTurn(player.size()-1);
+        } else if (getTurn() > player.size()-1) {
             setTurn(0);
         }
+    }
+
+    /**
+     * Get predecessor for the challenge.
+     *
+     * @return turn (the position of the predecessor player in the arraylist of players)
+     */
+    private static int getPredecessor() {
+        int turn = getTurn() - reverse;
+        if (turn < 0) {
+            turn = player.size()-1;
+        }
+        if (turn > player.size()-1) {
+            turn = 0;
+        }
+        return turn;
     }
 
     /**
@@ -342,7 +359,7 @@ public class Game {
             if (challenge.equals("Y")) {
                 if (challenge()) {
                     for (int i = 0; i < 6; i++) {
-                        int turn = checkTurn();
+                        int turn = getPredecessor();
                         givePlayerDrawCards(getPlayer(turn), 1);
                         checkEmptyDeck();
                     }
@@ -357,21 +374,11 @@ public class Game {
         }
     }
 
-    // TODO: Get rid of hardcoded values (to keep nr of players flexible), 2 almost same methods - work with parameter?
-    private static int checkTurn() {
-        int turn = getTurn() - reverse;
-        if (turn < 0) {
-            turn = 3;
-        }
-        if (turn > 3) {
-            turn = 0;
-        }
-        return turn;
-    }
+
 
     public static boolean challenge() {
         System.out.println(discardDeck.getCardBeforeWild().getColor());
-        return getPlayer(checkTurn()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
+        return getPlayer(getPredecessor()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
     }
 }
 
