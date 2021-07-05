@@ -200,14 +200,17 @@ public class Game {
     }
 
     /**
-     * TODO: mit Schleife machen (check empty deck) + random?
      * This Method gives TWO penalty card to the Player who forgot to say "UNO" with only one card left in the hand
      * and the next Player already drew a new card
      *
      * @param player who needs to get penalty cards
      */
     public static void missingUnoPenalty(Player player) {
-        player.takeCards(getDeck().takeCards(2));
+        for (int i = 0; i < 2; i++) {
+            player.takeCards(getDeck().takeCards(1));
+            checkEmptyDeck();
+        }
+
     }
 
     /**
@@ -218,6 +221,7 @@ public class Game {
      */
     public static void giveOnePenaltyCard(Player player) {
         player.takeCards(getDeck().takeCards(1));
+        checkEmptyDeck();
     }
 
     /**
@@ -290,7 +294,6 @@ public class Game {
         }
     }
 
-    // TODO: setTurn only if it is not the beginning - sth like do initial checks??
     public static void doChecks(boolean beginning) {
         checkReverse();
         checkColorChange();
@@ -355,20 +358,14 @@ public class Game {
             output.println("You have to take 4 cards!");
             output.println("Dou you want to challenge the last player? (Y/N)");
             String challenge = getPlayer(getTurn()).challengeWish();
-            // TODO: Ausgabe, ob challenge gerechtfertigt!
             if (challenge.equals("Y")) {
                 if (challenge()) {
-                    for (int i = 0; i < 6; i++) {
-                        int turn = getPredecessor();
-                        givePlayerDrawCards(getPlayer(turn), 1);
-                        checkEmptyDeck();
-                    }
+                    output.println("You were right, the last player tried to cheat!");
+                    int turn = getPredecessor();
+                    givePlayerDrawCards(getPlayer(turn), 6);
                 }
             } else {
-                for (int i = 0; i < 4; i++) {
-                    givePlayerDrawCards(getPlayer(getTurn()), 1);
-                    checkEmptyDeck();
-                }
+                givePlayerDrawCards(getPlayer(getTurn()), 4);
                 setTurn(getTurn() + getReverse());
             }
         }
