@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="printouts for challenge">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="beautify and comment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +78,7 @@
       <workItem from="1625133923459" duration="13398000" />
       <workItem from="1625150132030" duration="6818000" />
       <workItem from="1625466270694" duration="8281000" />
+      <workItem from="1625475779266" duration="289000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -281,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625474805025</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="beautify and comment">
+      <created>1625476063330</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1625476063330</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +309,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dbmanager" />
     <MESSAGE value="print end game" />
     <MESSAGE value="exit within first round" />
     <MESSAGE value="drop table at the beginning" />
@@ -325,6 +333,7 @@
     <MESSAGE value="point status ausgabe" />
     <MESSAGE value="refactoring, got rid of hardcoded values" />
     <MESSAGE value="printouts for challenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="printouts for challenge" />
+    <MESSAGE value="beautify and comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="beautify and comment" />
   </component>
 </project>
