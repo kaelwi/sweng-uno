@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="remove/get from position 0">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="test - some comments (@Before, assertEquals, assertTrue, assertFalse)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/help.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +107,7 @@
       <workItem from="1625466270694" duration="8281000" />
       <workItem from="1625475779266" duration="289000" />
       <workItem from="1625476582880" duration="947000" />
-      <workItem from="1625554016873" duration="865000" />
+      <workItem from="1625554016873" duration="1688000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -353,7 +340,28 @@
       <option name="project" value="LOCAL" />
       <updated>1625554444575</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="refactor - main/test">
+      <created>1625554992701</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1625554992701</updated>
+    </task>
+    <task id="LOCAL-00035" summary="bsp test">
+      <created>1625555178565</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1625555178565</updated>
+    </task>
+    <task id="LOCAL-00036" summary="test - some comments (@Before, assertEquals, assertTrue, assertFalse)">
+      <created>1625555304172</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1625555304172</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,9 +380,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ignore case when calling uno" />
-    <MESSAGE value="draw command without the need to enter number of cards to draw" />
-    <MESSAGE value="reformat code" />
     <MESSAGE value="get rid of warnings" />
     <MESSAGE value="implemented status" />
     <MESSAGE value="don't print bots cards" />
@@ -397,7 +402,10 @@
     <MESSAGE value="comment in bot" />
     <MESSAGE value="index out of bound problem solved (hopefully)" />
     <MESSAGE value="remove/get from position 0" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove/get from position 0" />
+    <MESSAGE value="refactor - main/test" />
+    <MESSAGE value="bsp test" />
+    <MESSAGE value="test - some comments (@Before, assertEquals, assertTrue, assertFalse)" />
+    <option name="LAST_COMMIT_MESSAGE" value="test - some comments (@Before, assertEquals, assertTrue, assertFalse)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

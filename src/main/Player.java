@@ -68,8 +68,8 @@ public abstract class Player {
     }
 
     /**
-     * This Method ???
-     * @param cardsToBeTaken - ???
+     * This Method adds drawn cards to players hand.
+     * @param cardsToBeTaken - list of drawn cards
      */
     public void takeCards(List<Card> cardsToBeTaken) {
         playerCards.addAll(cardsToBeTaken);
@@ -115,7 +115,8 @@ public abstract class Player {
     }
 
     /**
-     * This Method
+     * This Method checks if the player had a card of the right color to play (and therefore
+     * was not allowed to play the W+4 card).
      */
     public boolean challengeColorCheck(String color) {
         for (Card cardOnHand : this.getPlayerCards()) {
