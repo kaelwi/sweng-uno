@@ -74,7 +74,7 @@ public class Deck {
     }
 
     public void removeCardFromDeck() {
-        cards.remove(cards.size()-1);
+        cards.remove(0);
     }
 
     /**
