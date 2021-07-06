@@ -27,7 +27,7 @@ public class Game {
     private static boolean alreadyChallenged = false;
 
     /**
-     * This Method fills the main.Deck with all the cards and shuffles them.
+     * This Method fills the Deck with all the cards and shuffles them.
      * It allows us to choose the number of human/bot players and to open the first card on the discard deck.
      * @param in - reads User's input
      */
@@ -77,7 +77,7 @@ public class Game {
             output.println("The last player is allowed to choose the color at the beginning of the game: ");
             // String color = getPlayer(getPredecessor()).colorWish();
             String color = getPlayer(getTurn()).colorWish();
-            getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
+            getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1, Card.checkColorCode(color)));
         }
     }
 
@@ -169,7 +169,7 @@ public class Game {
 
     /**
      * This Method deals the cards to the players.
-     * The Method also checks if the main.Deck is empty.
+     * The Method also checks if the Deck is empty.
      * @param player - to which player are the cards dealt.
      * @param number - number of cards to be dealt.
      */
@@ -181,8 +181,8 @@ public class Game {
     }
 
     /**
-     * This Method gives TWO penalty cards to the main.Player who forgot to say "UNO"
-     * with only one card left in the hand, ins situation when the next main.Player already drew a new card
+     * This Method gives TWO penalty cards to the Player who forgot to say "UNO"
+     * with only one card left in the hand, ins situation when the next Player already drew a new card
      * @param player - player who gets the penalty cards
      */
     public static void missingUnoPenalty(Player player) {
@@ -193,8 +193,8 @@ public class Game {
     }
 
     /**
-     * This Method gives ONE penalty card to the main.Player who forgot to say "UNO"
-     * with only one card left in the hand in the situation when the next main.Player did not draw a new card.
+     * This Method gives ONE penalty card to the Player who forgot to say "UNO"
+     * with only one card left in the hand in the situation when the next Player did not draw a new card.
      * @param player - player who gets a penalty card
      */
     public static void giveOnePenaltyCard(Player player) {
@@ -204,9 +204,9 @@ public class Game {
 
     /**
      * This Method checks if the card we want to play is appropriate to play.
-     * It checks if the color or the value of this card matches the color or the value of the top card on the discard main.Deck.
+     * It checks if the color or the value of this card matches the color or the value of the top card on the discard Deck.
      * @param card            - we want to play
-     * @param discardDeckCard - top card on the discard main.Deck
+     * @param discardDeckCard - top card on the discard Deck
      * @returns               - if the card should be played
      */
     public static boolean cardValidation(Card card, Card discardDeckCard) {
@@ -240,9 +240,9 @@ public class Game {
     }
 
     /**
-     * This Method checks if the main main.Deck is empty of cards.
-     * If so, the discard main.Deck (which is full with cards) becomes the main main.Deck
-     * The new discard main.Deck starts afresh.
+     * This Method checks if the main Deck is empty of cards.
+     * If so, the discard Deck (which is full with cards) becomes the main Deck
+     * The new discard Deck starts afresh.
      */
     public static void checkEmptyDeck() {
         if (deck.isEmpty()) {
@@ -299,7 +299,7 @@ public class Game {
             String color;
             output.println("You can choose the color.");
             color = getPlayer(getTurn()).colorWish();
-            getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1));
+            getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1, Card.checkColorCode(color)));
         }
     }
 

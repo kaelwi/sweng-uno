@@ -3,7 +3,7 @@ package main;
 import java.util.List;
 
 /**
- *  This class creates human players, as an extension of the main.Player class. Also move and card validation of the current
+ *  This class creates human players, as an extension of the Player class. Also move and card validation of the current
  *  turn is done here.
  *
  *  Last Modified: 01.07.2021
@@ -35,7 +35,7 @@ public class Human extends Player {
 
     /**
      * This Method takes a change of color by player's input
-     * and checks in main.Player class if the color is a valid UNO card color.
+     * and checks in Player class if the color is a valid UNO card color.
      * @return color - color that the player has chosen.
      */
     @Override

@@ -14,7 +14,7 @@ public class CardTest {
 
     @Test
     public void testGetColor() {
-        Card card = new Card("R", "0", 0);
+        Card card = new Card("R", "0", 0, "0");
         assertEquals("R", card.getColor());
     }
 }

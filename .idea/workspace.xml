@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="delete comment to show warning">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/help.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Human.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +41,8 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />

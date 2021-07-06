@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
- * This is the main.Main method of the UNO Program.
+ * This is the Main method of the UNO Program.
  * It starts and ends the Program
  */
 public class Main {

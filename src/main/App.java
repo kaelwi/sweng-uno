@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *  The main.App class implements a game loop (incl. initialization, entrance point of reading the user input, update of
+ *  The App class implements a game loop (incl. initialization, entrance point of reading the user input, update of
  *  the game) and this is the place where the winner of the round and/or game is checked.
  *
  *  Last Modified: 01.07.2021
@@ -99,7 +99,7 @@ public class App {
                     while (resultSet.next()) {
                         if (resultSet.getInt("points") >= 500) {
                             output.println();
-                            output.println("main.Player " + player.getName() + " wins this game with " + resultSet.getInt("points") + " points");
+                            output.println("Player " + player.getName() + " wins this game with " + resultSet.getInt("points") + " points");
                             return true;
                         }
                     }

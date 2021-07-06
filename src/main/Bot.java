@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- *  This class creates bot players, as an extension of the main.Player class.
+ *  This class creates bot players, as an extension of the Player class.
  *
  *  Last Modified: 01.07.2021
  *  @author  Paulina Safar
@@ -19,7 +19,7 @@ public class Bot extends Player {
     }
 
     /**
-     * This Method checks the main.Player's Cards for an appropriate card to play.
+     * This Method checks the Player's Cards for an appropriate card to play.
      * If there is such a card, it returns it. If not, it returns null.
      * @param discardDeckCard - the card being on the discard deck right now
      * @returns card - the appropriate card to play or null
