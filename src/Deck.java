@@ -6,8 +6,8 @@ import java.util.List;
  *  A class for the representation of deck objects.
  *
  *  Last Modified: 01.07.2021
- *  @author  Paulina Safar
- *           Julia Summer
+ *  @author  Julia Summer
+ *           Paulina Safar
  *           Karoline E. Wild
  */
 
@@ -20,7 +20,8 @@ public class Deck {
     }
 
     /**
-     * Fill the deck with corresponding cards. 108 cards in total.
+     * This Method fills the deck with the corresponding cards.
+     * There are 108 cards in total.
      */
     public void fillDeck() {
         String[] colors = Card.getAllColors();
@@ -52,7 +53,7 @@ public class Deck {
     }
 
     /**
-     * Initial dealing of cards. 7 cards for each player.
+     * This Method initially deals 7 cards for each player.
      * @return playerCards, a list of 7 cards that a player gets on hand
      */
     public List<Card> giveCards() {
@@ -77,10 +78,9 @@ public class Deck {
     }
 
     /**
-     * Lets a player taky any specified number of cards.
-     *
+     * This Method gives a player any specified number of cards.
      * @param number of cards to be taken
-     * @return playerCards, a list of cards enriched with new cards
+     * @return playerCards, a list of cards with the new cards included
      */
     public List<Card> takeCards(int number) {
         List<Card> playerCards = new ArrayList<>(number);

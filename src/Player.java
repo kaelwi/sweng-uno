@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *  Abstract class Player as a template or common ground for bots and human players.
+ *  Abstract class Player as a template with common attributes and operations for bots and human players.
  *
  *  Last Modified: 01.07.2021
- *  @author  Paulina Safar
- *           Julia Summer
+ *  @author  Julia Summer
+ *           Paulina Safar
  *           Karoline E. Wild
  */
 
@@ -44,11 +44,10 @@ public abstract class Player {
     }
 
     /**
-     * This Method checks if the wanted card is in the player's hand,
-     * and if it is, the player plays it
-     *
-     * @param cardToPlay The card a player wants to play
-     * @returns the card to play
+     * This Method checks if the card chosen for play is in player's hand.
+     * If so, the player plays the card.
+     * @param cardToPlay - card chosen for play
+     * @returns the card - a played card
      */
     public Card isCardOnHand(String cardToPlay) {
         Card foundCard = new Card();
@@ -66,10 +65,18 @@ public abstract class Player {
         return foundCard;
     }
 
+    /**
+     * This Method ???
+     * @param cardsToBeTaken - ???
+     */
     public void takeCards(List<Card> cardsToBeTaken) {
         playerCards.addAll(cardsToBeTaken);
     }
 
+    /**
+     * This Method allows the card to be taken back from discard deck into the player's hand.
+     * @param cards - card returned from the discard deck into the player's hand
+     */
     public void takeCardBack(Card card) {
         playerCards.add(card);
     }
@@ -84,9 +91,8 @@ public abstract class Player {
 
 
     /**
-     * This Method removes a specific card from the Player's hand
-     *
-     * @param card Card to be removed from hand
+     * This Method removes a specific card from the Player's hand.
+     * @param card - Card to be removed from discard deck and returned into the player's hand
      */
     public void removeCardFromHand(Card card) {
         Iterator<Card> it = this.getPlayerCards().iterator();
@@ -99,10 +105,16 @@ public abstract class Player {
         }
     }
 
+    /**
+     * This Method sets a rule in which situation should a player call "uno".
+     */
     public boolean checkUno() {
         return playerCards.size() == 1;
     }
 
+    /**
+     * This Method
+     */
     public boolean challengeColorCheck(String color) {
         for (Card cardOnHand : this.getPlayerCards()) {
             if (cardOnHand.getColor().equals(color) && (cardOnHand.getPoints() < 20)) {

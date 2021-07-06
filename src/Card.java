@@ -2,8 +2,8 @@
  *  Card class to represent all cards of the UNO game.
  *
  *  Last Modified: 01.07.2021
- *  @author  Paulina Safar
- *           Julia Summer
+ *  @author  Julia Summer
+ *           Paulina Safar
  *           Karoline E. Wild
  */
 

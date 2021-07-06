@@ -33,10 +33,10 @@ public class Bot extends Player {
     }
 
     /**
-     * If there is any card to play, remove it from bots hand and return it. Also check for UNO.
-     * If there is no card to play, draw 1.
-     *
-     * @param discardDeckCard to compare bots cards on hand with
+     * This Methods checks if bot has a card to play. If so, the card is removed from the bot hand and returned.
+     * If there is no card to play, 1 card is drawn.
+     * The Method also checks for "uno" situation.
+     * @param discardDeckCard to compare bots' cards in hand with
      * @return card that is being played
      */
     @Override
@@ -57,9 +57,8 @@ public class Bot extends Player {
     }
 
     /**
-     * As the name suggests, check if the drawn card can be played.
-     *
-     * @param discardDeckCard to compare cards with the discard deck card
+     * This Method checks if the drawn card can be played. It also allows calling "uno".
+     * @param discardDeckCard to compare the card with the discard deck card
      * @return card to be played (if possible)
      */
     public Card checkDrawnCard(Card discardDeckCard) {
@@ -78,10 +77,9 @@ public class Bot extends Player {
     }
 
     /**
-     * If the bot gets the possibility to change the color, choose first color on hand.
-     * In the very unlikely case of having only wild cars (with no color), return a random color.
-     *
-     * @return color which shall be played onwards
+     * With this Method the bot has a possibility to change the color by choosing first color in hand.
+     * In a very unlikely case of having only wild cards (without color), a random color is returned.
+     * @return - color which shall be played onwards
      */
     @Override
     public String colorWish() {
@@ -94,9 +92,8 @@ public class Bot extends Player {
     }
 
     /**
-     * The will to challenge a player because of the wild-take-four card is determined with a random number.
-     *
-     * @return challenge or not
+     * This Method randomly decides to challenge a player that used the "Wild Draw 4" card.
+     * @return - is player challenged or not
      */
     @Override
     public String challengeWish() {
@@ -109,7 +106,7 @@ public class Bot extends Player {
     }
 
     /**
-     * Don't show bots cards.
+     * This Method does not allow bots' cards to be seen.
      */
     @Override
     public void printCards() {

@@ -8,8 +8,8 @@ import java.util.Scanner;
  *  This class implements most of the game logic. It works mostly as a dealer and rule checker.
  *
  *  Last Modified: 01.07.2021
- *  @author  Paulina Safar
- *           Julia Summer
+ *  @author  Julia Summer
+ *           Paulina Safar
  *           Karoline E. Wild
  */
 
@@ -383,9 +383,8 @@ public class Game {
     }
 
     /**
-     * Method to check if a player was allowed to play the +4 wild card.
-     *
-     * @return boolean (true if the challenge is right and the player had another card that he/she could play)
+     * This Method checks if a player was allowed to play the "Wild Draw 4" card.
+     * @return boolean (true if the challenge is justified and the player had another card that they could play)
      */
     public static boolean challenge() {
         return getPlayer(getPredecessor()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());

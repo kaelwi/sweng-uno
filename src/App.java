@@ -9,8 +9,8 @@ import java.util.Scanner;
  *  the game) and this is the place where the winner of the round and/or game is checked.
  *
  *  Last Modified: 01.07.2021
- *  @author  Paulina Safar
- *           Julia Summer
+ *  @author  Julia Summer
+ *           Paulina Safar
  *           Karoline E. Wild
  */
 
@@ -35,7 +35,9 @@ public class App {
             Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard());
         }
     }
-
+    /**
+     * Initial setup
+     */
     private void initialize() {
         DBManager.createTable();
         Game.startGame(input);
@@ -55,6 +57,13 @@ public class App {
         updateState(cardToBePlayed, player);
     }
 
+    /**
+     * This Method performs checks necessary for playing the game according to the UNO rules, e.g.:
+     * check if a player played a valid card
+     * check if a player played a special card
+     * check if a player played all his cards (has no more cards in hand) and is thus a winner of the round.
+     * In the last case the round is finished.
+     */
     private void updateState(Card card, Player player) {
         if (exit) {
             Printer.printEndGame();
@@ -70,6 +79,11 @@ public class App {
         }
     }
 
+    /**
+     * This Method determines if a player has played all of his cards and has no cards left in hand.
+     * Such a player is then a winner of the round, and receives points for all the cards
+     * that are still in the opponents' hands.
+     */
     private void checkWinner(Player player) {
         if (player.getPlayerCards().isEmpty()) {
             Printer.printWin(player);
@@ -93,6 +107,10 @@ public class App {
         }
     }
 
+    /**
+     * This Method determines the winner of the game, as per the number of collected points in rounds.
+     * @param players
+     */
     private boolean checkOverallWinner(List<Player> players) {
         try {
             for (Player player : players) {
