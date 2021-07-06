@@ -115,8 +115,9 @@ public abstract class Player {
     }
 
     /**
-     * This Method checks if the player had a card of the right color to play (and therefore
-     * was not allowed to play the W+4 card).
+     * This Method is part of the challenge and checks if the player had a card with the right color to play.
+     * If so, s/he was not allowed to play the "Wild Draw 4" card.
+     * @param color - color, for which we search in the player's hand.
      */
     public boolean challengeColorCheck(String color) {
         for (Card cardOnHand : this.getPlayerCards()) {
@@ -127,6 +128,11 @@ public abstract class Player {
         return false;
     }
 
+    /**
+     * This Method checks if the color, which was chosen by a player, is in the list of valid UNO card colors.
+     * @param color - color that we are checking.
+     * @returns boolean - information if the color is valid.
+     */
     public boolean isRightInput(String color) {
         for (int i = 0; i < Card.getAllColors().length-1; i++) {
             if (color.equals(Card.getAllColors()[i])) {

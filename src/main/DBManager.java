@@ -26,7 +26,8 @@ public class DBManager {
     }
 
     /**
-     *  Drop table if already exists (from previous games). Create new one.
+     *  This Method deletes (drops) a table if there already is one from the previous game,
+     *  and then creates a new DB table with players (varchar) as PRIMARY KEY and points (int) for each player.
      */
     public static void createTable() {
         String create = "CREATE TABLE uno (player varchar(255) PRIMARY KEY, points int)";
@@ -41,9 +42,9 @@ public class DBManager {
     }
 
     /**
-     * If there is an existing table, update values (points). Otherwise insert new values.
-     *
-     * @param players List of all players to fill the table with their names and points after each round.
+     * This Method inserts values (points) for each player in the DBtable.
+     * If points already exist for the same game, they are updated with new values.
+     * @param players - list of all players as values in the DBtable with results for the game.
      */
     public static void insertOrUpdate(List<Player> players) {
         try {
@@ -87,10 +88,9 @@ public class DBManager {
     }
 
     /**
-     * Get points of a specific player.
-     *
-     * @param player The player whose points are wished for
-     * @return ResultSet result of the SELECT statement constraint by the player (null if anything goes wrong)
+     * This Method delivers number of points for a specific player.
+     * @param player - the player whose points we want to check
+     * @return ResultSet - result of the SELECT statement constraint by the player (null if anything goes wrong)
      */
     public static ResultSet selectPoints(Player player) {
         try {
@@ -104,9 +104,8 @@ public class DBManager {
     }
 
     /**
-     * Gets SELECT * FROM.
-     *
-     * @return ResultSet of the above Query (or null if anything goes wrong)
+     * This Method delivers all values from the DBtable with players and scores.
+     * @return ResultSet -  of the above Query (or null if anything goes wrong)
      */
     public static ResultSet selectAll() {
         try {

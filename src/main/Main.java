@@ -17,4 +17,4 @@ public class Main {
     }
 }
 
-/* Diese Datei nicht ändern! */
+/* Do not change this class! */

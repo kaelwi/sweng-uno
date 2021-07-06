@@ -22,12 +22,22 @@ public class Human extends Player {
         return null;
     }
 
+    /**
+     * This Method takes an input from player (which card the player wishes to play) and checks if the move is valid.
+     * @param card - card the player wishes to play.
+     * @return validation - result of the move validity check.
+     */
     @Override
     public Card turn(Card card) {
         String[] userInput = cleanUserInput();
         return moveValidation(userInput);
     }
 
+    /**
+     * This Method takes a change of color by player's input
+     * and checks in main.Player class if the color is a valid UNO card color.
+     * @return color - color that the player has chosen.
+     */
     @Override
     public String colorWish() {
         String color;
@@ -39,8 +49,10 @@ public class Human extends Player {
         return color;
     }
 
-
-
+    /**
+     * This Method takes player's wish to challenge a player that used the "Wild Draw 4" card.
+     * @return String - player's input regarding the challenge.
+     */
     @Override
     public String challengeWish() {
         return input.nextLine();

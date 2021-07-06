@@ -37,9 +37,7 @@ public class App {
             Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard());
         }
     }
-    /**
-     * Initial setup
-     */
+
     private void initialize() {
         DBManager.createTable();
         Game.startGame(input);
@@ -49,23 +47,12 @@ public class App {
         beginning = false;
     }
 
-    /**
-     * This Method reads the card the User wants to play
-     * @param player (whose input shall be read)
-     */
     private void readUserInput(Player player) {
         output.println("Tell me your next step.");
         Card cardToBePlayed = player.turn(Game.getDiscardDeck().getDiscardDeckCard());
         updateState(cardToBePlayed, player);
     }
 
-    /**
-     * This Method performs checks necessary for playing the game according to the UNO rules, e.g.:
-     * check if a player played a valid card
-     * check if a player played a special card
-     * check if a player played all his cards (has no more cards in hand) and is thus a winner of the round.
-     * In the last case the round is finished.
-     */
     private void updateState(Card card, Player player) {
         if (exit) {
             Printer.printEndGame();
@@ -81,11 +68,6 @@ public class App {
         }
     }
 
-    /**
-     * This Method determines if a player has played all of his cards and has no cards left in hand.
-     * Such a player is then a winner of the round, and receives points for all the cards
-     * that are still in the opponents' hands.
-     */
     private void checkWinner(Player player) {
         if (player.getPlayerCards().isEmpty()) {
             Printer.printWin(player);
@@ -109,10 +91,6 @@ public class App {
         }
     }
 
-    /**
-     * This Method determines the winner of the game, as per the number of collected points in rounds.
-     * @param players List of all players to check the overall winner within the DB
-     */
     private boolean checkOverallWinner(List<Player> players) {
         try {
             for (Player player : players) {
