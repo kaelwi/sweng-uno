@@ -85,8 +85,8 @@ public class Deck {
     public List<Card> takeCards(int number) {
         List<Card> playerCards = new ArrayList<>(number);
         for (int i = 0; i < number; i++) {
-            playerCards.add(cards.get(cards.size() - 1));
-            cards.remove(cards.size() - 1);
+            playerCards.add(cards.get(0));
+            cards.remove(0);
         }
         return playerCards;
     }
