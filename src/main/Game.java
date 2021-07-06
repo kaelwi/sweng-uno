@@ -355,10 +355,7 @@ public class Game {
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 2 cards!");
-            for (int i = 0; i < 2; i++) {
-                givePlayerDrawCards(getPlayer(getTurn()), 1);
-                checkEmptyDeck();
-            }
+            givePlayerDrawCards(getPlayer(getTurn()), 2);
             setTurn(getTurn() + getReverse());
         }
     }

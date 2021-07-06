@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="test - some comments (@Before, assertEquals, assertTrue, assertFalse)">
+    <list default="true" id="9e6a4c66-fec9-4745-9b79-99fcb41277d0" name="Default Changelist" comment="delete comment to show warning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.66510904" />
@@ -46,7 +47,7 @@
       <recent name="C:\Users\karol\Desktop\uno" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CardTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="uno" />
@@ -82,8 +83,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CardTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CardTest" />
       </list>
     </recent_temporary>
   </component>
@@ -107,7 +108,7 @@
       <workItem from="1625466270694" duration="8281000" />
       <workItem from="1625475779266" duration="289000" />
       <workItem from="1625476582880" duration="947000" />
-      <workItem from="1625554016873" duration="1688000" />
+      <workItem from="1625554016873" duration="2579000" />
     </task>
     <task id="LOCAL-00001" summary="help in switch">
       <created>1625123076803</created>
@@ -361,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625555304172</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="added some comments">
+      <created>1625555734773</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1625555734773</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,8 +388,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="get rid of warnings" />
-    <MESSAGE value="implemented status" />
     <MESSAGE value="don't print bots cards" />
     <MESSAGE value="some todos and corrections" />
     <MESSAGE value="some duplicate code fragments. check correct user input while color change." />
@@ -405,7 +411,9 @@
     <MESSAGE value="refactor - main/test" />
     <MESSAGE value="bsp test" />
     <MESSAGE value="test - some comments (@Before, assertEquals, assertTrue, assertFalse)" />
-    <option name="LAST_COMMIT_MESSAGE" value="test - some comments (@Before, assertEquals, assertTrue, assertFalse)" />
+    <MESSAGE value="added some comments" />
+    <MESSAGE value="delete comment to show warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete comment to show warning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
