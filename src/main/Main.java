@@ -1,10 +1,10 @@
-/* Diese Datei nicht ändern! */
+package main;/* Diese Datei nicht ändern! */
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
- * This is the Main method of the UNO Program.
+ * This is the main.Main method of the UNO Program.
  * It starts and ends the Program
  */
 public class Main {

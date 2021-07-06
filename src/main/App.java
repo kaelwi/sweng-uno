@@ -1,3 +1,5 @@
+package main;
+
 import java.io.PrintStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -5,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *  The App class implements a game loop (incl. initialization, entrance point of reading the user input, update of
+ *  The main.App class implements a game loop (incl. initialization, entrance point of reading the user input, update of
  *  the game) and this is the place where the winner of the round and/or game is checked.
  *
  *  Last Modified: 01.07.2021
@@ -49,7 +51,7 @@ public class App {
 
     /**
      * This Method reads the card the User wants to play
-     * @param player
+     * @param player (whose input shall be read)
      */
     private void readUserInput(Player player) {
         output.println("Tell me your next step.");
@@ -109,7 +111,7 @@ public class App {
 
     /**
      * This Method determines the winner of the game, as per the number of collected points in rounds.
-     * @param players
+     * @param players List of all players to check the overall winner within the DB
      */
     private boolean checkOverallWinner(List<Player> players) {
         try {
@@ -119,7 +121,7 @@ public class App {
                     while (resultSet.next()) {
                         if (resultSet.getInt("points") >= 500) {
                             output.println();
-                            output.println("Player " + player.getName() + " wins this game with " + resultSet.getInt("points") + " points");
+                            output.println("main.Player " + player.getName() + " wins this game with " + resultSet.getInt("points") + " points");
                             return true;
                         }
                     }

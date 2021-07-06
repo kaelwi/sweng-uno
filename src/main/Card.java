@@ -1,5 +1,7 @@
+package main;
+
 /**
- *  Card class to represent all cards of the UNO game.
+ *  main.Card class to represent all cards of the UNO game.
  *
  *  Last Modified: 01.07.2021
  *  @author  Julia Summer

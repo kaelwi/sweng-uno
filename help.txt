@@ -1,17 +1,17 @@
 These are the rules - happy playing! :)
 
-Main rules for playing UNO:
+main.Main rules for playing UNO:
     - 4 players are allowed to play UNO
     - to be part of the game - write your commands in the command line of the Run-Terminal and hit "Enter" on your keyboard (you will see your entries in green)
     i - to adjust the size of the Run-Terminal grab the command window on the top (above the class window) and pull the window in the desired direction. If you want to have the game in a separate window,
         click on the gear wheel (top right) and change the "View Mode" to "Window".
     - if you need help during the game, please enter "help" to view this document
     - to end the game please type "exit"
-    - Card explanation: R -> red, G -> Green, B -> Blue, Y -> Yellow with each values from 0 - 9 and +2, <-> (reverse card -> changes direction), X (skip card). Additionally two wild cards: W -> colour changer, W+4 -> colour changer and draw 4 cards.
+    - main.Card explanation: R -> red, G -> Green, B -> Blue, Y -> Yellow with each values from 0 - 9 and +2, <-> (reverse card -> changes direction), X (skip card). Additionally two wild cards: W -> colour changer, W+4 -> colour changer and draw 4 cards.
     - you will always see the latest card being played on the line: "Open card deck: >>Color+Value<<" e.g. Open card deck: Y0
     -
 
-After starting the program by hitting the green "play-button" in the class Main:
+After starting the program by hitting the green "play-button" in the class main.Main:
     1. Choose how many bots should play
     2. Enter the names for the bots
     3. Enter your name

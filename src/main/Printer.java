@@ -1,3 +1,5 @@
+package main;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- *  Printer class. A helper class to keep the code clean from bigger console outputs.
+ *  main.Printer class. A helper class to keep the code clean from bigger console outputs.
  *
  *  Last Modified: 01.07.2021
  *  @author  Paulina Safar
@@ -34,7 +36,7 @@ public class Printer {
         output.println("You want to get the actual point status? Type \"status\".");
         output.println();
 
-        output.println("Let the Game begin!");
+        output.println("Let the main.Game begin!");
         output.println();
     }
 
@@ -47,7 +49,7 @@ public class Printer {
 
     public static void printWin(Player player) {
         output.println();
-        output.println("Congratulations! Player " + player + " wins this round.");
+        output.println("Congratulations! main.Player " + player + " wins this round.");
         output.println();
     }
 
@@ -57,7 +59,7 @@ public class Printer {
             output.println("Open card deck: " + card);
             output.println();
             if (reverse) {
-                output.println("Reverse-Card has been played! Reverse direction...\n");
+                output.println("Reverse-main.Card has been played! Reverse direction...\n");
             }
         }
     }
@@ -67,7 +69,7 @@ public class Printer {
         try {
             ResultSet resultSet = DBManager.selectAll();
             while (resultSet != null && resultSet.next()) {
-                output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
+                output.println("main.Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -97,7 +99,7 @@ public class Printer {
     }
 
     public static void printPlayerCards(Player player) {
-        output.print("Player " + player + " cards: ");
+        output.print("main.Player " + player + " cards: ");
         player.printCards();
         output.println();
     }
@@ -111,7 +113,7 @@ public class Printer {
             } else {
                 output.println("The game ended before anyone could reach 500 points. Here are your points: ");
                 do {
-                    output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
+                    output.println("main.Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
                 } while (resultSet.next());
             }
         } catch (SQLException throwables) {
@@ -136,7 +138,7 @@ public class Printer {
             } else {
                 output.println("Status: ");
                 do {
-                    output.println("Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
+                    output.println("main.Player " + resultSet.getString(1) + ": " + resultSet.getInt(2));
                 } while (resultSet.next());
             }
         } catch (SQLException throwables) {

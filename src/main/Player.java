@@ -1,10 +1,12 @@
+package main;
+
 import java.io.PrintStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- *  Abstract class Player as a template with common attributes and operations for bots and human players.
+ *  Abstract class main.Player as a template with common attributes and operations for bots and human players.
  *
  *  Last Modified: 01.07.2021
  *  @author  Julia Summer
@@ -75,7 +77,7 @@ public abstract class Player {
 
     /**
      * This Method allows the card to be taken back from discard deck into the player's hand.
-     * @param cards - card returned from the discard deck into the player's hand
+     * @param card - card returned from the discard deck into the player's hand
      */
     public void takeCardBack(Card card) {
         playerCards.add(card);
@@ -91,8 +93,8 @@ public abstract class Player {
 
 
     /**
-     * This Method removes a specific card from the Player's hand.
-     * @param card - Card to be removed from discard deck and returned into the player's hand
+     * This Method removes a specific card from the main.Player's hand.
+     * @param card - main.Card to be removed from discard deck and returned into the player's hand
      */
     public void removeCardFromHand(Card card) {
         Iterator<Card> it = this.getPlayerCards().iterator();

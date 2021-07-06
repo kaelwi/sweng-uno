@@ -1,3 +1,5 @@
+package main;
+
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -122,7 +124,7 @@ public class Game {
     }
 
     /**
-     * This Method creates a list of Player's Names
+     * This Method creates a list of main.Player's Names
      *
      * @returns names, a List of already used names
      */
@@ -175,7 +177,7 @@ public class Game {
     /**
      * This Method determines the first Players
      *
-     * @returns the random first Player
+     * @returns the random first main.Player
      */
     private static int setFirst() {
         Random random = new Random();
@@ -191,7 +193,7 @@ public class Game {
      *
      * @param player (to which player are the cards dealt)
      * @param number (number of cards to be dealt)
-     *               The Method also checks if the Deck is empty
+     *               The Method also checks if the main.Deck is empty
      */
     public static void givePlayerDrawCards(Player player, int number) {
         for (int i = 0; i < number; i++) {
@@ -201,8 +203,8 @@ public class Game {
     }
 
     /**
-     * This Method gives TWO penalty card to the Player who forgot to say "UNO" with only one card left in the hand
-     * and the next Player already drew a new card
+     * This Method gives TWO penalty card to the main.Player who forgot to say "UNO" with only one card left in the hand
+     * and the next main.Player already drew a new card
      *
      * @param player who needs to get penalty cards
      */
@@ -215,8 +217,8 @@ public class Game {
     }
 
     /**
-     * This Method gives ONE penalty card to the Player who forgot to say "UNO" with only one card left in the hand
-     * and the next Player did not draw a new card
+     * This Method gives ONE penalty card to the main.Player who forgot to say "UNO" with only one card left in the hand
+     * and the next main.Player did not draw a new card
      *
      * @param player who needs to get penalty card
      */
@@ -227,10 +229,10 @@ public class Game {
 
     /**
      * This Method checks if the card we want to play is appropriate to play
-     * (if the color or the value of this card matches the color or the value of the top card on the discard Deck)
+     * (if the color or the value of this card matches the color or the value of the top card on the discard main.Deck)
      *
      * @param card            we want to play
-     * @param discardDeckCard top card on the discard Deck
+     * @param discardDeckCard top card on the discard main.Deck
      * @returns if the card should be played
      */
     public static boolean cardValidation(Card card, Card discardDeckCard) {
@@ -265,9 +267,9 @@ public class Game {
     }
 
     /**
-     * This Method checks if the main Deck is empty of cards.
-     * If it is, than the discard Deck full with cards becomes the main Deck
-     * and the new discard Deck starts afresh
+     * This Method checks if the main main.Deck is empty of cards.
+     * If it is, than the discard main.Deck full with cards becomes the main main.Deck
+     * and the new discard main.Deck starts afresh
      */
     public static void checkEmptyDeck() {
         if (deck.isEmpty()) {

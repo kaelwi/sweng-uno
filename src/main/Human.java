@@ -1,7 +1,9 @@
+package main;
+
 import java.util.List;
 
 /**
- *  This class creates human players, as an extension of the Player class. Also move and card validation of the current
+ *  This class creates human players, as an extension of the main.Player class. Also move and card validation of the current
  *  turn is done here.
  *
  *  Last Modified: 01.07.2021
