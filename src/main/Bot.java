@@ -19,7 +19,7 @@ public class Bot extends Player {
     }
 
     /**
-     * This Method checks the Player's Cards for an appropriate card to play.
+     * This Method checks the Bot's Cards for an appropriate card to play.
      * If there is such a card, it returns it. If not, it returns null.
      * @param discardDeckCard - the card being on the discard deck right now
      * @returns card - the appropriate card to play or null
@@ -34,12 +34,12 @@ public class Bot extends Player {
     }
 
     /**
-     * This Methods checks if bot has a card to play.
-     * If so, the card is removed from the bot's hand and returned.
-     * If there is no card to play, 1 card is drawn.
+     * This Method removes the card to play from the bot's hand and plays it.
+     * If the bot has no appropriate card to play, 1 card has to be drawn.
+     * The drawn card is checked against the discard deck and played, if possible.
      * The Method also checks if "uno" should be called.
-     * @param discardDeckCard to compare bots' cards in hand with
-     * @return card that is being played
+     * @param discardDeckCard - to compare bots' cards in hand with
+     * @return card  - that is being played
      */
     @Override
     public Card turn(Card discardDeckCard) {
@@ -59,15 +59,16 @@ public class Bot extends Player {
     }
 
     /**
-     * This Method checks if the drawn card can be played. It also allows calling "uno".
-     * @param discardDeckCard to compare the card with the discard deck card
-     * @return card to be played, if possible
+     * This Method checks the drawn card against the discard deck, so that it can be played.
+     * It also allows calling "uno", as per the rules.
+     * @param discardDeckCard - to compare the card with the discard deck card
+     * @returns card - to be played, if possible
      */
     public Card checkDrawnCard(Card discardDeckCard) {
         Card card = getCardToPlay(discardDeckCard);
         if (card != null) {
             removeCardFromHand(card);
-            output.println("I was happy, I can play that card.");
+            output.println("I am happy I can play that card.");
             output.println(card);
             if (checkUno()) {
                 output.println("UNO!");
