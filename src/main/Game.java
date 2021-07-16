@@ -210,7 +210,9 @@ public class Game {
      * @returns               - if the card should be played
      */
     public static boolean cardValidation(Card card, Card discardDeckCard) {
-        return card.getValue().equals(discardDeckCard.getValue()) || card.getColor().equals(discardDeckCard.getColor()) || card.getColor().equals("");
+        return card.getValue().equals(discardDeckCard.getValue())
+                || card.getColor().equals(discardDeckCard.getColor())
+                || card.getColor().equals("");
     }
 
     /**
@@ -267,7 +269,7 @@ public class Game {
         if (cardValidation(card, getDiscardDeck().getDiscardDeckCard())) {
             return true;
         } else {
-            output.println("Invalid move!");
+            output.println("Invalid move! Player " + player.getName() + " draws one penalty card.");
             player.takeCardBack(card);
             giveOnePenaltyCard(player);
             return false;

@@ -47,7 +47,6 @@ public abstract class Player {
 
     /**
      * This Method checks if the card chosen for play is in player's hand.
-     * If so, the player plays the card.
      * @param cardToPlay - card chosen for play
      * @returns the card - a played card
      */
@@ -116,7 +115,7 @@ public abstract class Player {
 
     /**
      * This Method is part of the challenge and checks if the player had a card with the right color to play.
-     * If so, s/he was not allowed to play the "Wild Draw 4" card.
+     * If true, s/he was not allowed to play the "Wild Draw 4" card.
      * @param color - color, for which we search in the player's hand.
      */
     public boolean challengeColorCheck(String color) {

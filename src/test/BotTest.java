@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class BotTest {
 
@@ -29,12 +30,11 @@ public class BotTest {
         assertEquals(card2, bot.getCardToPlay(cardDiscardDeck));
     }
 
-        @Test
+    @Test
     public void testTurn() {
         playerCards.add(card1);
-        playerCards.add(card2);
         playerCards.add(card3);
-        assertEquals(card2, bot.getCardToPlay(cardDiscardDeck));
+        assertNull(bot.getCardToPlay(cardDiscardDeck));
     }
 
     @Test
@@ -52,9 +52,10 @@ public class BotTest {
         assertEquals("G", bot.colorWish());
     }
 
-//    @Test
-//    public void testChallengeWish() {
-//        TODO - testing answer to random number generator
-//        assertEquals("", bot.colorWish());
-//    }
+    @Test
+    public void testChallengeWish() {
+        int random = 4;
+        // TODO - testing answer to random number generator  !!! Doesn't work!
+        assertEquals("N", bot.colorWish());
+    }
 }

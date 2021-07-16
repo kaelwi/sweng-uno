@@ -94,6 +94,11 @@ public class Deck {
         return playerCards;
     }
 
+    /**
+     * it was hard to write
+     * so it should be hard to read !
+     */
+
     public Card getDiscardDeckCard() {
         return cards.get(0);
     }

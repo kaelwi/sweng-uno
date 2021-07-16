@@ -17,6 +17,11 @@ public class Human extends Player {
         super(name, giveCards);
     }
 
+    /**
+     * This Method is not needed for human player, who can consciously choose a card to play.
+     * @param discardDeckCard - last card on the discard deck
+     * @returns - null, the player will independently chose a card to play
+     */
     @Override
     public Card getCardToPlay(Card discardDeckCard) {
         return null;
@@ -54,9 +59,7 @@ public class Human extends Player {
      * @return String - player's input regarding the challenge.
      */
     @Override
-    public String challengeWish() {
-        return input.nextLine();
-    }
+    public String challengeWish() { return input.nextLine(); }
 
     private String[] cleanUserInput() {
         String inputLine = input.nextLine();
