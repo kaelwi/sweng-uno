@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Objects;
+
 /**
  *  Card class to represent all cards of the UNO game.
  *
@@ -87,4 +89,16 @@ public class Card {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return Objects.equals(color, card.color) && Objects.equals(value, card.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, value, points, colorCode);
+    }
 }

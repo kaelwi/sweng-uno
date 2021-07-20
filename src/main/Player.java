@@ -65,7 +65,7 @@ public abstract class Player {
             Card cardOnHand = it.next();
             if (cardOnHand.getColorValue().equals(cardToPlay)) {
                 foundCard = cardOnHand;
-                it.remove();
+                // it.remove();
                 break;
             } else {
                 foundCard = null;

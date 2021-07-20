@@ -67,8 +67,8 @@ public class Human extends Player {
         return inputLine.split(" ");
     }
 
-    private Card moveValidation(String[] input) {
-        switch (input[0]) {
+    private Card moveValidation(String[] userInput) {
+        switch (userInput[0]) {
             case "help":
                 Printer.printHelp();
                 return moveValidation(cleanUserInput());
@@ -90,25 +90,28 @@ public class Human extends Player {
             case "skip":
                 return null;
             default:
-                return cardValidation(input);
+                return cardValidation(userInput);
         }
     }
 
-    private Card cardValidation(String[] input) {
+    private Card cardValidation(String[] userInput) {
         boolean valid = false;
         Card cardToBeChecked;
+        String[] inputToBeChecked = userInput;
         do {
-            cardToBeChecked = isCardOnHand(input[0]);
+            cardToBeChecked = isCardOnHand(inputToBeChecked[0]);
 
             if (cardToBeChecked == null) {
+                output.println(inputToBeChecked[0]);
                 Printer.noSuchCardOnHand();
-                input = cleanUserInput();
-                if (moveValidation(input) == null) {
+                inputToBeChecked = cleanUserInput();
+                // if (moveValidation(inputToBeChecked) == null) {
+                if (inputToBeChecked[0].equals("skip") || inputToBeChecked[0].equals("exit")) {
                     valid = true;
                 }
             } else {
                 valid = true;
-                printMove(input);
+                printMove(inputToBeChecked);
                 removeCardFromHand(cardToBeChecked);
             }
         } while (!valid);
