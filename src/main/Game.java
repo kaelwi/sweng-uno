@@ -345,10 +345,11 @@ public class Game {
                     output.println("You were right, the last player tried to cheat!");
                     int turn = getPredecessor();
                     givePlayerDrawCards(getPlayer(turn), 6);
+                } else {
+                    output.println("You still have to take 4 cards...");
+                    givePlayerDrawCards(getPlayer(getTurn()), 4);
+                    setTurn(getTurn() + getReverse());
                 }
-            } else {
-                givePlayerDrawCards(getPlayer(getTurn()), 4);
-                setTurn(getTurn() + getReverse());
             }
         }
     }

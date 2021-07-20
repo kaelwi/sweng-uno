@@ -102,8 +102,10 @@ public class Bot extends Player {
     public String challengeWish() {
         int random = new Random().nextInt(11);
         if (random < 5) {
+            output.println("N");
             return "N";
         } else {
+            output.println("Y");
             return "Y";
         }
     }
@@ -113,6 +115,9 @@ public class Bot extends Player {
      */
     @Override
     public void printCards() {
-        output.println("Don't be so curious....");
+        // output.println("Don't be so curious....");
+        for (int i = 0; i < getPlayerCards().size(); i++) {
+            output.print(getPlayerCards().get(i) + ", ");
+        }
     }
 }
