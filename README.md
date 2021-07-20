@@ -1,6 +1,6 @@
 # UNO
 
-Gruppenprojekt für Projekt I+II.
+Gruppenarbeit für Projekt I+II.
 
 ## Roadmap:
 
