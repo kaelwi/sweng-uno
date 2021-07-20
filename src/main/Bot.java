@@ -117,7 +117,7 @@ public class Bot extends Player {
     public void printCards() {
         // output.println("Don't be so curious....");
         for (int i = 0; i < getPlayerCards().size(); i++) {
-            output.print(getPlayerCards().get(i) + ", ");
+            output.print("[], ");
         }
     }
 }
