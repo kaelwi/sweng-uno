@@ -128,8 +128,9 @@ public class Human extends Player {
 
     @Override
     public void printCards() {
-        for (int i = 0; i < getPlayerCards().size(); i++) {
+        for (int i = 0; i < getPlayerCards().size()-1; i++) {
             output.print(getPlayerCards().get(i) + ", ");
         }
+        output.print(getPlayerCards().get(getPlayerCards().size()-1));
     }
 }
