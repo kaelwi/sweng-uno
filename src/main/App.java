@@ -63,6 +63,7 @@ public class App {
                 }
             }
 
+            player.setCanDraw(true);
             Game.doChecks(beginning);
             checkWinner(player);
         }

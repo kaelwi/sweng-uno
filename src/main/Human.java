@@ -79,8 +79,13 @@ public class Human extends Player {
                 App.exit = true;
                 return null;
             case "draw":
-                Game.givePlayerDrawCards(this, 1);
-                Printer.printPlayerCards(this);
+                if (this.getCanDraw()) {
+                    Game.givePlayerDrawCards(this, 1);
+                    Printer.printPlayerCards(this);
+                    this.setCanDraw(false);
+                } else {
+                    output.println("You already took a card! If there is still no card to play, type \"skip\".");
+                }
                 return moveValidation(cleanUserInput());
             case "skip":
                 return null;

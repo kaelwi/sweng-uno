@@ -20,6 +20,7 @@ public abstract class Player {
     private int points;
     protected Scanner input = new Scanner(System.in);
     protected final PrintStream output = System.out;
+    protected boolean canDraw = true;
 
     public Player(String name, List<Card> playerCards) {
         this.name = name;
@@ -31,6 +32,13 @@ public abstract class Player {
         this.playerCards = playerCards;
     }
 
+    public boolean getCanDraw() {
+        return canDraw;
+    }
+
+    public void setCanDraw(boolean canDraw) {
+        this.canDraw = canDraw;
+    }
 
     public List<Card> getPlayerCards() {
         return playerCards;
