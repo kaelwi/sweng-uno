@@ -118,7 +118,7 @@ public class Human extends Player {
     private void printMove(String[] input) {
         if (checkUno() && (input.length < 2 || !input[1].equalsIgnoreCase("UNO"))) {
             output.println("Oh no, you forgot to shout uno...");
-            Game.missingUnoPenalty(this);
+            Game.giveOnePenaltyCard(this);
         } else if (checkUno() && input[1].equals("UNO")) {
             output.println(input[0] + " " + input[1]);
         } else {

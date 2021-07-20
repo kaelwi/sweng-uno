@@ -181,18 +181,6 @@ public class Game {
     }
 
     /**
-     * This Method gives TWO penalty cards to the Player who forgot to say "UNO"
-     * with only one card left in the hand, ins situation when the next Player already drew a new card
-     * @param player - player who gets the penalty cards
-     */
-    public static void missingUnoPenalty(Player player) {
-        for (int i = 0; i < 2; i++) {
-            player.takeCards(getDeck().takeCards(1));
-            checkEmptyDeck();
-        }
-    }
-
-    /**
      * This Method gives ONE penalty card to the Player who forgot to say "UNO"
      * with only one card left in the hand in the situation when the next Player did not draw a new card.
      * @param player - player who gets a penalty card
