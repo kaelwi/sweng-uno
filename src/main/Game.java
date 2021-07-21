@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  *  This class implements most of the game logic. It works mostly as a dealer and rule checker.
@@ -113,16 +114,29 @@ public class Game {
     }
 
     private static int checkNrBots() {
-        int bots = Integer.parseInt(input.nextLine());
+        int bots = Integer.parseInt(getNumberFromInput());
+
         while (bots < 0 || bots > 4) {
             if (bots > 4) {
                 output.println("The maximum number of allowed players is 4!");
             } else {
                 output.println("You know you need at least 1 player...");
             }
-            bots = Integer.parseInt(input.nextLine());
+            bots = Integer.parseInt(getNumberFromInput());
         }
         return bots;
+    }
+
+    private static String getNumberFromInput() {
+        Pattern pattern = Pattern.compile("\\d+");
+        String number = input.nextLine();
+
+        while(!pattern.matcher(number).matches()) {
+            output.println("Please enter a valid number.");
+            number = input.nextLine();
+        }
+
+        return number;
     }
 
     public static Deck getDeck() {
