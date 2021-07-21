@@ -331,7 +331,7 @@ public class Game {
             output.println("You have to take 4 cards!");
             output.println("Dou you want to challenge the last player? (Y/N)");
             String challenge = getPlayer(getTurn()).challengeWish();
-            if (challenge.equals("Y")) {
+            if (challenge.equalsIgnoreCase("Y")) {
                 if (challenge()) {
                     output.println("You were right, the last player tried to cheat!");
                     int turn = getPredecessor();
