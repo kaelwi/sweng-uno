@@ -304,7 +304,7 @@ public class Game {
 
     private static void doOtherChecks() {
         turnOverflow();
-        if (getPlayer(getPredecessor()).getPlayed() || getPlayer(getTurn()).getPlayed()) {
+        if (getPlayer(getPredecessor()).getPlayed()) {
             actionAlreadyPlayed = false;
         }
         checkStop();
