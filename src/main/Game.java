@@ -269,7 +269,7 @@ public class Game {
      * @param beginning - turn reversed if a special card gets on the discard deck on the very beginning.
      */
     public static void doChecks(boolean beginning) {
-        checkReverse();
+        checkReverse(beginning);
         checkColorChange();
         if (!beginning) {
             setTurn(getTurn() + getReverse());
@@ -277,11 +277,11 @@ public class Game {
         doOtherChecks();
     }
 
-    private static void checkReverse() {
+    private static void checkReverse(boolean beginning) {
         if (getDiscardDeck().checkReverse()) {
             setReverse();
         }
-        if (getDiscardDeck().getCards().size() == 1) {
+        if (beginning) {
             setTurn(getTurn()+getReverse());
         }
     }
