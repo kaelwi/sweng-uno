@@ -1,7 +1,8 @@
 # UNO
 
-Gruppenarbeit für Projekt I+II. 
-UNO mit Datenbank Einbindung programmiert in Java.
+Gruppenarbeit für Projekt I+II.<br>
+UNO mit Datenbank Einbindung programmiert in Java.<br>
+Aufgaben: Programmieren, Testen, Dokumentieren.
 
 ## Roadmap:
 
