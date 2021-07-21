@@ -89,6 +89,7 @@ public class App {
                 Printer.startingNewRound();
                 Printer.whoBegins(Game.getPlayer(Game.getTurn()));
                 Game.doChecks(beginning);
+                beginning = false;
                 // Game.checkStartingColor();
             }
         }
