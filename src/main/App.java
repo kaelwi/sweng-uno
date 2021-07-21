@@ -84,10 +84,12 @@ public class App {
             Printer.printEndRound();
             exit = checkOverallWinner(Game.getPlayers());
             if (!exit) {
+                beginning = true;
                 Game.newRound();
                 Printer.startingNewRound();
                 Printer.whoBegins(Game.getPlayer(Game.getTurn()));
-                Game.checkStartingColor();
+                Game.doChecks(beginning);
+                // Game.checkStartingColor();
             }
         }
     }
