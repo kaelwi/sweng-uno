@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 
 public abstract class Player {
+
     private final String name;
     private List<Card> playerCards;
     private int points;

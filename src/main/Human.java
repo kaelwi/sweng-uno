@@ -124,6 +124,8 @@ public class Human extends Player {
             removeCardFromHand(cardToBeChecked);
         }
 
+
+
         return cardToBeChecked;
     }
 

@@ -83,13 +83,13 @@ public class Printer {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+                output.println(line);
             }
             bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Everything clear? Let's move on, you still have a turn to play!");
+        output.println("Everything clear? Let's move on, you still have a turn to play!");
     }
 
     public static void noSuchCardOnHand() {

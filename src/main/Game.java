@@ -305,7 +305,8 @@ public class Game {
     }
 
     private static void checkStop() {
-        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X") && getDiscardDeck().getDiscardDeckCard().getPoints() != -1) {
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X")
+                && getDiscardDeck().getDiscardDeckCard().getPoints() != -1) {
             Printer.printState(App.exit, getDiscardDeck().getDiscardDeckCard());
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("Stop! You are not allowed to play!");
