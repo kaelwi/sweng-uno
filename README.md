@@ -1,6 +1,7 @@
 # UNO
 
-Gruppenarbeit für Projekt I+II.
+Gruppenarbeit für Projekt I+II. 
+UNO mit Datenbank Einbindung programmiert in Java.
 
 ## Roadmap:
 
