@@ -51,7 +51,7 @@ public class Human extends Player {
             color = input.nextLine();
             rightInput = isRightInput(color);
         } while (!rightInput);
-        return color;
+        return color.toUpperCase();
     }
 
     /**

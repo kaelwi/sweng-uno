@@ -150,6 +150,7 @@ public abstract class Player {
      * @returns boolean - information if the color is valid.
      */
     public boolean isRightInput(String color) {
+        color = color.toUpperCase();
         for (int i = 0; i < Card.getAllColors().length-1; i++) {
             if (color.equals(Card.getAllColors()[i])) {
                 return true;
