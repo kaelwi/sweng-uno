@@ -270,15 +270,16 @@ public class Game {
      * @param beginning - turn reversed if a special card gets on the discard deck on the very beginning.
      */
     public static void doChecks(boolean beginning) {
+        if (getPlayer(getPredecessor()).getPlayed()) {
+            actionAlreadyPlayed = false;
+        }
         checkReverse(beginning);
         checkColorChange();
         if (!beginning) {
             setTurn(getTurn() + getReverse());
         }
         doOtherChecks();
-        if (getPlayer(getPredecessor()).getPlayed() || getPlayer(getTurn()).getPlayed()) {
-            actionAlreadyPlayed = false;
-        }
+
     }
 
     private static void checkReverse(boolean beginning) {
@@ -303,6 +304,9 @@ public class Game {
 
     private static void doOtherChecks() {
         turnOverflow();
+        if (getPlayer(getPredecessor()).getPlayed() || getPlayer(getTurn()).getPlayed()) {
+            actionAlreadyPlayed = false;
+        }
         checkStop();
         checkTakeTwo();
         checkTakeFour();
@@ -312,6 +316,7 @@ public class Game {
     private static void checkStop() {
         if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X") && !actionAlreadyPlayed) {
             actionAlreadyPlayed = true;
+            getPlayer(getTurn()).setPlayed(false);
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard(), getPlayer(getTurn()).getPlayed(), false);
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("Stop! You are not allowed to play!");
@@ -322,6 +327,7 @@ public class Game {
     private static void checkTakeTwo() {
         if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2") && !actionAlreadyPlayed) {
             actionAlreadyPlayed = true;
+            getPlayer(getTurn()).setPlayed(false);
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard(), getPlayer(getTurn()).getPlayed(), false);
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 2 cards!");

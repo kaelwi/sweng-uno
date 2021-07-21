@@ -61,6 +61,10 @@ public class Printer {
             if (reverse && (played || beginning)) {
                 output.println("Reverse-Card has been played! Reverse direction...\n");
             }
+
+            if (reverse && beginning) {
+                output.println("Reverse-Card at the beginning! The originally last player is starting this round.");
+            }
         }
     }
 
