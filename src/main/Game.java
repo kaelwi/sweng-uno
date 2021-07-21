@@ -281,6 +281,9 @@ public class Game {
         if (getDiscardDeck().checkReverse()) {
             setReverse();
         }
+        if (getDiscardDeck().getCards().size() == 1) {
+            setTurn(getTurn()+getReverse());
+        }
     }
 
     private static void checkColorChange() {
