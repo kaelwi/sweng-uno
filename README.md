@@ -1,6 +1,7 @@
 # UNO
 
 Gruppenarbeit für Projekt I+II.<br>
+52 Detail Anforderungen.
 UNO mit Datenbank Einbindung programmiert in Java.<br>
 Aufgaben: Programmieren, Testen, Dokumentieren.<br>
 <br>
