@@ -2,7 +2,21 @@
 
 Gruppenarbeit für Projekt I+II.<br>
 UNO mit Datenbank Einbindung programmiert in Java.<br>
-Aufgaben: Programmieren, Testen, Dokumentieren.
+Aufgaben: Programmieren, Testen, Dokumentieren.<br>
+<br>
+
+Struktur:
+- Main (startet App)
+- App (initialisiert das Game, beinhaltet eine Game Loop, read User Input, Update State and Check Winner)
+- Game (Game-Logik und Aufsetzen des Spiels)
+- Card (selbsterklärend - eine Klasse für die Karten-Objekte)
+- Deck (für Ziehstapel und Ablegestapel)
+- Player (abstrakte Klasse)
+- Human und Bot (abgeleitete Klassen von Player)
+- Printer (weil zu viele Ausgaben die anderen Klassen zu unübersichtlich gemacht haben...)
+- DBManager für das Verbinden mit der Datenbank und die Hanhabung der SQL Statements)
+
+Das Projekt beinhaltet weiters eine help.txt Datei, es wird im Root Verzeichnis des Projekts die Datenbank angelegt und es gibt einen Test-Folder (für Gruppe zum Kennenlernen, Tests nicht vollständig).
 
 ## Roadmap:
 
