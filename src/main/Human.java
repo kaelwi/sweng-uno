@@ -114,7 +114,6 @@ public class Human extends Player {
                 output.println(inputToBeChecked[0]);
                 Printer.noSuchCardOnHand();
                 inputToBeChecked = cleanUserInput();
-                // if (moveValidation(inputToBeChecked) == null) {
                 if (inputToBeChecked[0].equalsIgnoreCase("skip") || inputToBeChecked[0].equalsIgnoreCase("exit") || inputToBeChecked[0].equalsIgnoreCase("draw")) {
                     valid = true;
                 }

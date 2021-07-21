@@ -332,15 +332,7 @@ public class Game {
             output.println("Dou you want to challenge the last player? (Y/N)");
             String challenge = getPlayer(getTurn()).challengeWish();
             if (challenge.equalsIgnoreCase("Y")) {
-                if (challenge()) {
-                    output.println("You were right, the last player tried to cheat!");
-                    int turn = getPredecessor();
-                    givePlayerDrawCards(getPlayer(turn), 6);
-                } else {
-                    output.println("You still have to take 4 cards...");
-                    givePlayerDrawCards(getPlayer(getTurn()), 4);
-                    setTurn(getTurn() + getReverse());
-                }
+                challengeAction();
             } else {
                 givePlayerDrawCards(getPlayer(getTurn()), 4);
                 setTurn(getTurn() + getReverse());
@@ -352,7 +344,19 @@ public class Game {
      * This Method checks if a player was allowed to play the "Wild Draw 4" card.
      * @returns boolean - true if the challenge is justified and the player had another card that they could play.
      */
-    public static boolean challenge() {
+    private static boolean challenge() {
         return getPlayer(getPredecessor()).challengeColorCheck(discardDeck.getCardBeforeWild().getColor());
+    }
+
+    private static void challengeAction() {
+        if (challenge()) {
+            output.println("You were right, the last player tried to cheat!");
+            int turn = getPredecessor();
+            givePlayerDrawCards(getPlayer(turn), 6);
+        } else {
+            output.println("You still have to take 4 cards...");
+            givePlayerDrawCards(getPlayer(getTurn()), 4);
+            setTurn(getTurn() + getReverse());
+        }
     }
 }
