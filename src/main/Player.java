@@ -21,20 +21,11 @@ public abstract class Player {
     protected Scanner input = new Scanner(System.in);
     protected final PrintStream output = System.out;
     protected boolean canDraw = true;
-    protected boolean played = false;
 
     public Player(String name, List<Card> playerCards) {
         this.name = name;
         this.playerCards = playerCards;
         this.points = 0;
-    }
-
-    public boolean getPlayed() {
-        return played;
-    }
-
-    public void setPlayed(boolean played) {
-        this.played = played;
     }
 
     public void setPlayerCards(List<Card> playerCards) {

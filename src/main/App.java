@@ -60,7 +60,6 @@ public class App {
             if (card != null) {
                 if (Game.moveValidation(card, player)) {
                     Game.getDiscardDeck().addCardToDiscardDeck(card);
-                    player.setPlayed(true);
                 }
             } else {
                 Card helperCard = new Card(Game.getDiscardDeck().getDiscardDeckCard().getColor(), Game.getDiscardDeck().getDiscardDeckCard().getValue(), -1, Game.getDiscardDeck().getDiscardDeckCard().getColorCode());
