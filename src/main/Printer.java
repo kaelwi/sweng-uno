@@ -53,16 +53,16 @@ public class Printer {
         output.println();
     }
 
-    public static void printState(boolean exit, boolean reverse, Card card, boolean played, boolean beginning) {
+    public static void printState(boolean exit, Card card, boolean beginning) {
         output.println();
         if (!exit) {
             output.println("Open card deck: " + card);
             output.println();
-            if (reverse && (played || beginning)) {
+            if (card.getValue().equals("<->") && card.getPoints() != -1) {
                 output.println("Reverse-Card has been played! Reverse direction...\n");
             }
 
-            if (reverse && beginning) {
+            if (card.getValue().equals("<->") && card.getPoints() != -1 && beginning) {
                 output.println("Reverse-Card at the beginning! The originally last player is starting this round.");
             }
         }

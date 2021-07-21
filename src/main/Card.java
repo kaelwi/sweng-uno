@@ -74,6 +74,10 @@ public class Card {
         return points;
     }
 
+    public String getColorCode() {
+        return colorCode;
+    }
+
     public static String checkColorCode(String color){
         switch (color){
             case "R":

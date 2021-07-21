@@ -29,12 +29,12 @@ public class App {
 
     public void Run() {
         initialize();
-        Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard(), Game.getPlayer(Game.getTurn()).getPlayed(), beginning);
+        Printer.printState(exit, Game.getDiscardDeck().getDiscardDeckCard(), beginning);
 
         while (!exit) {
             Printer.printPlayerCards(Game.getPlayer(Game.getTurn()));
             readUserInput(Game.getPlayer(Game.getTurn()));
-            Printer.printState(exit, Game.getDiscardDeck().checkReverse(), Game.getDiscardDeck().getDiscardDeckCard(), Game.getPlayer(Game.getTurn()).getPlayed(), beginning);
+            Printer.printState(exit, Game.getDiscardDeck().getDiscardDeckCard(), beginning);
         }
     }
 
@@ -63,6 +63,8 @@ public class App {
                     player.setPlayed(true);
                 }
             } else {
+                Card helperCard = new Card(Game.getDiscardDeck().getDiscardDeckCard().getColor(), Game.getDiscardDeck().getDiscardDeckCard().getValue(), -1, Game.getDiscardDeck().getDiscardDeckCard().getColorCode());
+                Game.getDiscardDeck().addCardToDiscardDeck(helperCard);
                 player.setPlayed(false);
             }
 
