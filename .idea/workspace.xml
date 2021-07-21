@@ -50,7 +50,20 @@
       <recent name="C:\Users\karol\Desktop\uno" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.BotTest">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="uno" />
@@ -64,15 +77,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+    <configuration name="BotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uno" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BotTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uno" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CardTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,39 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeckTest.testGetCardToPlay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uno" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.DeckTest" />
-      <option name="METHOD_NAME" value="testGetCardToPlay" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeckTest.testGiveCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uno" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.DeckTest" />
-      <option name="METHOD_NAME" value="testGiveCards" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HumanTest.testChallengeColorCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HumanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uno" />
       <extension name="coverage">
         <pattern>
@@ -135,19 +133,18 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.HumanTest" />
-      <option name="METHOD_NAME" value="testChallengeColorCheck" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BotTest" />
+        <item itemvalue="JUnit.CardTest" />
+        <item itemvalue="JUnit.HumanTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DeckTest.testAddCardToDiscardDeck" />
-        <item itemvalue="JUnit.DeckTest.testGiveCards" />
-        <item itemvalue="JUnit.DeckTest.testGetCardToPlay" />
-        <item itemvalue="JUnit.HumanTest.testChallengeColorCheck" />
       </list>
     </recent_temporary>
   </component>

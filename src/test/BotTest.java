@@ -52,10 +52,4 @@ public class BotTest {
         assertEquals("G", bot.colorWish());
     }
 
-    @Test
-    public void testChallengeWish() {
-        int random = 4;
-        // TODO - testing answer to random number generator  !!! Doesn't work!
-        assertEquals("N", bot.colorWish());
-    }
 }
