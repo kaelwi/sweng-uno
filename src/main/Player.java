@@ -63,7 +63,7 @@ public abstract class Player {
         Iterator<Card> it = this.getPlayerCards().iterator();
         while (it.hasNext()) {
             Card cardOnHand = it.next();
-            if (cardOnHand.getColorValue().equals(cardToPlay)) {
+            if (cardOnHand.getColorValue().equals(cardToPlay.toUpperCase())) {
                 foundCard = cardOnHand;
                 // it.remove();
                 break;

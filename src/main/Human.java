@@ -68,7 +68,8 @@ public class Human extends Player {
     }
 
     private Card moveValidation(String[] userInput) {
-        switch (userInput[0]) {
+        String input = userInput[0].toLowerCase();
+        switch (input) {
             case "help":
                 Printer.printHelp();
                 return moveValidation(cleanUserInput());
@@ -106,7 +107,7 @@ public class Human extends Player {
                 Printer.noSuchCardOnHand();
                 inputToBeChecked = cleanUserInput();
                 // if (moveValidation(inputToBeChecked) == null) {
-                if (inputToBeChecked[0].equals("skip") || inputToBeChecked[0].equals("exit")) {
+                if (inputToBeChecked[0].equalsIgnoreCase("skip") || inputToBeChecked[0].equalsIgnoreCase("exit")) {
                     valid = true;
                 }
             } else {
