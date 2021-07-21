@@ -30,6 +30,7 @@ public class App {
     public void Run() {
         initialize();
         Printer.printState(exit, Game.getDiscardDeck().getDiscardDeckCard(), beginning);
+        beginning = false;
 
         while (!exit) {
             Printer.printPlayerCards(Game.getPlayer(Game.getTurn()));
@@ -44,7 +45,6 @@ public class App {
         Printer.printBegin(Game.getPlayers());
         Printer.whoBegins(Game.getPlayer(Game.getTurn()));
         Game.doChecks(beginning);
-        beginning = false;
     }
 
     private void readUserInput(Player player) {
