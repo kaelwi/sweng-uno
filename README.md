@@ -72,7 +72,7 @@ See Testreport ().
 
 This game is based on the official UNO rules. For more information see: https://www.uno-kartenspiel.de/spielregeln/
 
-There are however a few modifications, e.g. the rule for noticing another player has forgot to shout UNO is not included (if you forget to shout UNO, you automatically get 1 penalty card).
+There are however a few modifications, e.g. the rule for noticing another player has forgotten to shout UNO is not included (if you forget to shout UNO, you automatically get 1 penalty card).
 
 This game is made for exactly 4 players. You can choose how many of them shall be bots and how many human.
 
