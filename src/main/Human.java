@@ -80,13 +80,7 @@ public class Human extends Player {
                 App.exit = true;
                 return null;
             case "draw":
-                if (this.getCanDraw()) {
-                    Game.givePlayerDrawCards(this, 1);
-                    Printer.printPlayerCards(this);
-                    this.setCanDraw(false);
-                } else {
-                    output.println("You already took a card! If there is still no card to play, type \"skip\".");
-                }
+                drawFunction();
                 return moveValidation(cleanUserInput());
             case "skip":
                 if (this.getCanDraw()) {
@@ -96,6 +90,16 @@ public class Human extends Player {
                 return null;
             default:
                 return cardValidation(userInput);
+        }
+    }
+
+    private void drawFunction() {
+        if (this.getCanDraw()) {
+            Game.givePlayerDrawCards(this, 1);
+            Printer.printPlayerCards(this);
+            this.setCanDraw(false);
+        } else {
+            output.println("You already took a card! If there is still no card to play, type \"skip\".");
         }
     }
 
@@ -111,9 +115,10 @@ public class Human extends Player {
                 Printer.noSuchCardOnHand();
                 inputToBeChecked = cleanUserInput();
                 // if (moveValidation(inputToBeChecked) == null) {
-                if (inputToBeChecked[0].equalsIgnoreCase("skip") || inputToBeChecked[0].equalsIgnoreCase("exit")) {
+                if (inputToBeChecked[0].equalsIgnoreCase("skip") || inputToBeChecked[0].equalsIgnoreCase("exit") || inputToBeChecked[0].equalsIgnoreCase("draw")) {
                     valid = true;
                 }
+
             } else {
                 valid = true;
                 removeCardFromHand(cardToBeChecked);
@@ -121,6 +126,10 @@ public class Human extends Player {
                 removeCardFromHand(cardToBeChecked);
             }
         } while (!valid);
+        if (inputToBeChecked[0].equalsIgnoreCase("draw")) {
+            drawFunction();
+            return moveValidation(cleanUserInput());
+        }
         return cardToBeChecked;
     }
 
