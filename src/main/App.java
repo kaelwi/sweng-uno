@@ -29,13 +29,12 @@ public class App {
 
     public void Run() {
         initialize();
-        Printer.printState(exit, Game.getDiscardDeck().getDiscardDeckCard(), beginning);
-        beginning = false;
+        Printer.printState(exit, Game.getDiscardDeck().getDiscardDeckCard());
 
         while (!exit) {
             Printer.printPlayerCards(Game.getPlayer(Game.getTurn()));
             readUserInput(Game.getPlayer(Game.getTurn()));
-            Printer.printState(exit, Game.getDiscardDeck().getDiscardDeckCard(), beginning);
+            Printer.printState(exit, Game.getDiscardDeck().getDiscardDeckCard());
         }
     }
 
@@ -45,6 +44,7 @@ public class App {
         Printer.printBegin(Game.getPlayers());
         Printer.whoBegins(Game.getPlayer(Game.getTurn()));
         Game.doChecks(beginning);
+        beginning = false;
     }
 
     private void readUserInput(Player player) {
