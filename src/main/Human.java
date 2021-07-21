@@ -83,14 +83,18 @@ public class Human extends Player {
                 drawFunction();
                 return moveValidation(cleanUserInput());
             case "skip":
-                if (this.getCanDraw()) {
-                    output.println("Don't you dare to skip without drawing a card!");
-                    return moveValidation(cleanUserInput());
-                }
-                return null;
+                return skipFunction();
             default:
                 return cardValidation(userInput);
         }
+    }
+
+    private Card skipFunction() {
+        if (this.getCanDraw()) {
+            output.println("Don't you dare to skip without drawing a card!");
+            return moveValidation(cleanUserInput());
+        }
+        return null;
     }
 
     private void drawFunction() {
@@ -104,31 +108,22 @@ public class Human extends Player {
     }
 
     private Card cardValidation(String[] userInput) {
-        boolean valid = false;
         Card cardToBeChecked;
         String[] inputToBeChecked = userInput;
-        do {
-            cardToBeChecked = isCardOnHand(inputToBeChecked[0]);
 
-            if (cardToBeChecked == null) {
-                output.println(inputToBeChecked[0]);
-                Printer.noSuchCardOnHand();
-                inputToBeChecked = cleanUserInput();
-                if (inputToBeChecked[0].equalsIgnoreCase("skip") || inputToBeChecked[0].equalsIgnoreCase("exit") || inputToBeChecked[0].equalsIgnoreCase("draw")) {
-                    valid = true;
-                }
+        cardToBeChecked = isCardOnHand(inputToBeChecked[0]);
 
-            } else {
-                valid = true;
-                removeCardFromHand(cardToBeChecked);
-                printMove(inputToBeChecked);
-                removeCardFromHand(cardToBeChecked);
-            }
-        } while (!valid);
-        if (inputToBeChecked[0].equalsIgnoreCase("draw")) {
-            drawFunction();
-            return moveValidation(cleanUserInput());
+        if (cardToBeChecked == null) {
+            output.println(inputToBeChecked[0]);
+            Printer.noSuchCardOnHand();
+            inputToBeChecked = cleanUserInput();
+            return moveValidation(inputToBeChecked);
+        } else {
+            removeCardFromHand(cardToBeChecked);
+            printMove(inputToBeChecked);
+            removeCardFromHand(cardToBeChecked);
         }
+
         return cardToBeChecked;
     }
 
