@@ -64,3 +64,5 @@ Available commands:
 - status
 - CardColor + CardValue (e.g. R8)
 
+For more information see help.txt
+
