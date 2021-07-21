@@ -89,6 +89,10 @@ public class Human extends Player {
                 }
                 return moveValidation(cleanUserInput());
             case "skip":
+                if (this.getCanDraw()) {
+                    output.println("Don't you dare to skip without drawing a card!");
+                    return moveValidation(cleanUserInput());
+                }
                 return null;
             default:
                 return cardValidation(userInput);

@@ -65,7 +65,6 @@ public class App {
             } else {
                 Card helperCard = new Card(Game.getDiscardDeck().getDiscardDeckCard().getColor(), Game.getDiscardDeck().getDiscardDeckCard().getValue(), -1, Game.getDiscardDeck().getDiscardDeckCard().getColorCode());
                 Game.getDiscardDeck().addCardToDiscardDeck(helperCard);
-                player.setPlayed(false);
             }
 
             player.setCanDraw(true);

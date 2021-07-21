@@ -25,7 +25,6 @@ public class Game {
     private static int turn = setFirst();
     private static int reverse = 1;
     private static boolean alreadyChallenged = false;
-    private static boolean actionAlreadyPlayed = false;
 
     /**
      * This Method fills the Deck with all the cards and shuffles them.
@@ -270,16 +269,12 @@ public class Game {
      * @param beginning - turn reversed if a special card gets on the discard deck on the very beginning.
      */
     public static void doChecks(boolean beginning) {
-        if (getPlayer(getPredecessor()).getPlayed()) {
-            actionAlreadyPlayed = false;
-        }
         checkReverse(beginning);
         checkColorChange();
         if (!beginning) {
             setTurn(getTurn() + getReverse());
         }
         doOtherChecks();
-
     }
 
     private static void checkReverse(boolean beginning) {
@@ -288,7 +283,6 @@ public class Game {
             if (beginning) {
                 setTurn(getTurn()+getReverse());
             }
-            actionAlreadyPlayed = true;
         }
     }
 
@@ -304,9 +298,6 @@ public class Game {
 
     private static void doOtherChecks() {
         turnOverflow();
-        if (getPlayer(getPredecessor()).getPlayed()) {
-            actionAlreadyPlayed = false;
-        }
         checkStop();
         checkTakeTwo();
         checkTakeFour();
@@ -315,8 +306,6 @@ public class Game {
 
     private static void checkStop() {
         if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X") && getDiscardDeck().getDiscardDeckCard().getPoints() != -1) {
-            actionAlreadyPlayed = true;
-            getPlayer(getTurn()).setPlayed(false);
             Printer.printState(App.exit, getDiscardDeck().getDiscardDeckCard(), false);
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("Stop! You are not allowed to play!");
@@ -326,8 +315,6 @@ public class Game {
 
     private static void checkTakeTwo() {
         if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2") && getDiscardDeck().getDiscardDeckCard().getPoints() != -1) {
-            actionAlreadyPlayed = true;
-            getPlayer(getTurn()).setPlayed(false);
             Printer.printState(App.exit, getDiscardDeck().getDiscardDeckCard(), false);
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 2 cards!");
