@@ -6,7 +6,7 @@ import java.util.List;
  *  This class creates human players, as an extension of the Player class. Also move and card validation of the current
  *  turn is done here.
  *
- *  Last Modified: 01.07.2021
+ *  Last Modified: 21.07.2021
  *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild

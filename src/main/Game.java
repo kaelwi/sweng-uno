@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  *  This class implements most of the game logic. It works mostly as a dealer and rule checker.
  *
- *  Last Modified: 01.07.2021
+ *  Last Modified: 21.07.2021
  *  @author  Julia Summer
  *           Paulina Safar
  *           Karoline E. Wild

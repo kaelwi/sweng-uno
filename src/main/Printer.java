@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  *  Printer class. A helper class to keep the code clean from bigger console outputs.
  *
- *  Last Modified: 01.07.2021
+ *  Last Modified: 21.07.2021
  *  @author  Paulina Safar
  *           Julia Summer
  *           Karoline E. Wild
