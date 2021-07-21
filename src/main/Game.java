@@ -25,6 +25,7 @@ public class Game {
     private static int turn = setFirst();
     private static int reverse = 1;
     private static boolean alreadyChallenged = false;
+    private static boolean alreadyTakenTwo = false;
 
     /**
      * This Method fills the Deck with all the cards and shuffles them.
@@ -314,7 +315,8 @@ public class Game {
     }
 
     private static void checkTakeTwo() {
-        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2")) {
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2") && !alreadyTakenTwo) {
+            alreadyTakenTwo = true;
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 2 cards!");
