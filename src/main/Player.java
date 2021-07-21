@@ -61,12 +61,9 @@ public abstract class Player {
      */
     public Card isCardOnHand(String cardToPlay) {
         Card foundCard = new Card();
-        Iterator<Card> it = this.getPlayerCards().iterator();
-        while (it.hasNext()) {
-            Card cardOnHand = it.next();
+        for (Card cardOnHand : this.getPlayerCards()) {
             if (cardOnHand.getColorValue().equals(cardToPlay.toUpperCase())) {
                 foundCard = cardOnHand;
-                // it.remove();
                 break;
             } else {
                 foundCard = null;
@@ -98,7 +95,6 @@ public abstract class Player {
     public void setPoints(int points) {
         this.points = points;
     }
-
 
     /**
      * This Method removes a specific card from the Player's hand.
@@ -161,6 +157,4 @@ public abstract class Player {
     public abstract String challengeWish();
 
     public abstract void printCards();
-
-
 }

@@ -74,7 +74,6 @@ public class Printer {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
     }
 
     public static void printHelp() {
@@ -94,7 +93,8 @@ public class Printer {
 
     public static void noSuchCardOnHand() {
         output.println("It seems there is no such card on your hand...");
-        output.println("Or did you enter an unknown command? Available commands are: skip, draw, exit, help, status or a card color+value from your hand.");
+        output.println("Or did you enter an unknown command? Available commands are: skip, draw, exit, " +
+                "help, status or a card color+value from your hand.");
         output.println();
         output.println("Which card do you want to play?");
     }

@@ -68,19 +68,6 @@ public class Game {
         }
     }
 
-    /**
-     * This Method checks the color of the first card on the discard deck.
-     * If the card is a "Wild Card", last player must choose the color to be played onwards.
-     */
-    public static void checkStartingColor() {
-        if (discardDeck.getDiscardDeckCard().getValue().equals("W")) {
-            output.println("The last player is allowed to choose the color at the beginning of the game: ");
-            // String color = getPlayer(getPredecessor()).colorWish();
-            String color = getPlayer(getTurn()).colorWish();
-            getDiscardDeck().addCardToDiscardDeck(new Card(color, getDiscardDeck().getDiscardDeckCard().getValue(), -1, Card.checkColorCode(color)));
-        }
-    }
-
     private static void setPlayers() {
         output.println("Tell me how many bots would you like to involve: ");
         int bots = checkNrBots();
