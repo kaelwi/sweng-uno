@@ -276,6 +276,9 @@ public class Game {
             setTurn(getTurn() + getReverse());
         }
         doOtherChecks();
+        if (getPlayer(getPredecessor()).getPlayed() || getPlayer(getTurn()).getPlayed()) {
+            actionAlreadyPlayed = false;
+        }
     }
 
     private static void checkReverse(boolean beginning) {
@@ -284,6 +287,7 @@ public class Game {
             if (beginning) {
                 setTurn(getTurn()+getReverse());
             }
+            actionAlreadyPlayed = true;
         }
     }
 
@@ -303,16 +307,12 @@ public class Game {
         checkTakeTwo();
         checkTakeFour();
         turnOverflow();
-        if (getPlayer(getPredecessor()).getPlayed()) {
-            actionAlreadyPlayed = false;
-        }
-
     }
 
     private static void checkStop() {
         if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X") && !actionAlreadyPlayed) {
             actionAlreadyPlayed = true;
-            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
+            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard(), getPlayer(getTurn()).getPlayed(), false);
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("Stop! You are not allowed to play!");
             setTurn(getTurn() + getReverse());
@@ -322,7 +322,7 @@ public class Game {
     private static void checkTakeTwo() {
         if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2") && !actionAlreadyPlayed) {
             actionAlreadyPlayed = true;
-            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
+            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard(), getPlayer(getTurn()).getPlayed(), false);
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 2 cards!");
             givePlayerDrawCards(getPlayer(getTurn()), 2);
@@ -333,7 +333,7 @@ public class Game {
     private static void checkTakeFour() {
         if (getDiscardDeck().getDiscardDeckCard().getValue().equals("W+4") && !alreadyChallenged) {
             alreadyChallenged = true;
-            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
+            Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard(), getPlayer(getTurn()).getPlayed(), false);
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 4 cards!");
             output.println("Dou you want to challenge the last player? (Y/N)");
