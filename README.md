@@ -63,6 +63,9 @@ Available commands:
 - exit
 - status
 - CardColor + CardValue (e.g. R8)
+- CardColor (e.g. B)
+
+All commands are case insensitive.
 
 For more information see help.txt
 
