@@ -84,6 +84,7 @@ Available commands:
 - status
 - CardColor + CardValue (e.g. R8)
 - CardColor (e.g. B)
+- UNO
 
 All commands are case insensitive.
 
