@@ -60,9 +60,11 @@ public class App {
             if (card != null) {
                 if (Game.moveValidation(card, player)) {
                     Game.getDiscardDeck().addCardToDiscardDeck(card);
+                    player.setPlayed(true);
                 }
             }
 
+            player.setPlayed(false);
             player.setCanDraw(true);
             Game.doChecks(beginning);
             checkWinner(player);

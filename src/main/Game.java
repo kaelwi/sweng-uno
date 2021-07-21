@@ -25,7 +25,7 @@ public class Game {
     private static int turn = setFirst();
     private static int reverse = 1;
     private static boolean alreadyChallenged = false;
-    private static boolean alreadyTakenTwo = false;
+    private static boolean actionAlreadyPlayed = false;
 
     /**
      * This Method fills the Deck with all the cards and shuffles them.
@@ -279,7 +279,7 @@ public class Game {
     }
 
     private static void checkReverse(boolean beginning) {
-        if (getDiscardDeck().checkReverse()) {
+        if (getDiscardDeck().checkReverse() && !actionAlreadyPlayed) {
             setReverse();
             if (beginning) {
                 setTurn(getTurn()+getReverse());
@@ -303,10 +303,15 @@ public class Game {
         checkTakeTwo();
         checkTakeFour();
         turnOverflow();
+        if (getPlayer(getPredecessor()).getPlayed()) {
+            actionAlreadyPlayed = false;
+        }
+
     }
 
     private static void checkStop() {
-        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X")) {
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("X") && !actionAlreadyPlayed) {
+            actionAlreadyPlayed = true;
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("Stop! You are not allowed to play!");
@@ -315,8 +320,8 @@ public class Game {
     }
 
     private static void checkTakeTwo() {
-        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2") && !alreadyTakenTwo) {
-            alreadyTakenTwo = true;
+        if (getDiscardDeck().getDiscardDeckCard().getValue().equals("+2") && !actionAlreadyPlayed) {
+            actionAlreadyPlayed = true;
             Printer.printState(App.exit, getDiscardDeck().checkReverse(), getDiscardDeck().getDiscardDeckCard());
             Printer.printPlayerCards(getPlayer(getTurn()));
             output.println("You have to take 2 cards!");
