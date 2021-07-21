@@ -111,6 +111,7 @@ public class Human extends Player {
                 }
             } else {
                 valid = true;
+                removeCardFromHand(cardToBeChecked);
                 printMove(inputToBeChecked);
                 removeCardFromHand(cardToBeChecked);
             }
@@ -119,13 +120,21 @@ public class Human extends Player {
     }
 
     private void printMove(String[] input) {
-        if (checkUno() && (input.length < 2 || !input[1].equalsIgnoreCase("UNO"))) {
-            output.println("Oh no, you forgot to shout uno...");
-            Game.giveOnePenaltyCard(this);
-        } else if (checkUno() && input[1].equals("UNO")) {
-            output.println(input[0] + " " + input[1]);
-        } else {
+        if (!this.checkUno()) {
             output.println(input[0]);
+        } else {
+            if (input.length < 2) {
+                output.println("Oh no, you forgot to shout uno...");
+                Game.giveOnePenaltyCard(this);
+            } else {
+                if (input[1].equalsIgnoreCase("UNO")) {
+                    output.println(input[0] + " " + input[1]);
+                } else {
+                    output.println(input[0] + " " + input[1]);
+                    output.println("What did you say? That was no UNO!");
+                    Game.giveOnePenaltyCard(this);
+                }
+            }
         }
     }
 

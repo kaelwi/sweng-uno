@@ -341,6 +341,9 @@ public class Game {
                     givePlayerDrawCards(getPlayer(getTurn()), 4);
                     setTurn(getTurn() + getReverse());
                 }
+            } else {
+                givePlayerDrawCards(getPlayer(getTurn()), 4);
+                setTurn(getTurn() + getReverse());
             }
         }
     }
