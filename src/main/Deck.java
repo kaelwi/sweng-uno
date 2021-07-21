@@ -104,7 +104,7 @@ public class Deck {
     }
 
     public Card getCardBeforeWild() {
-        return this.cards.get(this.cards.size() - 3);
+        return this.cards.get(2);
     }
 
     public boolean checkReverse() {

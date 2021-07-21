@@ -280,9 +280,9 @@ public class Game {
     private static void checkReverse(boolean beginning) {
         if (getDiscardDeck().checkReverse()) {
             setReverse();
-        }
-        if (beginning) {
-            setTurn(getTurn()+getReverse());
+            if (beginning) {
+                setTurn(getTurn()+getReverse());
+            }
         }
     }
 
