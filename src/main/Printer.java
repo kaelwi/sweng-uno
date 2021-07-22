@@ -34,6 +34,8 @@ public class Printer {
         output.println("In case you need help: type \"help\".");
         output.println("If you wish to end the game: type \"exit\".");
         output.println("You want to get the actual point status? Type \"status\".");
+        output.println("You have no card to play? Type \"draw\".");
+        output.println("Still no card to play? Type \"skip\".");
         output.println();
 
         output.println("Let the Game begin!");
@@ -93,7 +95,7 @@ public class Printer {
 
     public static void noSuchCardOnHand() {
         output.println("It seems there is no such card on your hand...");
-        output.println("Or did you enter an unknown command? Available commands are: skip, draw, exit, " +
+        output.println("Or did you enter an unknown command? Available commands are: draw, skip, exit, " +
                 "help, status or a card color+value from your hand.");
         output.println();
         output.println("Which card do you want to play?");
