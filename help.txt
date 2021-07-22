@@ -1,19 +1,70 @@
-These are the rules - happy playing! :)
+These are the rules for playing UNO created by Paulina Šafar, Julia Summer, Karoline E. Wild: - happy playing! :)
 
-main.Main rules for playing UNO:
-    - 4 players are allowed to play UNO
-    - to be part of the game - write your commands in the command line of the Run-Terminal and hit "Enter" on your keyboard (you will see your entries in green)
-    i - to adjust the size of the Run-Terminal grab the command window on the top (above the class window) and pull the window in the desired direction. If you want to have the game in a separate window,
+Following settings and examples are based on playing UNO in the IDE IntelliJ IDEA.
+
+After starting the program by hitting the green "play-button" in the class Main:
+    1. Choose how many bots should play (1 - 4).
+    2. Enter the names for the bots (be aware that the names must be unique).
+    3. Enter your name (in case you want to play -> chosen bot 1 - 3).
+    - the card deck will be shuffled and the player to start the game will be drawn -> e.g., "Player 1 may begin".
+    4. The game starts.
+    - you will see whether the game is running or not at the console tools -> if the "replay" button or the "stop" button is visible the game is ongoing.
+    - to adjust the size of the Run-Terminal grab the command window on the top (above the class window) and pull the window in the desired direction. If you want to have the game in a separate window,
         click on the gear wheel (top right) and change the "View Mode" to "Window".
-    - if you need help during the game, please enter "help" to view this document
-    - to end the game please type "exit"
-    - main.Card explanation: R -> red, G -> Green, B -> Blue, Y -> Yellow with each values from 0 - 9 and +2, <-> (reverse card -> changes direction), X (skip card). Additionally two wild cards: W -> colour changer, W+4 -> colour changer and draw 4 cards.
-    - you will always see the latest card being played on the line: "Open card deck: >>Color+Value<<" e.g. Open card deck: Y0
-    -
 
-After starting the program by hitting the green "play-button" in the class main.Main:
-    1. Choose how many bots should play
-    2. Enter the names for the bots
-    3. Enter your name
-    - The card deck will be shuffled and the player to start the game will be drawn
+    -> Let's proceed with the main rules and some information:
 
+Main rules:
+    - 4 players are allowed to play UNO.
+    - To be part of the game - write your commands in the command line of the Run-Terminal and hit "Enter" on your keyboard (you will see your entries in green).
+    - If you need help during the game, please enter "help" to view this document.
+    - To end the game please type "exit".
+    - Card explanation: R -> red, G -> green, B -> blue, Y -> yellow with each values from 0 - 9 and +2 (draw 2 cards), <-> (reverse card -> changes direction), X (skip card).
+        Additionally two wild cards: W -> color changer, W+4 -> color changer and draw 4 cards.
+    - You can only put cards with the same color or number or symbol (+2, <->, X) except the wild cards.
+    - If you play a wrong card you will get a penalty card.
+    - If someone puts the +2 on the discard deck, the next player has to draw two cards and is not allowed to play a card.
+    - You will always see the latest card being played on the line: "Open card deck: >>Color+Value<<" e.g., "Open card deck: Y0".
+    - In case you play the W or W+4 card you will be asked to choose the color. To do so please enter the preferred color: e.g., "R". After this you will see the color in front of the wild card.
+    - You are only allowed to play the W+4 when you do not have a card to play on your hand besides the W card.
+    - Everytime you play a W+4 card, the next player has the possibility whether to challenge you or not ("Y"/"N").
+        -> the challenge function - player A (played W+4), player B (next player)
+            1. Player B challenges (enters "Y"):
+                a) Player A had no other card to play -> player B has to draw 4 cards and next player is allowed to play.
+                b) Player B cheated and had a card to play -> player A has to draw 6 cards and player B can play a card.
+            2. Player B does not want to challenge (enters "N"):
+                a) Player B has to draw 4 cards and it is the next player's turn.
+    - Action and wild cards as first card on the discard deck:
+        a) +2 -> the first player has to draw 2 cards and the next player is allowed to play.
+        b) Skip card -> not the randomly chosen first player is allowed to play, but the next.
+        c) Reverse card -> if following sequence is chosen by chance: A, B, C, D then the game starts counterclockwise, so it is D's turn.
+        d) W card -> the first player may choose the color.
+        e) W+4 card -> the next card from the deck will be put on the discard pile, as long as no W+4 is the first card.
+    - If you do not have any card to play, you must draw (enter "draw") a card. If you still have nothing to play, please enter "skip" and it is the next player's turn.
+    - If it is your turn and you only have 2 cards left, you must shout (enter) UNO in addition to your card you want to play.
+    - If you forgot to shout UNO you will get a penalty card
+
+    GOAL:
+        - The player who scores first 500 points wins the game.
+            - One game includes many rounds.
+            - To score points, you will have to be first who finishes one round by playing all cards on your hand.
+            - The winner of the round will earn the points which the other players have on their hand.
+
+    POINTS:
+        - All cards from 0 - 9 count their value as points.
+        - The cards including +2, <-> and X count 20 points.
+        - The wild cards W and W+4 count 50 points.
+            - e.g. the round ended and Player X has the following cards on his hand: R6, BX, W -> will lead to 76 points for the winner.
+        - You can see the points by entering "status" in the command line.
+
+    ALL COMMANDS IN SHORT (case-insensitive):
+        - color+value e.g., R8 or Y<->
+        - color only e.g., B
+        - wild card e.g., W or W+4
+        - draw
+        - skip
+        - Y or N for the challenge
+        - UNO
+        - help
+        - status
+        - exit
