@@ -119,7 +119,6 @@ public class Human extends Player {
             inputToBeChecked = cleanUserInput();
             return moveValidation(inputToBeChecked);
         } else {
-            removeCardFromHand(cardToBeChecked);
             printMove(inputToBeChecked);
             removeCardFromHand(cardToBeChecked);
         }
