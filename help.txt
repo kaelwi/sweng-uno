@@ -64,7 +64,7 @@ Main rules:
         - draw
         - skip
         - Y or N for the challenge
-        - UNO
+        - UNO e.g., G5 UNO
         - help
         - status
         - exit
